@@ -1,0 +1,57 @@
+<%= form_for(tour) do |f| %>
+  <% if tour.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tour.errors.count, "error") %> prohibited this tour from being saved:</h2>
+
+      <ul>
+      <% tour.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Bezeichnung %>
+    <%= f.text_field :Bezeichnung %>
+  </div>
+
+  <div class="field">
+    <%= f.label :MaxTeilnehmer %>
+    <%= f.number_field :MaxTeilnehmer %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Preis %>
+    <%= f.text_field :Preis %>
+  </div>
+
+  <div class="field">
+    <%= f.label :TourStartDatum %>
+    <%= f.datetime_select :TourStartDatum %>
+  </div>
+
+  <div class="field">
+    <%= f.label :TourEndeDatum %>
+    <%= f.datetime_select :TourEndeDatum %>
+  </div>
+
+  <div class="field">
+    <%= f.label :EintragErstelltVon %>
+    <%= f.text_field :EintragErstelltVon %>
+  </div>
+
+  <div class="field">
+    <%= f.label :EintragGeaendertVon %>
+    <%= f.text_field :EintragGeaendertVon %>
+  </div>
+
+  <div class="field">
+    <%= f.label :SyncedFrom %>
+    <%= f.number_field :SyncedFrom %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

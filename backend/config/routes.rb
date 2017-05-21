@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tours
   get 'welcome/index'
 
   resources :status
