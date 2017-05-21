@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  StatusID: 1
+  Bezeichnung: MyString
+  EintragErstelltAm: 2017-05-21 18:08:24
+  EintragErstelltVon: MyString
+  EintragGeaendertAm: 2017-05-21 18:08:24
+  EintragGeandertVon: MyString
+
+two:
+  StatusID: 1
+  Bezeichnung: MyString
+  EintragErstelltAm: 2017-05-21 18:08:24
+  EintragErstelltVon: MyString
+  EintragGeaendertAm: 2017-05-21 18:08:24
+  EintragGeandertVon: MyString

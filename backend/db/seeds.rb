@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Status.create(StatusID: '0', Bezeichnung: 'Laufend', EintragErstelltAm: DateTime.now, EintragErstelltVon: 'Gustaf', EintragGeaendertAm: DateTime.now, EintragGeandertVon: 'Gans')
