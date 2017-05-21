@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170521160824) do
+ActiveRecord::Schema.define(version: 20170521180842) do
 
   create_table "statuses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "StatusID"
@@ -21,6 +21,19 @@ ActiveRecord::Schema.define(version: 20170521160824) do
     t.string   "EintragGeandertVon"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+  end
+
+  create_table "tours", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "Bezeichnung"
+    t.integer  "MaxTeilnehmer"
+    t.float    "Preis",               limit: 24
+    t.datetime "TourStartDatum"
+    t.datetime "TourEndeDatum"
+    t.string   "EintragErstelltVon"
+    t.string   "EintragGeaendertVon"
+    t.integer  "SyncedFrom"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
 end
