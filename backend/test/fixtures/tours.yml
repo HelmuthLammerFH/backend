@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Bezeichnung: MyString
+  MaxTeilnehmer: 1
+  Preis: 1.5
+  TourStartDatum: 2017-05-21 20:08:42
+  TourEndeDatum: 2017-05-21 20:08:42
+  EintragErstelltVon: MyString
+  EintragGeaendertVon: MyString
+  SyncedFrom: 1
+
+two:
+  Bezeichnung: MyString
+  MaxTeilnehmer: 1
+  Preis: 1.5
+  TourStartDatum: 2017-05-21 20:08:42
+  TourEndeDatum: 2017-05-21 20:08:42
+  EintragErstelltVon: MyString
+  EintragGeaendertVon: MyString
+  SyncedFrom: 1
