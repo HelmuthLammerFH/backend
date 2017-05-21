@@ -7,3 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Status.create(StatusID: '0', Bezeichnung: 'Laufend', EintragErstelltAm: DateTime.now, EintragErstelltVon: 'Gustaf', EintragGeaendertAm: DateTime.now, EintragGeandertVon: 'Gans')
+
+Tour.create(Bezeichnung: 'Unsere 1. Tour', MaxTeilnehmer: 10, Preis: 100, TourStartDatum: DateTime.now, TourEndeDatum: DateTime.now, EintragErstelltVon: 'Roland', EintragGeaendertVon: 'Patrick', SyncedFrom: 1)
