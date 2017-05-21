@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20170521180842) do
 
-  create_table "statuses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "statuses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "StatusID"
     t.string   "Bezeichnung"
     t.datetime "EintragErstelltAm"
@@ -23,7 +23,11 @@ ActiveRecord::Schema.define(version: 20170521180842) do
     t.datetime "updated_at",         null: false
   end
 
+<<<<<<< Updated upstream
   create_table "tours", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+=======
+  create_table "tours", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+>>>>>>> Stashed changes
     t.string   "Bezeichnung"
     t.integer  "MaxTeilnehmer"
     t.float    "Preis",               limit: 24
