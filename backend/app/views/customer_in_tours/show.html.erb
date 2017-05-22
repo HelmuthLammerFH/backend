@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bookeddate:</strong>
+  <%= @customer_in_tour.bookedDate %>
+</p>
+
+<p>
+  <strong>Participated:</strong>
+  <%= @customer_in_tour.participated %>
+</p>
+
+<p>
+  <strong>Starrating:</strong>
+  <%= @customer_in_tour.starRating %>
+</p>
+
+<p>
+  <strong>Feedbacktourguid:</strong>
+  <%= @customer_in_tour.feedbackTourGuid %>
+</p>
+
+<p>
+  <strong>Createdfrom:</strong>
+  <%= @customer_in_tour.createdFrom %>
+</p>
+
+<p>
+  <strong>Changedfrom:</strong>
+  <%= @customer_in_tour.changedFrom %>
+</p>
+
+<p>
+  <strong>Syncedfrom:</strong>
+  <%= @customer_in_tour.syncedFrom %>
+</p>
+
+<%= link_to 'Edit', edit_customer_in_tour_path(@customer_in_tour) %> |
+<%= link_to 'Back', customer_in_tours_path %>

@@ -1,0 +1,2 @@
+class RessourceForTour < ApplicationRecord
+end

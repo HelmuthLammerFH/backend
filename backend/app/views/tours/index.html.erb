@@ -5,13 +5,13 @@
 <table>
   <thead>
     <tr>
-      <th>Bezeichnung</th>
-      <th>Maxteilnehmer</th>
-      <th>Preis</th>
-      <th>Tourstartdatum</th>
-      <th>Tourendedatum</th>
-      <th>Eintragerstelltvon</th>
-      <th>Eintraggeaendertvon</th>
+      <th>Name</th>
+      <th>Maxattendees</th>
+      <th>Price</th>
+      <th>Startdate</th>
+      <th>Enddate</th>
+      <th>Createdfrom</th>
+      <th>Changedfrom</th>
       <th>Syncedfrom</th>
       <th colspan="3"></th>
     </tr>
@@ -20,14 +20,14 @@
   <tbody>
     <% @tours.each do |tour| %>
       <tr>
-        <td><%= tour.Bezeichnung %></td>
-        <td><%= tour.MaxTeilnehmer %></td>
-        <td><%= tour.Preis %></td>
-        <td><%= tour.TourStartDatum %></td>
-        <td><%= tour.TourEndeDatum %></td>
-        <td><%= tour.EintragErstelltVon %></td>
-        <td><%= tour.EintragGeaendertVon %></td>
-        <td><%= tour.SyncedFrom %></td>
+        <td><%= tour.name %></td>
+        <td><%= tour.maxAttendees %></td>
+        <td><%= tour.price %></td>
+        <td><%= tour.startDate %></td>
+        <td><%= tour.endDate %></td>
+        <td><%= tour.createdFrom %></td>
+        <td><%= tour.changedFrom %></td>
+        <td><%= tour.syncedFrom %></td>
         <td><%= link_to 'Show', tour %></td>
         <td><%= link_to 'Edit', edit_tour_path(tour) %></td>
         <td><%= link_to 'Destroy', tour, method: :delete, data: { confirm: 'Are you sure?' } %></td>

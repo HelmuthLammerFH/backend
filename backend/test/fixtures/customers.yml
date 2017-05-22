@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  note: MyString
+  createdFrom: MyString
+  changedFrom: MyString
+  syncedFrom: 1
+
+two:
+  note: MyString
+  createdFrom: MyString
+  changedFrom: MyString
+  syncedFrom: 1

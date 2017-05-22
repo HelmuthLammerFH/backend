@@ -1,0 +1,32 @@
+<%= form_for(ressource_for_tour) do |f| %>
+  <% if ressource_for_tour.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ressource_for_tour.errors.count, "error") %> prohibited this ressource_for_tour from being saved:</h2>
+
+      <ul>
+      <% ressource_for_tour.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :createdFrom %>
+    <%= f.text_field :createdFrom %>
+  </div>
+
+  <div class="field">
+    <%= f.label :changedFrom %>
+    <%= f.text_field :changedFrom %>
+  </div>
+
+  <div class="field">
+    <%= f.label :syncedFrom %>
+    <%= f.number_field :syncedFrom %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

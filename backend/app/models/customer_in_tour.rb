@@ -1,0 +1,2 @@
+class CustomerInTour < ApplicationRecord
+end

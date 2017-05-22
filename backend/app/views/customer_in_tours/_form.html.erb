@@ -1,0 +1,52 @@
+<%= form_for(customer_in_tour) do |f| %>
+  <% if customer_in_tour.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(customer_in_tour.errors.count, "error") %> prohibited this customer_in_tour from being saved:</h2>
+
+      <ul>
+      <% customer_in_tour.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :bookedDate %>
+    <%= f.datetime_select :bookedDate %>
+  </div>
+
+  <div class="field">
+    <%= f.label :participated %>
+    <%= f.text_field :participated %>
+  </div>
+
+  <div class="field">
+    <%= f.label :starRating %>
+    <%= f.number_field :starRating %>
+  </div>
+
+  <div class="field">
+    <%= f.label :feedbackTourGuid %>
+    <%= f.text_field :feedbackTourGuid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :createdFrom %>
+    <%= f.text_field :createdFrom %>
+  </div>
+
+  <div class="field">
+    <%= f.label :changedFrom %>
+    <%= f.text_field :changedFrom %>
+  </div>
+
+  <div class="field">
+    <%= f.label :syncedFrom %>
+    <%= f.number_field :syncedFrom %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

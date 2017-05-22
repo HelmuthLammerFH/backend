@@ -1,0 +1,2 @@
+class TourGuideToAgentur < ApplicationRecord
+end

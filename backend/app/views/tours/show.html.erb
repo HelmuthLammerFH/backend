@@ -1,43 +1,43 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Bezeichnung:</strong>
-  <%= @tour.Bezeichnung %>
+  <strong>Name:</strong>
+  <%= @tour.name %>
 </p>
 
 <p>
-  <strong>Maxteilnehmer:</strong>
-  <%= @tour.MaxTeilnehmer %>
+  <strong>Maxattendees:</strong>
+  <%= @tour.maxAttendees %>
 </p>
 
 <p>
-  <strong>Preis:</strong>
-  <%= @tour.Preis %>
+  <strong>Price:</strong>
+  <%= @tour.price %>
 </p>
 
 <p>
-  <strong>Tourstartdatum:</strong>
-  <%= @tour.TourStartDatum %>
+  <strong>Startdate:</strong>
+  <%= @tour.startDate %>
 </p>
 
 <p>
-  <strong>Tourendedatum:</strong>
-  <%= @tour.TourEndeDatum %>
+  <strong>Enddate:</strong>
+  <%= @tour.endDate %>
 </p>
 
 <p>
-  <strong>Eintragerstelltvon:</strong>
-  <%= @tour.EintragErstelltVon %>
+  <strong>Createdfrom:</strong>
+  <%= @tour.createdFrom %>
 </p>
 
 <p>
-  <strong>Eintraggeaendertvon:</strong>
-  <%= @tour.EintragGeaendertVon %>
+  <strong>Changedfrom:</strong>
+  <%= @tour.changedFrom %>
 </p>
 
 <p>
   <strong>Syncedfrom:</strong>
-  <%= @tour.SyncedFrom %>
+  <%= @tour.syncedFrom %>
 </p>
 
 <%= link_to 'Edit', edit_tour_path(@tour) %> |

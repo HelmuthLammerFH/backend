@@ -17,7 +17,7 @@ class ToursControllerTest < ActionDispatch::IntegrationTest
 
   test "should create tour" do
     assert_difference('Tour.count') do
-      post tours_url, params: { tour: { Bezeichnung: @tour.Bezeichnung, EintragErstelltVon: @tour.EintragErstelltVon, EintragGeaendertVon: @tour.EintragGeaendertVon, MaxTeilnehmer: @tour.MaxTeilnehmer, Preis: @tour.Preis, SyncedFrom: @tour.SyncedFrom, TourEndeDatum: @tour.TourEndeDatum, TourStartDatum: @tour.TourStartDatum } }
+      post tours_url, params: { tour: { changedFrom: @tour.changedFrom, createdFrom: @tour.createdFrom, endDate: @tour.endDate, maxAttendees: @tour.maxAttendees, name: @tour.name, price: @tour.price, startDate: @tour.startDate, syncedFrom: @tour.syncedFrom } }
     end
 
     assert_redirected_to tour_url(Tour.last)
@@ -34,7 +34,7 @@ class ToursControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update tour" do
-    patch tour_url(@tour), params: { tour: { Bezeichnung: @tour.Bezeichnung, EintragErstelltVon: @tour.EintragErstelltVon, EintragGeaendertVon: @tour.EintragGeaendertVon, MaxTeilnehmer: @tour.MaxTeilnehmer, Preis: @tour.Preis, SyncedFrom: @tour.SyncedFrom, TourEndeDatum: @tour.TourEndeDatum, TourStartDatum: @tour.TourStartDatum } }
+    patch tour_url(@tour), params: { tour: { changedFrom: @tour.changedFrom, createdFrom: @tour.createdFrom, endDate: @tour.endDate, maxAttendees: @tour.maxAttendees, name: @tour.name, price: @tour.price, startDate: @tour.startDate, syncedFrom: @tour.syncedFrom } }
     assert_redirected_to tour_url(@tour)
   end
 
