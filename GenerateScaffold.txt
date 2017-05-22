@@ -1,17 +1,17 @@
 rails generate scaffold User firstname:string lastname:string birthdate:date address:string city:string email:string username:string passwort:string createdFrom:string changedFrom:string syncedFrom:integer
-rails generate scaffold Customer note:string user_id:integer createdFrom:string changedFrom:string syncedFrom:integer
-rails generate scaffold TourGuide tourGuideSince:date user_id:integer createdFrom:string changedFrom:string syncedFrom:integer
+rails generate scaffold Customer note:string createdFrom:string changedFrom:string syncedFrom:integer
+rails generate scaffold TourGuide tourGuideSince:date createdFrom:string changedFrom:string syncedFrom:integer
 rails generate scaffold Agency name:string entranceDate:date
 rails generate scaffold Status name:string createdFrom:string changedFrom:string syncedFrom:integer
-rails generate scaffold Tour name:string maxAttendees:integer status_id:integer tourGuide_id:integer price:float startDate:datetime endDate:datetime createdFrom:string changedFrom:string syncedFrom:integer
-rails generate scaffold CustomerInTour cutomer_id:integer tour_id:integer bookedDate:datetime participated:string starRating:integer feedbackTourGuid:string createdFrom:string changedFrom:string syncedFrom:integer
+rails generate scaffold Tour name:string maxAttendees:integer price:float startDate:datetime endDate:datetime createdFrom:string changedFrom:string syncedFrom:integer
+rails generate scaffold CustomerInTour bookedDate:datetime participated:string starRating:integer feedbackTourGuid:string createdFrom:string changedFrom:string syncedFrom:integer
 rails generate scaffold TourPosition name:string position:string createdFrom:string changedFrom:string syncedFrom:integer
-rails generate scaffold TourToTourPosition tour_id:integer tourPosition_id:integer startDate:datetime endDate:datetime createdFrom:string changedFrom:string syncedFrom:integer
+rails generate scaffold TourToTourPosition tourPosition_id:integer startDate:datetime endDate:datetime createdFrom:string changedFrom:string syncedFrom:integer
 rails generate scaffold RessourceTyp name:string createdFrom:string changedFrom:string syncedFrom:integer
-rails generate scaffold RessourceForTour ressourceTyp_id:integer tour_id:integer createdFrom:string changedFrom:string syncedFrom:integer
+rails generate scaffold RessourceForTour createdFrom:string changedFrom:string syncedFrom:integer
 
 
-#Foreign Key
+#Foreign Key Definitions
 rails g migration AddUsersToTourGuide User:references
 rails g migration AddUsersToCustomer User:references
 rails g migration AddAgencysToTourGuide Agency:references
@@ -23,3 +23,22 @@ rails g migration AddTourGuidesToTour TourGuide:references
 rails g migration AddStatusesToTour Status:references
 rails g migration AddToursToRessourceForTour Tour:references
 rails g migration AddRessourceTypsToRessourceForTour RessourceTyp:references
+
+
+
+
+#Destroy Scaffolds
+
+rails destroy scaffold User
+rails destroy scaffold Customer
+rails destroy scaffold TourGuide
+rails destroy scaffold Agency
+rails destroy scaffold Status
+rails destroy scaffold Tour
+rails destroy scaffold CustomerInTour
+rails destroy scaffold TourPosition
+rails destroy scaffold TourToTourPosition
+rails destroy scaffold RessourceTyp
+rails destroy scaffold RessourceForTour
+
+
