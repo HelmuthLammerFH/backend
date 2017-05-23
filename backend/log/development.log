@@ -763,3 +763,230 @@ FOREIGN KEY (`Ressource_Typ_id`)
   [1m[35m (0.9ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'tours'[0m
   [1m[35m (0.0ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
   [1m[35m (2.0ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+  [1m[35m (63.6ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6943363954396776060', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (7.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateUsers (20170522151612)
+  [1m[35m (15.4ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `firstname` varchar(255), `lastname` varchar(255), `birthdate` date, `address` varchar(255), `city` varchar(255), `email` varchar(255), `username` varchar(255), `passwort` varchar(255), `createdFrom` varchar(255), `changedFrom` varchar(255), `syncedFrom` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170522151612')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCustomers (20170522151618)
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE TABLE `customers` (`id` int AUTO_INCREMENT PRIMARY KEY, `note` varchar(255), `createdFrom` varchar(255), `changedFrom` varchar(255), `syncedFrom` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170522151618')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTourGuides (20170522151624)
+  [1m[35m (24.3ms)[0m  [1m[35mCREATE TABLE `tour_guides` (`id` int AUTO_INCREMENT PRIMARY KEY, `tourGuideSince` date, `createdFrom` varchar(255), `changedFrom` varchar(255), `syncedFrom` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170522151624')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAgencies (20170522151630)
+  [1m[35m (17.2ms)[0m  [1m[35mCREATE TABLE `agencies` (`id` int AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `entranceDate` date, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170522151630')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateStatuses (20170522151636)
+  [1m[35m (20.9ms)[0m  [1m[35mCREATE TABLE `statuses` (`id` int AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `createdFrom` varchar(255), `changedFrom` varchar(255), `syncedFrom` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170522151636')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTours (20170522151642)
+  [1m[35m (150.3ms)[0m  [1m[35mCREATE TABLE `tours` (`id` int AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `maxAttendees` int, `price` float, `startDate` datetime, `endDate` datetime, `createdFrom` varchar(255), `changedFrom` varchar(255), `syncedFrom` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170522151642')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCustomerInTours (20170522151646)
+  [1m[35m (28.6ms)[0m  [1m[35mCREATE TABLE `customer_in_tours` (`id` int AUTO_INCREMENT PRIMARY KEY, `bookedDate` datetime, `participated` varchar(255), `starRating` int, `feedbackTourGuid` varchar(255), `createdFrom` varchar(255), `changedFrom` varchar(255), `syncedFrom` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170522151646')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTourPositions (20170522151651)
+  [1m[35m (17.6ms)[0m  [1m[35mCREATE TABLE `tour_positions` (`id` int AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `position` varchar(255), `createdFrom` varchar(255), `changedFrom` varchar(255), `syncedFrom` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170522151651')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTourToTourPositions (20170522151656)
+  [1m[35m (20.3ms)[0m  [1m[35mCREATE TABLE `tour_to_tour_positions` (`id` int AUTO_INCREMENT PRIMARY KEY, `tourPosition_id` int, `startDate` datetime, `endDate` datetime, `createdFrom` varchar(255), `changedFrom` varchar(255), `syncedFrom` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170522151656')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRessourceTyps (20170522151703)
+  [1m[35m (17.6ms)[0m  [1m[35mCREATE TABLE `ressource_typs` (`id` int AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `createdFrom` varchar(255), `changedFrom` varchar(255), `syncedFrom` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170522151703')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRessourceForTours (20170522151708)
+  [1m[35m (15.5ms)[0m  [1m[35mCREATE TABLE `ressource_for_tours` (`id` int AUTO_INCREMENT PRIMARY KEY, `createdFrom` varchar(255), `changedFrom` varchar(255), `syncedFrom` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170522151708')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUsersToTourGuide (20170522151813)
+  [1m[35m (48.6ms)[0m  [1m[35mALTER TABLE `tour_guides` ADD `User_id` int[0m
+  [1m[35m (15.0ms)[0m  [1m[35mCREATE  INDEX `index_tour_guides_on_User_id`  ON `tour_guides` (`User_id`) [0m
+  [1m[35m (36.2ms)[0m  [1m[35mALTER TABLE `tour_guides` ADD CONSTRAINT `fk_rails_cd60af023a`
+FOREIGN KEY (`User_id`)
+  REFERENCES `Users` (`id`)
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170522151813')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUsersToCustomer (20170522151850)
+  [1m[35m (12.9ms)[0m  [1m[35mALTER TABLE `customers` ADD `User_id` int[0m
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE  INDEX `index_customers_on_User_id`  ON `customers` (`User_id`) [0m
+  [1m[35m (20.4ms)[0m  [1m[35mALTER TABLE `customers` ADD CONSTRAINT `fk_rails_214af3ccd1`
+FOREIGN KEY (`User_id`)
+  REFERENCES `Users` (`id`)
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170522151850')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAgencysToTourGuide (20170522151856)
+  [1m[35m (21.3ms)[0m  [1m[35mALTER TABLE `tour_guides` ADD `Agency_id` int[0m
+  [1m[35m (16.7ms)[0m  [1m[35mCREATE  INDEX `index_tour_guides_on_Agency_id`  ON `tour_guides` (`Agency_id`) [0m
+  [1m[35m (15.4ms)[0m  [1m[35mALTER TABLE `tour_guides` ADD CONSTRAINT `fk_rails_75fe1d109d`
+FOREIGN KEY (`Agency_id`)
+  REFERENCES `Agencies` (`id`)
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170522151856')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddCustomersToCustomerInTour (20170522151901)
+  [1m[35m (11.8ms)[0m  [1m[35mALTER TABLE `customer_in_tours` ADD `Customer_id` int[0m
+  [1m[35m (14.6ms)[0m  [1m[35mCREATE  INDEX `index_customer_in_tours_on_Customer_id`  ON `customer_in_tours` (`Customer_id`) [0m
+  [1m[35m (16.2ms)[0m  [1m[35mALTER TABLE `customer_in_tours` ADD CONSTRAINT `fk_rails_e612292412`
+FOREIGN KEY (`Customer_id`)
+  REFERENCES `Customers` (`id`)
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170522151901')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddToursToCustomerInTour (20170522151906)
+  [1m[35m (21.8ms)[0m  [1m[35mALTER TABLE `customer_in_tours` ADD `Tour_id` int[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE  INDEX `index_customer_in_tours_on_Tour_id`  ON `customer_in_tours` (`Tour_id`) [0m
+  [1m[35m (16.2ms)[0m  [1m[35mALTER TABLE `customer_in_tours` ADD CONSTRAINT `fk_rails_e3fc6de74e`
+FOREIGN KEY (`Tour_id`)
+  REFERENCES `Tours` (`id`)
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170522151906')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddToursToTourToTourPosition (20170522151911)
+  [1m[35m (12.9ms)[0m  [1m[35mALTER TABLE `tour_positions` ADD `Tour_id` int[0m
+  [1m[35m (14.1ms)[0m  [1m[35mCREATE  INDEX `index_tour_positions_on_Tour_id`  ON `tour_positions` (`Tour_id`) [0m
+  [1m[35m (19.5ms)[0m  [1m[35mALTER TABLE `tour_positions` ADD CONSTRAINT `fk_rails_35a1e22617`
+FOREIGN KEY (`Tour_id`)
+  REFERENCES `Tours` (`id`)
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170522151911')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddTourPositionsToTourToTourPosition (20170522151915)
+  [1m[35m (22.5ms)[0m  [1m[35mALTER TABLE `tour_to_tour_positions` ADD `tour_position_id` int[0m
+  [1m[35m (17.4ms)[0m  [1m[35mCREATE  INDEX `index_tour_to_tour_positions_on_tour_position_id`  ON `tour_to_tour_positions` (`tour_position_id`) [0m
+  [1m[35m (13.9ms)[0m  [1m[35mALTER TABLE `tour_to_tour_positions` ADD CONSTRAINT `fk_rails_4dc5971fa6`
+FOREIGN KEY (`tour_position_id`)
+  REFERENCES `tour_positions` (`id`)
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170522151915')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddTourGuidesToTour (20170522151921)
+  [1m[35m (14.4ms)[0m  [1m[35mALTER TABLE `tours` ADD `tour_guide_id` int[0m
+  [1m[35m (14.2ms)[0m  [1m[35mCREATE  INDEX `index_tours_on_tour_guide_id`  ON `tours` (`tour_guide_id`) [0m
+  [1m[35m (17.4ms)[0m  [1m[35mALTER TABLE `tours` ADD CONSTRAINT `fk_rails_c69a083d60`
+FOREIGN KEY (`tour_guide_id`)
+  REFERENCES `tour_guides` (`id`)
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170522151921')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddStatusesToTour (20170522151926)
+  [1m[35m (18.0ms)[0m  [1m[35mALTER TABLE `tours` ADD `Status_id` int[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE  INDEX `index_tours_on_Status_id`  ON `tours` (`Status_id`) [0m
+  [1m[35m (20.1ms)[0m  [1m[35mALTER TABLE `tours` ADD CONSTRAINT `fk_rails_037d8851af`
+FOREIGN KEY (`Status_id`)
+  REFERENCES `Statuses` (`id`)
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170522151926')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddToursToRessourceForTour (20170522151930)
+  [1m[35m (12.3ms)[0m  [1m[35mALTER TABLE `ressource_for_tours` ADD `Tour_id` int[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE  INDEX `index_ressource_for_tours_on_Tour_id`  ON `ressource_for_tours` (`Tour_id`) [0m
+  [1m[35m (21.5ms)[0m  [1m[35mALTER TABLE `ressource_for_tours` ADD CONSTRAINT `fk_rails_3b2a12ca80`
+FOREIGN KEY (`Tour_id`)
+  REFERENCES `Tours` (`id`)
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170522151930')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRessourceTypsToRessourceForTour (20170522151935)
+  [1m[35m (17.1ms)[0m  [1m[35mALTER TABLE `ressource_for_tours` ADD `Ressource_Typ_id` int[0m
+  [1m[35m (17.4ms)[0m  [1m[35mCREATE  INDEX `index_ressource_for_tours_on_Ressource_Typ_id`  ON `ressource_for_tours` (`Ressource_Typ_id`) [0m
+  [1m[35m (16.1ms)[0m  [1m[35mALTER TABLE `ressource_for_tours` ADD CONSTRAINT `fk_rails_4bcd0fa890`
+FOREIGN KEY (`Ressource_Typ_id`)
+  REFERENCES `Ressource_Typs` (`id`)
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170522151935')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-05-23 15:03:40', '2017-05-23 15:03:40')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT RELEASE_LOCK('6943363954396776060')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (1.6ms)[0m  [1m[35mSHOW CREATE TABLE `agencies`[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'agencies'[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSHOW CREATE TABLE `customer_in_tours`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'customer_in_tours'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `customers`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'customers'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `ressource_for_tours`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'ressource_for_tours'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `ressource_typs`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'ressource_typs'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `statuses`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'statuses'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `tour_guides`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'tour_guides'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `tour_positions`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'tour_positions'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `tour_to_tour_positions`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'tour_to_tour_positions'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `tours`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'tours'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Started POST "/api/v1/tours.json" for 127.0.0.1 at 2017-05-23 17:30:18 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Api::V1::ToursController#create as JSON
+  Parameters: {"Bezeichnung"=>"Test with Postman", "MaxTeilnehmer"=>100, "Preis"=>100, "TourStartDatum"=>"2017-06-15 00:00:00", "TourEndeDatum"=>"2017-06-15 00:00:00", "EintragErstelltVon"=>"Duck", "EintragGeaendertVon"=>"Donald", "SyncedFrom"=>1, "tour"=>{}}
+Can't verify CSRF token authenticity.
+Completed 400 Bad Request in 14ms (ActiveRecord: 8.3ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: tour):
+  
+app/controllers/api/v1/tours_controller.rb:72:in `tour_params'
+app/controllers/api/v1/tours_controller.rb:27:in `create'
+  Rendering /Users/rp/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/rp/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/rp/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /Users/rp/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/rp/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/rp/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/rp/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/rp/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (88.7ms)
+Started GET "/api/v1/tours.json" for 127.0.0.1 at 2017-05-23 17:30:40 +0200
+Processing by Api::V1::ToursController#index as JSON
+  Parameters: {"tour"=>{}}
+No template found for Api::V1::ToursController#index, rendering head :no_content
+Completed 204 No Content in 98ms (ActiveRecord: 0.0ms)
+
+

@@ -5,8 +5,6 @@ class Api::V1::ToursController < Api::V1::BaseController
   # GET /tours.json
   def index
     @tours = Tour.all
-
-    render :json => @tours
   end
 
   # GET /tours/1
@@ -71,6 +69,6 @@ class Api::V1::ToursController < Api::V1::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_params
-      params.require(:tour).permit(:Bezeichnung, :MaxTeilnehmer, :Preis, :TourStartDatum, :TourEndeDatum, :EintragErstelltVon, :EintragGeaendertVon, :SyncedFrom)
+      params.require(:tour).permit(:name, :maxAttendees, :price, :startDate, :endDate, :createdFrom, :changedFrom, :syncedFrom)
     end
 end
