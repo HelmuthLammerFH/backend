@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Status.create(StatusID: '0', Bezeichnung: 'Laufend', EintragErstelltAm: DateTime.now, EintragErstelltVon: 'Gustaf', EintragGeaendertAm: DateTime.now, EintragGeandertVon: 'Gans')
+Tour.create(
 
-Tour.create(Bezeichnung: 'Unsere 1. Tour', MaxTeilnehmer: 10, Preis: 100, TourStartDatum: DateTime.now, TourEndeDatum: DateTime.now, EintragErstelltVon: 'Roland', EintragGeaendertVon: 'Patrick', SyncedFrom: 1)
+    name:'SchoenbrunnTour',maxAttendees:12,price:1234.0,startDate:'2017-05-23T15:33:00.000',endDate:'2017-05-23T15:33:00.000',createdFrom:'Mr' ,changedFrom:'Roland',syncedFrom:1
+)
