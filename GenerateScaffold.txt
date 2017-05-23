@@ -24,7 +24,19 @@ rails g migration AddStatusesToTour Status:references
 rails g migration AddToursToRessourceForTour Tour:references
 rails g migration AddRessourceTypsToRessourceForTour RessourceTyp:references
 
+#Generate DeleteColumn
 
+rails generate migration AddDeleteFlagToUsers deleteFlag:boolean
+rails generate migration AddDeleteFlagToCustomers deleteFlag:boolean
+rails generate migration AddDeleteFlagToTourGuides deleteFlag:boolean
+rails generate migration AddDeleteFlagToAgencies deleteFlag:boolean
+rails generate migration AddDeleteFlagToStatuses deleteFlag:boolean
+rails generate migration AddDeleteFlagToTours deleteFlag:boolean
+rails generate migration AddDeleteFlagToCustomerInTours deleteFlag:boolean
+rails generate migration AddDeleteFlagToTourPositions deleteFlag:boolean
+rails generate migration AddDeleteFlagToTourToTourPositions deleteFlag:boolean
+rails generate migration AddDeleteFlagToRessourceTyps deleteFlag:boolean
+rails generate migration AddDeleteFlagToRessourceForTours deleteFlag:boolean
 
 
 #Destroy Scaffolds
