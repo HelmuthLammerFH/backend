@@ -21,8 +21,22 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :status
+      resources :ressource_for_tours
+      resources :ressource_typs
+      resources :tour_to_tour_positions
+      resources :tour_positions
+      resources :customer_in_tours
       resources :tours
+      resources :statuses
+      resources :agencies
+      resources :tour_guides
+      resources :customers
+      resources :users
+      resources :tour_guide_to_agenturs
     end
+  end
+
+  scope "/api/v2" do
+    resources :ressource_for_tours
   end
 end
