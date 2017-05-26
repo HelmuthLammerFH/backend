@@ -1,5 +1,8 @@
 class Api::V1::CustomerInToursController < Api::V1::BaseController
-  before_action :set_customer_in_tour, only: [:show, :edit, :update, :destroy]
+  before_action :set_model, only: [:edit, :update, :destroy]
+  before_action :set_model_show, only: [:show]
+  before_action :check_synced_from, only: [:edit, :update, :destroy]
+
 
   # GET /customer_in_tours
   # GET /customer_in_tours.json
@@ -63,8 +66,19 @@ class Api::V1::CustomerInToursController < Api::V1::BaseController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_customer_in_tour
-      @customer_in_tour = CustomerInTour.find(params[:id])
+    # checks for the app that requests and uses the correct id
+    def set_model
+      @customer_in_tour = set_variable(CustomerInTour, params[:syncedFrom], params[:id])
+    end
+
+    # checks for the app that requests and uses the correct id
+    def set_model_show
+      @customer_in_tour = set_variable(CustomerInTour, params[:syncedFrom], params[:id])
+    end
+
+    # checks for the app that requests and uses the correct id
+    def check_synced_from
+      global_check_synced_from(@customer_in_tour, customer_in_tour_params['syncedFrom'])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

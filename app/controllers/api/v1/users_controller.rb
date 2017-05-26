@@ -1,6 +1,6 @@
 class Api::V1::UsersController < Api::V1::BaseController
-  before_action :set_user, only: [:edit, :update, :destroy]
-  before_action :set_user_show, only: [:show]
+  before_action :set_model, only: [:edit, :update, :destroy]
+  before_action :set_model_show, only: [:show]
   before_action :check_synced_from, only: [:edit, :update, :destroy]
 
   # GET /users
@@ -65,12 +65,12 @@ class Api::V1::UsersController < Api::V1::BaseController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_user
+    def set_model
       @user = set_variable(User, params[:syncedFrom], params[:id])
     end
 
     # checks for the app that requests and uses the correct id
-    def set_user_show
+    def set_model_show
       @user = set_variable(User, params[:syncedFrom], params[:id])
     end
 
