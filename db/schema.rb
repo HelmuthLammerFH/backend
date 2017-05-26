@@ -114,8 +114,6 @@ ActiveRecord::Schema.define(version: 20170526110932) do
     t.boolean  "deleteFlag"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "Tour_id"
-    t.index ["Tour_id"], name: "index_tour_positions_on_Tour_id", using: :btree
   end
 
   create_table "tour_to_tour_positions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -130,7 +128,9 @@ ActiveRecord::Schema.define(version: 20170526110932) do
     t.boolean  "deleteFlag"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "Tour_id"
     t.integer  "tour_position_id"
+    t.index ["Tour_id"], name: "index_tour_to_tour_positions_on_Tour_id", using: :btree
     t.index ["tour_position_id"], name: "index_tour_to_tour_positions_on_tour_position_id", using: :btree
   end
 
@@ -178,8 +178,8 @@ ActiveRecord::Schema.define(version: 20170526110932) do
   add_foreign_key "ressource_for_tours", "tours", column: "Tour_id"
   add_foreign_key "tour_guides", "agencies", column: "Agency_id"
   add_foreign_key "tour_guides", "users", column: "User_id"
-  add_foreign_key "tour_positions", "tours", column: "Tour_id"
   add_foreign_key "tour_to_tour_positions", "tour_positions"
+  add_foreign_key "tour_to_tour_positions", "tours", column: "Tour_id"
   add_foreign_key "tours", "statuses", column: "Status_id"
   add_foreign_key "tours", "tour_guides"
 end
