@@ -69,6 +69,6 @@ class Api::V1::UsersController < Api::V1::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:firstname, :lastname, :birthdate, :address, :city, :email, :username, :passwort, :createdFrom, :changedFrom, :syncedFrom)
+      params.require(:user).permit(:joomlaID, :firstname, :lastname, :birthdate, :address, :city, :email, :username, :passwort, :createdFrom, :changedFrom, :syncedFrom, :deleteFlag)
     end
 end

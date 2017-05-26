@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Agency:</strong>
+  <%= @tour_guide_to_agentur.agency_id %>
+</p>
+
+<p>
+  <strong>Tourguide:</strong>
+  <%= @tour_guide_to_agentur.tourGuide_id %>
+</p>
+
+<p>
+  <strong>Createdfrom:</strong>
+  <%= @tour_guide_to_agentur.createdFrom %>
+</p>
+
+<p>
+  <strong>Changedfrom:</strong>
+  <%= @tour_guide_to_agentur.changedFrom %>
+</p>
+
+<p>
+  <strong>Syncedfrom:</strong>
+  <%= @tour_guide_to_agentur.syncedFrom %>
+</p>
+
+<%= link_to 'Edit', edit_tour_guide_to_agentur_path(@tour_guide_to_agentur) %> |
+<%= link_to 'Back', tour_guide_to_agenturs_path %>

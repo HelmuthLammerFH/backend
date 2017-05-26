@@ -28,8 +28,10 @@ class Api::V1::CustomerInToursController < Api::V1::BaseController
 
     respond_to do |format|
       if @customer_in_tour.save
+        format.html { redirect_to @customer_in_tour, notice: 'Customer in tour was successfully created.' }
         format.json { render :show, status: :created, location: @customer_in_tour }
       else
+        format.html { render :new }
         format.json { render json: @customer_in_tour.errors, status: :unprocessable_entity }
       end
     end
@@ -40,8 +42,10 @@ class Api::V1::CustomerInToursController < Api::V1::BaseController
   def update
     respond_to do |format|
       if @customer_in_tour.update(customer_in_tour_params)
+        format.html { redirect_to @customer_in_tour, notice: 'Customer in tour was successfully updated.' }
         format.json { render :show, status: :ok, location: @customer_in_tour }
       else
+        format.html { render :edit }
         format.json { render json: @customer_in_tour.errors, status: :unprocessable_entity }
       end
     end
@@ -52,6 +56,7 @@ class Api::V1::CustomerInToursController < Api::V1::BaseController
   def destroy
     @customer_in_tour.destroy
     respond_to do |format|
+      format.html { redirect_to customer_in_tours_url, notice: 'Customer in tour was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,6 +69,6 @@ class Api::V1::CustomerInToursController < Api::V1::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def customer_in_tour_params
-      params.require(:customer_in_tour).permit(:bookedDate, :participated, :starRating, :feedbackTourGuid, :createdFrom, :changedFrom, :syncedFrom)
+      params.require(:customer_in_tour).permit(:joomlaID, :bookedDate, :participated, :starRating, :feedbackTourGuid, :createdFrom, :changedFrom, :syncedFrom, :deleteFlag)
     end
 end

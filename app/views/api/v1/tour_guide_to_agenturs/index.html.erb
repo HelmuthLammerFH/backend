@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tour Guide To Agenturs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Agency</th>
+      <th>Tourguide</th>
+      <th>Createdfrom</th>
+      <th>Changedfrom</th>
+      <th>Syncedfrom</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tour_guide_to_agenturs.each do |tour_guide_to_agentur| %>
+      <tr>
+        <td><%= tour_guide_to_agentur.agency_id %></td>
+        <td><%= tour_guide_to_agentur.tourGuide_id %></td>
+        <td><%= tour_guide_to_agentur.createdFrom %></td>
+        <td><%= tour_guide_to_agentur.changedFrom %></td>
+        <td><%= tour_guide_to_agentur.syncedFrom %></td>
+        <td><%= link_to 'Show', tour_guide_to_agentur %></td>
+        <td><%= link_to 'Edit', edit_tour_guide_to_agentur_path(tour_guide_to_agentur) %></td>
+        <td><%= link_to 'Destroy', tour_guide_to_agentur, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tour Guide To Agentur', new_tour_guide_to_agentur_path %>
