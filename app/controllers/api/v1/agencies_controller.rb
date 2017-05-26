@@ -28,8 +28,10 @@ class Api::V1::AgenciesController < Api::V1::BaseController
 
     respond_to do |format|
       if @agency.save
+        format.html { redirect_to @agency, notice: 'Agency was successfully created.' }
         format.json { render :show, status: :created, location: @agency }
       else
+        format.html { render :new }
         format.json { render json: @agency.errors, status: :unprocessable_entity }
       end
     end
@@ -40,8 +42,10 @@ class Api::V1::AgenciesController < Api::V1::BaseController
   def update
     respond_to do |format|
       if @agency.update(agency_params)
+        format.html { redirect_to @agency, notice: 'Agency was successfully updated.' }
         format.json { render :show, status: :ok, location: @agency }
       else
+        format.html { render :edit }
         format.json { render json: @agency.errors, status: :unprocessable_entity }
       end
     end
@@ -51,7 +55,10 @@ class Api::V1::AgenciesController < Api::V1::BaseController
   # DELETE /agencies/1.json
   def destroy
     @agency.destroy
-    format.json { head :no_content }
+    respond_to do |format|
+      format.html { redirect_to agencies_url, notice: 'Agency was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
@@ -62,6 +69,6 @@ class Api::V1::AgenciesController < Api::V1::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def agency_params
-      params.require(:agency).permit(:name, :entranceDate)
+      params.require(:agency).permit(:joomlaID, :name, :entranceDate, :deleteFlag)
     end
 end

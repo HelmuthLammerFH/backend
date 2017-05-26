@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Joomlaid:</strong>
+  <%= @user.joomlaID %>
+</p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @user.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @user.lastname %>
+</p>
+
+<p>
+  <strong>Birthdate:</strong>
+  <%= @user.birthdate %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @user.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @user.city %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+
+<p>
+  <strong>Passwort:</strong>
+  <%= @user.passwort %>
+</p>
+
+<p>
+  <strong>Createdfrom:</strong>
+  <%= @user.createdFrom %>
+</p>
+
+<p>
+  <strong>Changedfrom:</strong>
+  <%= @user.changedFrom %>
+</p>
+
+<p>
+  <strong>Syncedfrom:</strong>
+  <%= @user.syncedFrom %>
+</p>
+
+<p>
+  <strong>Deleteflag:</strong>
+  <%= @user.deleteFlag %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

@@ -28,8 +28,10 @@ class Api::V1::RessourceTypsController < Api::V1::BaseController
 
     respond_to do |format|
       if @ressource_typ.save
+        format.html { redirect_to @ressource_typ, notice: 'Ressource typ was successfully created.' }
         format.json { render :show, status: :created, location: @ressource_typ }
       else
+        format.html { render :new }
         format.json { render json: @ressource_typ.errors, status: :unprocessable_entity }
       end
     end
@@ -40,8 +42,10 @@ class Api::V1::RessourceTypsController < Api::V1::BaseController
   def update
     respond_to do |format|
       if @ressource_typ.update(ressource_typ_params)
+        format.html { redirect_to @ressource_typ, notice: 'Ressource typ was successfully updated.' }
         format.json { render :show, status: :ok, location: @ressource_typ }
       else
+        format.html { render :edit }
         format.json { render json: @ressource_typ.errors, status: :unprocessable_entity }
       end
     end
@@ -51,7 +55,10 @@ class Api::V1::RessourceTypsController < Api::V1::BaseController
   # DELETE /ressource_typs/1.json
   def destroy
     @ressource_typ.destroy
-    format.json { head :no_content }
+    respond_to do |format|
+      format.html { redirect_to ressource_typs_url, notice: 'Ressource typ was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
@@ -62,6 +69,6 @@ class Api::V1::RessourceTypsController < Api::V1::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ressource_typ_params
-      params.require(:ressource_typ).permit(:name, :createdFrom, :changedFrom, :syncedFrom)
+      params.require(:ressource_typ).permit(:joomlaID, :name, :createdFrom, :changedFrom, :syncedFrom, :deleteFlag)
     end
 end

@@ -28,8 +28,10 @@ class Api::V1::RessourceForToursController < Api::V1::BaseController
 
     respond_to do |format|
       if @ressource_for_tour.save
+        format.html { redirect_to @ressource_for_tour, notice: 'Ressource for tour was successfully created.' }
         format.json { render :show, status: :created, location: @ressource_for_tour }
       else
+        format.html { render :new }
         format.json { render json: @ressource_for_tour.errors, status: :unprocessable_entity }
       end
     end
@@ -40,8 +42,10 @@ class Api::V1::RessourceForToursController < Api::V1::BaseController
   def update
     respond_to do |format|
       if @ressource_for_tour.update(ressource_for_tour_params)
+        format.html { redirect_to @ressource_for_tour, notice: 'Ressource for tour was successfully updated.' }
         format.json { render :show, status: :ok, location: @ressource_for_tour }
       else
+        format.html { render :edit }
         format.json { render json: @ressource_for_tour.errors, status: :unprocessable_entity }
       end
     end
@@ -52,6 +56,7 @@ class Api::V1::RessourceForToursController < Api::V1::BaseController
   def destroy
     @ressource_for_tour.destroy
     respond_to do |format|
+      format.html { redirect_to ressource_for_tours_url, notice: 'Ressource for tour was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,6 +69,6 @@ class Api::V1::RessourceForToursController < Api::V1::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ressource_for_tour_params
-      params.require(:ressource_for_tour).permit(:createdFrom, :changedFrom, :syncedFrom)
+      params.require(:ressource_for_tour).permit(:joomlaID, :createdFrom, :picture, :changedFrom, :syncedFrom, :deleteFlag)
     end
 end
