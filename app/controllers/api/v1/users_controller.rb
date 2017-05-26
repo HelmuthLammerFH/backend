@@ -1,5 +1,7 @@
 class Api::V1::UsersController < Api::V1::BaseController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:edit, :update, :destroy]
+  before_action :set_user_show, only: [:show]
+  before_action :check_synced_from, only: [:edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
@@ -64,7 +66,17 @@ class Api::V1::UsersController < Api::V1::BaseController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      @user = set_variable(User, params[:syncedFrom], params[:id])
+    end
+
+    # checks for the app that requests and uses the correct id
+    def set_user_show
+      @user = set_variable(User, params[:syncedFrom], params[:id])
+    end
+
+    # checks for the app that requests and uses the correct id
+    def check_synced_from
+      global_check_synced_from(User, user_params['syncedFrom'])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
