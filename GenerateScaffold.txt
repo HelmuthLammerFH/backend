@@ -5,8 +5,8 @@ rails generate scaffold Agency joomlaID:integer name:string entranceDate:date de
 rails generate scaffold Status joomlaID:integer name:string createdFrom:string changedFrom:string syncedFrom:integer deleteFlag:boolean
 rails generate scaffold Tour joomlaID:integer name:string maxAttendees:integer price:float startDate:datetime endDate:datetime createdFrom:string changedFrom:string syncedFrom:integer deleteFlag:boolean
 rails generate scaffold CustomerInTour joomlaID:integer bookedDate:datetime participated:string starRating:integer feedbackTourGuid:string createdFrom:string changedFrom:string syncedFrom:integer deleteFlag:boolean
-rails generate scaffold TourPosition joomlaID:integer name:string position:string createdFrom:string changedFrom:string syncedFrom:integer deleteFlag:boolean
-rails generate scaffold TourToTourPosition joomlaID:integer tourPosition_id:integer startDate:datetime endDate:datetime price:integer createdFrom:string changedFrom:string syncedFrom:integer deleteFlag:boolean
+rails generate scaffold TourPosition joomlaID:integer name:string position:string createdFrom:string changedFrom:string price:integer syncedFrom:integer deleteFlag:boolean
+rails generate scaffold TourToTourPosition joomlaID:integer tourPosition_id:integer startDate:datetime endDate:datetime createdFrom:string changedFrom:string syncedFrom:integer deleteFlag:boolean
 rails generate scaffold RessourceTyp joomlaID:integer name:string createdFrom:string changedFrom:string syncedFrom:integer deleteFlag:boolean
 rails generate scaffold RessourceForTour joomlaID:integer createdFrom:string picture:binary changedFrom:string syncedFrom:integer deleteFlag:boolean
 
