@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Joomlaid:</strong>
+  <%= @tour_to_tour_position.joomlaID %>
+</p>
+
+<p>
   <strong>Tourposition:</strong>
   <%= @tour_to_tour_position.tourPosition_id %>
 </p>
@@ -16,6 +21,11 @@
 </p>
 
 <p>
+  <strong>Price:</strong>
+  <%= @tour_to_tour_position.price %>
+</p>
+
+<p>
   <strong>Createdfrom:</strong>
   <%= @tour_to_tour_position.createdFrom %>
 </p>
@@ -28,6 +38,11 @@
 <p>
   <strong>Syncedfrom:</strong>
   <%= @tour_to_tour_position.syncedFrom %>
+</p>
+
+<p>
+  <strong>Deleteflag:</strong>
+  <%= @tour_to_tour_position.deleteFlag %>
 </p>
 
 <%= link_to 'Edit', edit_tour_to_tour_position_path(@tour_to_tour_position) %> |

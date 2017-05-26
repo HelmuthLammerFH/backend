@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :joomlaID %>
+    <%= f.number_field :joomlaID %>
+  </div>
+
+  <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
@@ -19,6 +24,11 @@
   <div class="field">
     <%= f.label :entranceDate %>
     <%= f.date_select :entranceDate %>
+  </div>
+
+  <div class="field">
+    <%= f.label :deleteFlag %>
+    <%= f.check_box :deleteFlag %>
   </div>
 
   <div class="actions">

@@ -17,7 +17,7 @@ class RessourceTypsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create ressource_typ" do
     assert_difference('RessourceTyp.count') do
-      post ressource_typs_url, params: { ressource_typ: { changedFrom: @ressource_typ.changedFrom, createdFrom: @ressource_typ.createdFrom, name: @ressource_typ.name, syncedFrom: @ressource_typ.syncedFrom } }
+      post ressource_typs_url, params: { ressource_typ: { changedFrom: @ressource_typ.changedFrom, createdFrom: @ressource_typ.createdFrom, deleteFlag: @ressource_typ.deleteFlag, joomlaID: @ressource_typ.joomlaID, name: @ressource_typ.name, syncedFrom: @ressource_typ.syncedFrom } }
     end
 
     assert_redirected_to ressource_typ_url(RessourceTyp.last)
@@ -34,7 +34,7 @@ class RessourceTypsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update ressource_typ" do
-    patch ressource_typ_url(@ressource_typ), params: { ressource_typ: { changedFrom: @ressource_typ.changedFrom, createdFrom: @ressource_typ.createdFrom, name: @ressource_typ.name, syncedFrom: @ressource_typ.syncedFrom } }
+    patch ressource_typ_url(@ressource_typ), params: { ressource_typ: { changedFrom: @ressource_typ.changedFrom, createdFrom: @ressource_typ.createdFrom, deleteFlag: @ressource_typ.deleteFlag, joomlaID: @ressource_typ.joomlaID, name: @ressource_typ.name, syncedFrom: @ressource_typ.syncedFrom } }
     assert_redirected_to ressource_typ_url(@ressource_typ)
   end
 

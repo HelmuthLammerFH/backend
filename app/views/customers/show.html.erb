@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Joomlaid:</strong>
+  <%= @customer.joomlaID %>
+</p>
+
+<p>
   <strong>Note:</strong>
   <%= @customer.note %>
 </p>
@@ -18,6 +23,11 @@
 <p>
   <strong>Syncedfrom:</strong>
   <%= @customer.syncedFrom %>
+</p>
+
+<p>
+  <strong>Deleteflag:</strong>
+  <%= @customer.deleteFlag %>
 </p>
 
 <%= link_to 'Edit', edit_customer_path(@customer) %> |

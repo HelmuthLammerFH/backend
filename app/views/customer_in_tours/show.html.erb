@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Joomlaid:</strong>
+  <%= @customer_in_tour.joomlaID %>
+</p>
+
+<p>
   <strong>Bookeddate:</strong>
   <%= @customer_in_tour.bookedDate %>
 </p>
@@ -33,6 +38,11 @@
 <p>
   <strong>Syncedfrom:</strong>
   <%= @customer_in_tour.syncedFrom %>
+</p>
+
+<p>
+  <strong>Deleteflag:</strong>
+  <%= @customer_in_tour.deleteFlag %>
 </p>
 
 <%= link_to 'Edit', edit_customer_in_tour_path(@customer_in_tour) %> |

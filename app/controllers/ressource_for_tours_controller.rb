@@ -69,6 +69,6 @@ class RessourceForToursController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ressource_for_tour_params
-      params.require(:ressource_for_tour).permit(:createdFrom, :changedFrom, :syncedFrom)
+      params.require(:ressource_for_tour).permit(:joomlaID, :createdFrom, :picture, :changedFrom, :syncedFrom, :deleteFlag)
     end
 end

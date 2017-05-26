@@ -17,7 +17,7 @@ class CustomerInToursControllerTest < ActionDispatch::IntegrationTest
 
   test "should create customer_in_tour" do
     assert_difference('CustomerInTour.count') do
-      post customer_in_tours_url, params: { customer_in_tour: { bookedDate: @customer_in_tour.bookedDate, changedFrom: @customer_in_tour.changedFrom, createdFrom: @customer_in_tour.createdFrom, feedbackTourGuid: @customer_in_tour.feedbackTourGuid, participated: @customer_in_tour.participated, starRating: @customer_in_tour.starRating, syncedFrom: @customer_in_tour.syncedFrom } }
+      post customer_in_tours_url, params: { customer_in_tour: { bookedDate: @customer_in_tour.bookedDate, changedFrom: @customer_in_tour.changedFrom, createdFrom: @customer_in_tour.createdFrom, deleteFlag: @customer_in_tour.deleteFlag, feedbackTourGuid: @customer_in_tour.feedbackTourGuid, joomlaID: @customer_in_tour.joomlaID, participated: @customer_in_tour.participated, starRating: @customer_in_tour.starRating, syncedFrom: @customer_in_tour.syncedFrom } }
     end
 
     assert_redirected_to customer_in_tour_url(CustomerInTour.last)
@@ -34,7 +34,7 @@ class CustomerInToursControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update customer_in_tour" do
-    patch customer_in_tour_url(@customer_in_tour), params: { customer_in_tour: { bookedDate: @customer_in_tour.bookedDate, changedFrom: @customer_in_tour.changedFrom, createdFrom: @customer_in_tour.createdFrom, feedbackTourGuid: @customer_in_tour.feedbackTourGuid, participated: @customer_in_tour.participated, starRating: @customer_in_tour.starRating, syncedFrom: @customer_in_tour.syncedFrom } }
+    patch customer_in_tour_url(@customer_in_tour), params: { customer_in_tour: { bookedDate: @customer_in_tour.bookedDate, changedFrom: @customer_in_tour.changedFrom, createdFrom: @customer_in_tour.createdFrom, deleteFlag: @customer_in_tour.deleteFlag, feedbackTourGuid: @customer_in_tour.feedbackTourGuid, joomlaID: @customer_in_tour.joomlaID, participated: @customer_in_tour.participated, starRating: @customer_in_tour.starRating, syncedFrom: @customer_in_tour.syncedFrom } }
     assert_redirected_to customer_in_tour_url(@customer_in_tour)
   end
 

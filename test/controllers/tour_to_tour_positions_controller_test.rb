@@ -17,7 +17,7 @@ class TourToTourPositionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create tour_to_tour_position" do
     assert_difference('TourToTourPosition.count') do
-      post tour_to_tour_positions_url, params: { tour_to_tour_position: { changedFrom: @tour_to_tour_position.changedFrom, createdFrom: @tour_to_tour_position.createdFrom, endDate: @tour_to_tour_position.endDate, startDate: @tour_to_tour_position.startDate, syncedFrom: @tour_to_tour_position.syncedFrom, tourPosition_id: @tour_to_tour_position.tourPosition_id } }
+      post tour_to_tour_positions_url, params: { tour_to_tour_position: { changedFrom: @tour_to_tour_position.changedFrom, createdFrom: @tour_to_tour_position.createdFrom, deleteFlag: @tour_to_tour_position.deleteFlag, endDate: @tour_to_tour_position.endDate, joomlaID: @tour_to_tour_position.joomlaID, price: @tour_to_tour_position.price, startDate: @tour_to_tour_position.startDate, syncedFrom: @tour_to_tour_position.syncedFrom, tourPosition_id: @tour_to_tour_position.tourPosition_id } }
     end
 
     assert_redirected_to tour_to_tour_position_url(TourToTourPosition.last)
@@ -34,7 +34,7 @@ class TourToTourPositionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update tour_to_tour_position" do
-    patch tour_to_tour_position_url(@tour_to_tour_position), params: { tour_to_tour_position: { changedFrom: @tour_to_tour_position.changedFrom, createdFrom: @tour_to_tour_position.createdFrom, endDate: @tour_to_tour_position.endDate, startDate: @tour_to_tour_position.startDate, syncedFrom: @tour_to_tour_position.syncedFrom, tourPosition_id: @tour_to_tour_position.tourPosition_id } }
+    patch tour_to_tour_position_url(@tour_to_tour_position), params: { tour_to_tour_position: { changedFrom: @tour_to_tour_position.changedFrom, createdFrom: @tour_to_tour_position.createdFrom, deleteFlag: @tour_to_tour_position.deleteFlag, endDate: @tour_to_tour_position.endDate, joomlaID: @tour_to_tour_position.joomlaID, price: @tour_to_tour_position.price, startDate: @tour_to_tour_position.startDate, syncedFrom: @tour_to_tour_position.syncedFrom, tourPosition_id: @tour_to_tour_position.tourPosition_id } }
     assert_redirected_to tour_to_tour_position_url(@tour_to_tour_position)
   end
 

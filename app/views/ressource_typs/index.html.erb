@@ -5,10 +5,12 @@
 <table>
   <thead>
     <tr>
+      <th>Joomlaid</th>
       <th>Name</th>
       <th>Createdfrom</th>
       <th>Changedfrom</th>
       <th>Syncedfrom</th>
+      <th>Deleteflag</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,10 +18,12 @@
   <tbody>
     <% @ressource_typs.each do |ressource_typ| %>
       <tr>
+        <td><%= ressource_typ.joomlaID %></td>
         <td><%= ressource_typ.name %></td>
         <td><%= ressource_typ.createdFrom %></td>
         <td><%= ressource_typ.changedFrom %></td>
         <td><%= ressource_typ.syncedFrom %></td>
+        <td><%= ressource_typ.deleteFlag %></td>
         <td><%= link_to 'Show', ressource_typ %></td>
         <td><%= link_to 'Edit', edit_ressource_typ_path(ressource_typ) %></td>
         <td><%= link_to 'Destroy', ressource_typ, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -12,8 +12,18 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :joomlaID %>
+    <%= f.number_field :joomlaID %>
+  </div>
+
+  <div class="field">
     <%= f.label :createdFrom %>
     <%= f.text_field :createdFrom %>
+  </div>
+
+  <div class="field">
+    <%= f.label :picture %>
+    <%= f.text_field :picture %>
   </div>
 
   <div class="field">
@@ -24,6 +34,11 @@
   <div class="field">
     <%= f.label :syncedFrom %>
     <%= f.number_field :syncedFrom %>
+  </div>
+
+  <div class="field">
+    <%= f.label :deleteFlag %>
+    <%= f.check_box :deleteFlag %>
   </div>
 
   <div class="actions">

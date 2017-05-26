@@ -5,10 +5,12 @@
 <table>
   <thead>
     <tr>
+      <th>Joomlaid</th>
       <th>Name</th>
       <th>Createdfrom</th>
       <th>Changedfrom</th>
       <th>Syncedfrom</th>
+      <th>Deleteflag</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,10 +18,12 @@
   <tbody>
     <% @statuses.each do |status| %>
       <tr>
+        <td><%= status.joomlaID %></td>
         <td><%= status.name %></td>
         <td><%= status.createdFrom %></td>
         <td><%= status.changedFrom %></td>
         <td><%= status.syncedFrom %></td>
+        <td><%= status.deleteFlag %></td>
         <td><%= link_to 'Show', status %></td>
         <td><%= link_to 'Edit', edit_status_path(status) %></td>
         <td><%= link_to 'Destroy', status, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,21 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  joomlaID: 1
   name: MyString
   maxAttendees: 1
   price: 1.5
-  startDate: 2017-05-22 17:16:42
-  endDate: 2017-05-22 17:16:42
+  startDate: 2017-05-26 13:08:04
+  endDate: 2017-05-26 13:08:04
   createdFrom: MyString
   changedFrom: MyString
   syncedFrom: 1
+  deleteFlag: false
 
 two:
+  joomlaID: 1
   name: MyString
   maxAttendees: 1
   price: 1.5
-  startDate: 2017-05-22 17:16:42
-  endDate: 2017-05-22 17:16:42
+  startDate: 2017-05-26 13:08:04
+  endDate: 2017-05-26 13:08:04
   createdFrom: MyString
   changedFrom: MyString
   syncedFrom: 1
+  deleteFlag: false

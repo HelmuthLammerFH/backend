@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Joomlaid:</strong>
+  <%= @user.joomlaID %>
+</p>
+
+<p>
   <strong>Firstname:</strong>
   <%= @user.firstname %>
 </p>
@@ -53,6 +58,11 @@
 <p>
   <strong>Syncedfrom:</strong>
   <%= @user.syncedFrom %>
+</p>
+
+<p>
+  <strong>Deleteflag:</strong>
+  <%= @user.deleteFlag %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

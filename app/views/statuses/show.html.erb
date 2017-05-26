@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Joomlaid:</strong>
+  <%= @status.joomlaID %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @status.name %>
 </p>
@@ -18,6 +23,11 @@
 <p>
   <strong>Syncedfrom:</strong>
   <%= @status.syncedFrom %>
+</p>
+
+<p>
+  <strong>Deleteflag:</strong>
+  <%= @status.deleteFlag %>
 </p>
 
 <%= link_to 'Edit', edit_status_path(@status) %> |

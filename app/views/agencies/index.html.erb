@@ -5,8 +5,10 @@
 <table>
   <thead>
     <tr>
+      <th>Joomlaid</th>
       <th>Name</th>
       <th>Entrancedate</th>
+      <th>Deleteflag</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,8 +16,10 @@
   <tbody>
     <% @agencies.each do |agency| %>
       <tr>
+        <td><%= agency.joomlaID %></td>
         <td><%= agency.name %></td>
         <td><%= agency.entranceDate %></td>
+        <td><%= agency.deleteFlag %></td>
         <td><%= link_to 'Show', agency %></td>
         <td><%= link_to 'Edit', edit_agency_path(agency) %></td>
         <td><%= link_to 'Destroy', agency, method: :delete, data: { confirm: 'Are you sure?' } %></td>

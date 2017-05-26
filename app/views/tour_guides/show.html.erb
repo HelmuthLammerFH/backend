@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Joomlaid:</strong>
+  <%= @tour_guide.joomlaID %>
+</p>
+
+<p>
   <strong>Tourguidesince:</strong>
   <%= @tour_guide.tourGuideSince %>
 </p>
@@ -18,6 +23,11 @@
 <p>
   <strong>Syncedfrom:</strong>
   <%= @tour_guide.syncedFrom %>
+</p>
+
+<p>
+  <strong>Deleteflag:</strong>
+  <%= @tour_guide.deleteFlag %>
 </p>
 
 <%= link_to 'Edit', edit_tour_guide_path(@tour_guide) %> |

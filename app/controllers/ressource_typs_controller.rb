@@ -69,6 +69,6 @@ class RessourceTypsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ressource_typ_params
-      params.require(:ressource_typ).permit(:name, :createdFrom, :changedFrom, :syncedFrom)
+      params.require(:ressource_typ).permit(:joomlaID, :name, :createdFrom, :changedFrom, :syncedFrom, :deleteFlag)
     end
 end
