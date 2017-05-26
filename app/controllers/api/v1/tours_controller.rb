@@ -1,6 +1,6 @@
 class Api::V1::ToursController < Api::V1::BaseController
-  before_action :set_tour, only: [:edit, :update, :destroy]
-  before_action :set_tour_show, only: [:show]
+  before_action :set_model, only: [:edit, :update, :destroy]
+  before_action :set_model_show, only: [:show]
   before_action :check_synced_from, only: [:edit, :update, :destroy]
 
   # GET /tours
@@ -68,12 +68,12 @@ class Api::V1::ToursController < Api::V1::BaseController
   private
   # Use callbacks to share common setup or constraints between actions.
   # checks for the app that requests and uses the correct id
-  def set_tour
+  def set_model
     @tour = set_variable(Tour, params[:syncedFrom], params[:id])
   end
 
   # checks for the app that requests and uses the correct id
-  def set_tour_show
+  def set_model_show
     @tour = set_variable(Tour, params[:syncedFrom], params[:id])
   end
 
