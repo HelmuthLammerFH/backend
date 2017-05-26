@@ -39,6 +39,26 @@ rails generate migration AddDeleteFlagToRessourceTyps deleteFlag:boolean
 rails generate migration AddDeleteFlagToRessourceForTours deleteFlag:boolean
 
 
+#Generate JommlaID
+
+rails generate migration AddJoomlaIDToUsers joomlaID:integer
+rails generate migration AddJoomlaIDToCustomers joomlaID:integer
+rails generate migration AddJoomlaIDToTourGuides joomlaID:integer
+rails generate migration AddJoomlaIDToAgencies joomlaID:integer
+rails generate migration AddJoomlaIDToStatuses joomlaID:integer
+rails generate migration AddJoomlaIDToTours joomlaID:integer
+rails generate migration AddJoomlaIDToCustomerInTours joomlaID:integer
+rails generate migration AddJoomlaIDToTourPositions joomlaID:integer
+rails generate migration AddJoomlaIDToTourToTourPositions joomlaID:integer
+rails generate migration AddJoomlaIDToRessourceTyps joomlaID:integer
+rails generate migration AddJoomlaIDToRessourceForTours joomlaID:integer
+
+
+rails generate migration AddPriceToTourPositions price:integer
+
+rails generate migration AddPictureToRessourceForTours picture:binary
+
+
 #Destroy Scaffolds
 
 rails destroy scaffold User
