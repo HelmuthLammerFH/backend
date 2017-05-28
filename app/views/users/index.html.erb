@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Joomlaid</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Birthdate</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>Email</th>
+      <th>Username</th>
+      <th>Passwort</th>
+      <th>Createdfrom</th>
+      <th>Changedfrom</th>
+      <th>Syncedfrom</th>
+      <th>Deleteflag</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.joomlaID %></td>
+        <td><%= user.firstname %></td>
+        <td><%= user.lastname %></td>
+        <td><%= user.birthdate %></td>
+        <td><%= user.address %></td>
+        <td><%= user.city %></td>
+        <td><%= user.email %></td>
+        <td><%= user.username %></td>
+        <td><%= user.passwort %></td>
+        <td><%= user.createdFrom %></td>
+        <td><%= user.changedFrom %></td>
+        <td><%= user.syncedFrom %></td>
+        <td><%= user.deleteFlag %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>
