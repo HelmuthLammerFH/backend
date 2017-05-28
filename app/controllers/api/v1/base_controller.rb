@@ -15,7 +15,7 @@ class Api::V1::BaseController < ApplicationController
     end
   end
 
-  def guard_sync_local(model, clientID)
+  def guard_sync(model, clientID)
     if clientID == 2
       if model.syncedFrom == 1
         render json: {error: "you are not allowed to overwrite the web because the web is the ruler of the world"}, :status => :forbidden

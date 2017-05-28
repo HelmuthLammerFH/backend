@@ -26,7 +26,6 @@ class Api::V1::ToursController < Api::V1::BaseController
   # POST /tours.json
   def create
     @tour = Tour.new(tour_params)
-
     respond_to do |format|
       if @tour.save
         format.html {redirect_to @tour, notice: 'Tour was successfully created.'}
@@ -70,6 +69,7 @@ class Api::V1::ToursController < Api::V1::BaseController
   def set_model_local
     @tour = set_model(Tour, params[:clientID], params[:id])
   end
+
 
   # checks for the app that requests and uses the correct id
   def guard_sync_local
