@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Joomlaid</th>
       <th>Name</th>
       <th>Entrancedate</th>
       <th>Deleteflag</th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @agencies.each do |agency| %>
       <tr>
+        <td><%= agency.joomlaID %></td>
         <td><%= agency.name %></td>
         <td><%= agency.entranceDate %></td>
         <td><%= agency.deleteFlag %></td>

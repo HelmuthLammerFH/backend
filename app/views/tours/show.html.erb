@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Joomlaid:</strong>
+  <%= @tour.joomlaID %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @tour.name %>
 </p>
@@ -48,6 +53,11 @@
 <p>
   <strong>Status:</strong>
   <%= @tour.status %>
+</p>
+
+<p>
+  <strong>Tourguide:</strong>
+  <%= @tour.TourGuide %>
 </p>
 
 <%= link_to 'Edit', edit_tour_path(@tour) %> |

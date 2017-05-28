@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Joomlaid</th>
       <th>Firstname</th>
       <th>Lastname</th>
       <th>Birthdate</th>
@@ -24,6 +25,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><%= user.joomlaID %></td>
         <td><%= user.firstname %></td>
         <td><%= user.lastname %></td>
         <td><%= user.birthdate %></td>

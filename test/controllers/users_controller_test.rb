@@ -17,7 +17,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create user" do
     assert_difference('User.count') do
-      post users_url, params: { user: { address: @user.address, birthdate: @user.birthdate, changedFrom: @user.changedFrom, city: @user.city, createdFrom: @user.createdFrom, deleteFlag: @user.deleteFlag, email: @user.email, firstname: @user.firstname, lastname: @user.lastname, passwort: @user.passwort, syncedFrom: @user.syncedFrom, username: @user.username } }
+      post users_url, params: { user: { address: @user.address, birthdate: @user.birthdate, changedFrom: @user.changedFrom, city: @user.city, createdFrom: @user.createdFrom, deleteFlag: @user.deleteFlag, email: @user.email, firstname: @user.firstname, joomlaID: @user.joomlaID, lastname: @user.lastname, passwort: @user.passwort, syncedFrom: @user.syncedFrom, username: @user.username } }
     end
 
     assert_redirected_to user_url(User.last)
@@ -34,7 +34,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update user" do
-    patch user_url(@user), params: { user: { address: @user.address, birthdate: @user.birthdate, changedFrom: @user.changedFrom, city: @user.city, createdFrom: @user.createdFrom, deleteFlag: @user.deleteFlag, email: @user.email, firstname: @user.firstname, lastname: @user.lastname, passwort: @user.passwort, syncedFrom: @user.syncedFrom, username: @user.username } }
+    patch user_url(@user), params: { user: { address: @user.address, birthdate: @user.birthdate, changedFrom: @user.changedFrom, city: @user.city, createdFrom: @user.createdFrom, deleteFlag: @user.deleteFlag, email: @user.email, firstname: @user.firstname, joomlaID: @user.joomlaID, lastname: @user.lastname, passwort: @user.passwort, syncedFrom: @user.syncedFrom, username: @user.username } }
     assert_redirected_to user_url(@user)
   end
 

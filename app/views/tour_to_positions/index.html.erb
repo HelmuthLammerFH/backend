@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Joomlaid</th>
       <th>Startdate</th>
       <th>Enddate</th>
       <th>Createdfrom</th>
@@ -20,6 +21,7 @@
   <tbody>
     <% @tour_to_positions.each do |tour_to_position| %>
       <tr>
+        <td><%= tour_to_position.joomlaID %></td>
         <td><%= tour_to_position.startDate %></td>
         <td><%= tour_to_position.endDate %></td>
         <td><%= tour_to_position.createdFrom %></td>

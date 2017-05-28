@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Joomlaid</th>
       <th>Tourguidesince</th>
       <th>Createdfrom</th>
       <th>Changedfrom</th>
@@ -19,6 +20,7 @@
   <tbody>
     <% @tour_guides.each do |tour_guide| %>
       <tr>
+        <td><%= tour_guide.joomlaID %></td>
         <td><%= tour_guide.tourGuideSince %></td>
         <td><%= tour_guide.createdFrom %></td>
         <td><%= tour_guide.changedFrom %></td>

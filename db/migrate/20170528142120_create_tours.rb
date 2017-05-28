@@ -1,6 +1,7 @@
 class CreateTours < ActiveRecord::Migration[5.0]
   def change
     create_table :tours do |t|
+      t.integer :joomlaID
       t.string :name
       t.integer :maxAttendees
       t.float :price
@@ -11,6 +12,7 @@ class CreateTours < ActiveRecord::Migration[5.0]
       t.integer :syncedFrom
       t.boolean :deleteFlag
       t.belongs_to :status, foreign_key: true
+      t.belongs_to :Tour_Guide, foreign_key: true
 
       t.timestamps
     end

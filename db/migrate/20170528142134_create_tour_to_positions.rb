@@ -1,6 +1,7 @@
 class CreateTourToPositions < ActiveRecord::Migration[5.0]
   def change
     create_table :tour_to_positions do |t|
+      t.integer :joomlaID
       t.datetime :startDate
       t.datetime :endDate
       t.string :createdFrom

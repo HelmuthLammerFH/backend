@@ -1,6 +1,7 @@
 class CreateRessourceForTours < ActiveRecord::Migration[5.0]
   def change
     create_table :ressource_for_tours do |t|
+      t.integer :joomlaID
       t.string :createdFrom
       t.binary :picture
       t.string :changedFrom

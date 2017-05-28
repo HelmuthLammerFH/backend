@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Joomlaid</th>
       <th>Note</th>
       <th>Createdfrom</th>
       <th>Changedfrom</th>
@@ -18,6 +19,7 @@
   <tbody>
     <% @customers.each do |customer| %>
       <tr>
+        <td><%= customer.joomlaID %></td>
         <td><%= customer.note %></td>
         <td><%= customer.createdFrom %></td>
         <td><%= customer.changedFrom %></td>

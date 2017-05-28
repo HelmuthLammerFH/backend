@@ -1,6 +1,7 @@
 class CreateCustomerInTours < ActiveRecord::Migration[5.0]
   def change
     create_table :customer_in_tours do |t|
+      t.integer :joomlaID
       t.datetime :bookedDate
       t.integer :participated
       t.integer :starRating
