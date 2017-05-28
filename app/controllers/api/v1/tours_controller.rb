@@ -28,9 +28,10 @@ class Api::V1::ToursController < Api::V1::BaseController
     @tour = Tour.new(tour_params)
     @tour = set_sync_state(@tour)
 
-    if tour_params['Tour_Guide_id'] != nil
-      @tourguide = TourGuide.where("user_id = #{ tour_params[:Tour_Guide_id] }").first
-      @tour['Tour_Guide_id '] = @tourguide['id']
+    if tour_params['Tourguide_id'] != nil
+      @tourguide = Tourguide.where("user_id = #{ tour_params[:Tourguide_id] }").first
+      
+      @tour.Tourguide_id = @tourguide['id']
     end
 
     respond_to do |format|
@@ -49,9 +50,9 @@ class Api::V1::ToursController < Api::V1::BaseController
   def update
     @tour = set_sync_state(@tour)
 
-    if tour_params['Tour_Guide_id'] != nil
-      @tourguide = TourGuide.where("user_id = #{ tour_params[:Tour_Guide_id] }").first
-      @tour['Tour_Guide_id '] = @tourguide['id']
+    if tour_params['Tourguide_id'] != nil
+      @tourguide = Tourguide.where("user_id = #{ tour_params[:Tourguide_id] }").first
+      @tour.Tourguide_id = @tourguide['id']
     end
 
     respond_to do |format|
@@ -92,6 +93,6 @@ class Api::V1::ToursController < Api::V1::BaseController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def tour_params
-    params.require(:tour).permit(:id, :name, :maxAttendees, :price, :startDate, :endDate, :createdFrom, :changedFrom, :syncedFrom, :deleteFlag, :status_id, :Tour_Guide_id, :user_id)
+    params.require(:tour).permit(:id, :name, :maxAttendees, :price, :startDate, :endDate, :createdFrom, :changedFrom, :syncedFrom, :deleteFlag, :status_id, :Tourguide_id)
   end
 end
