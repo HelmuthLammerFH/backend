@@ -14,6 +14,8 @@
       <th>Changedfrom</th>
       <th>Syncedfrom</th>
       <th>Deleteflag</th>
+      <th>Customer</th>
+      <th>Tour</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -30,6 +32,8 @@
         <td><%= customer_in_tour.changedFrom %></td>
         <td><%= customer_in_tour.syncedFrom %></td>
         <td><%= customer_in_tour.deleteFlag %></td>
+        <td><%= customer_in_tour.customer %></td>
+        <td><%= customer_in_tour.tour %></td>
         <td><%= link_to 'Show', customer_in_tour %></td>
         <td><%= link_to 'Edit', edit_customer_in_tour_path(customer_in_tour) %></td>
         <td><%= link_to 'Destroy', customer_in_tour, method: :delete, data: { confirm: 'Are you sure?' } %></td>

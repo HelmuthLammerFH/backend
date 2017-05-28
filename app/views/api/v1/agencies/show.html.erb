@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Joomlaid:</strong>
+  <%= @agency.joomlaID %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @agency.name %>
+</p>
+
+<p>
+  <strong>Entrancedate:</strong>
+  <%= @agency.entranceDate %>
+</p>
+
+<p>
+  <strong>Deleteflag:</strong>
+  <%= @agency.deleteFlag %>
+</p>
+
+<%= link_to 'Edit', edit_agency_path(@agency) %> |
+<%= link_to 'Back', agencies_path %>
