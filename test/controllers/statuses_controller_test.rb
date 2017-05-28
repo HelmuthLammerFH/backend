@@ -17,7 +17,7 @@ class StatusesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create status" do
     assert_difference('Status.count') do
-      post statuses_url, params: { status: { changedFrom: @status.changedFrom, createdFrom: @status.createdFrom, deleteFlag: @status.deleteFlag, joomlaID: @status.joomlaID, name: @status.name, syncedFrom: @status.syncedFrom } }
+      post statuses_url, params: { status: { changedFrom: @status.changedFrom, createdFrom: @status.createdFrom, deleteFlag: @status.deleteFlag, name: @status.name, syncedFrom: @status.syncedFrom } }
     end
 
     assert_redirected_to status_url(Status.last)
@@ -34,7 +34,7 @@ class StatusesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update status" do
-    patch status_url(@status), params: { status: { changedFrom: @status.changedFrom, createdFrom: @status.createdFrom, deleteFlag: @status.deleteFlag, joomlaID: @status.joomlaID, name: @status.name, syncedFrom: @status.syncedFrom } }
+    patch status_url(@status), params: { status: { changedFrom: @status.changedFrom, createdFrom: @status.createdFrom, deleteFlag: @status.deleteFlag, name: @status.name, syncedFrom: @status.syncedFrom } }
     assert_redirected_to status_url(@status)
   end
 

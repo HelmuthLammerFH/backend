@@ -1,7 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  joomlaID: 1
   createdFrom: MyString
   picture: 
   changedFrom: MyString
@@ -10,7 +9,6 @@ one:
   RessourceTyp: one
 
 two:
-  joomlaID: 1
   createdFrom: MyString
   picture: 
   changedFrom: MyString

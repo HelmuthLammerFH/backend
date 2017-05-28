@@ -1,7 +1,6 @@
 class CreateTours < ActiveRecord::Migration[5.0]
   def change
     create_table :tours do |t|
-      t.integer :joomlaID
       t.string :name
       t.integer :maxAttendees
       t.float :price

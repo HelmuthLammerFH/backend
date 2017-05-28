@@ -17,7 +17,7 @@ class TourPositionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create tour_position" do
     assert_difference('TourPosition.count') do
-      post tour_positions_url, params: { tour_position: { changedFrom: @tour_position.changedFrom, createdFrom: @tour_position.createdFrom, deleteFlag: @tour_position.deleteFlag, description: @tour_position.description, joomlaID: @tour_position.joomlaID, name: @tour_position.name, position: @tour_position.position, price: @tour_position.price, syncedFrom: @tour_position.syncedFrom } }
+      post tour_positions_url, params: { tour_position: { changedFrom: @tour_position.changedFrom, createdFrom: @tour_position.createdFrom, deleteFlag: @tour_position.deleteFlag, description: @tour_position.description, name: @tour_position.name, position: @tour_position.position, price: @tour_position.price, syncedFrom: @tour_position.syncedFrom } }
     end
 
     assert_redirected_to tour_position_url(TourPosition.last)
@@ -34,7 +34,7 @@ class TourPositionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update tour_position" do
-    patch tour_position_url(@tour_position), params: { tour_position: { changedFrom: @tour_position.changedFrom, createdFrom: @tour_position.createdFrom, deleteFlag: @tour_position.deleteFlag, description: @tour_position.description, joomlaID: @tour_position.joomlaID, name: @tour_position.name, position: @tour_position.position, price: @tour_position.price, syncedFrom: @tour_position.syncedFrom } }
+    patch tour_position_url(@tour_position), params: { tour_position: { changedFrom: @tour_position.changedFrom, createdFrom: @tour_position.createdFrom, deleteFlag: @tour_position.deleteFlag, description: @tour_position.description, name: @tour_position.name, position: @tour_position.position, price: @tour_position.price, syncedFrom: @tour_position.syncedFrom } }
     assert_redirected_to tour_position_url(@tour_position)
   end
 

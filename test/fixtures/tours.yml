@@ -1,12 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  joomlaID: 1
   name: MyString
   maxAttendees: 1
   price: 1.5
-  startDate: 2017-05-28 12:56:14
-  endDate: 2017-05-28 12:56:14
+  startDate: 2017-05-28 15:29:57
+  endDate: 2017-05-28 15:29:57
   createdFrom: MyString
   changedFrom: MyString
   syncedFrom: 1
@@ -14,12 +13,11 @@ one:
   status: one
 
 two:
-  joomlaID: 1
   name: MyString
   maxAttendees: 1
   price: 1.5
-  startDate: 2017-05-28 12:56:14
-  endDate: 2017-05-28 12:56:14
+  startDate: 2017-05-28 15:29:57
+  endDate: 2017-05-28 15:29:57
   createdFrom: MyString
   changedFrom: MyString
   syncedFrom: 1
