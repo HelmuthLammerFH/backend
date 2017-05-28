@@ -50,5 +50,15 @@
   <%= @tour.deleteFlag %>
 </p>
 
+<p>
+  <strong>Status:</strong>
+  <%= @tour.status %>
+</p>
+
+<p>
+  <strong>Tourguide:</strong>
+  <%= @tour.TourGuide %>
+</p>
+
 <%= link_to 'Edit', edit_tour_path(@tour) %> |
 <%= link_to 'Back', tours_path %>
