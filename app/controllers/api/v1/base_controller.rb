@@ -15,7 +15,8 @@ class Api::V1::BaseController < ApplicationController
     #else
     #  return table.find(params[:id])
     #end
-    return table.where("joomlaID = #{ params[:id] }")
+    # return table.where("joomlaID = #{ params[:id] }")
+    return table.find(params[:id])
   end
 
   def guard_sync(model)
