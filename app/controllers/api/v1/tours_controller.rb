@@ -27,6 +27,12 @@ class Api::V1::ToursController < Api::V1::BaseController
   def create
     @tour = Tour.new(tour_params)
     @tour = set_sync_state(@tour)
+
+    if tour_params['Tour_Guide_id'] != nil
+      @tourguide = TourGuide.where("user_id = #{ tour_params[:Tour_Guide_id] }").first
+      @tour['Tour_Guide_id '] = @tourguide['id']
+    end
+
     respond_to do |format|
       if @tour.save
         format.html {redirect_to @tour, notice: 'Tour was successfully created.'}
@@ -42,6 +48,12 @@ class Api::V1::ToursController < Api::V1::BaseController
   # PATCH/PUT /tours/1.json
   def update
     @tour = set_sync_state(@tour)
+
+    if tour_params['Tour_Guide_id'] != nil
+      @tourguide = TourGuide.where("user_id = #{ tour_params[:Tour_Guide_id] }").first
+      @tour['Tour_Guide_id '] = @tourguide['id']
+    end
+
     respond_to do |format|
       if @tour.update(tour_params)
         format.html {redirect_to @tour, notice: 'Tour was successfully updated.'}
@@ -80,6 +92,6 @@ class Api::V1::ToursController < Api::V1::BaseController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def tour_params
-    params.require(:tour).permit(:joomlaID, :name, :maxAttendees, :price, :startDate, :endDate, :createdFrom, :changedFrom, :syncedFrom, :deleteFlag, :status_id, :Tour_Guide_id)
+    params.require(:tour).permit(:id, :name, :maxAttendees, :price, :startDate, :endDate, :createdFrom, :changedFrom, :syncedFrom, :deleteFlag, :status_id, :Tour_Guide_id, :user_id)
   end
 end
