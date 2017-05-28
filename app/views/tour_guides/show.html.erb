@@ -30,5 +30,15 @@
   <%= @tour_guide.deleteFlag %>
 </p>
 
+<p>
+  <strong>User:</strong>
+  <%= @tour_guide.user %>
+</p>
+
+<p>
+  <strong>Agency:</strong>
+  <%= @tour_guide.agency %>
+</p>
+
 <%= link_to 'Edit', edit_tour_guide_path(@tour_guide) %> |
 <%= link_to 'Back', tour_guides_path %>

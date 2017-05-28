@@ -1,2 +1,0 @@
-class TourToTourPosition < ApplicationRecord
-end

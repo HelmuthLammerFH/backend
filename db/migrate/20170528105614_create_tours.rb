@@ -1,14 +1,17 @@
-class CreateTourToTourPositions < ActiveRecord::Migration[5.0]
+class CreateTours < ActiveRecord::Migration[5.0]
   def change
-    create_table :tour_to_tour_positions do |t|
+    create_table :tours do |t|
       t.integer :joomlaID
-      t.integer :tourPosition_id
+      t.string :name
+      t.integer :maxAttendees
+      t.float :price
       t.datetime :startDate
       t.datetime :endDate
       t.string :createdFrom
       t.string :changedFrom
       t.integer :syncedFrom
       t.boolean :deleteFlag
+      t.belongs_to :status, foreign_key: true
 
       t.timestamps
     end

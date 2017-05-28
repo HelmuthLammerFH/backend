@@ -2,20 +2,22 @@
 
 one:
   joomlaID: 1
-  tourPosition_id: 1
-  startDate: 2017-05-28 09:21:09
-  endDate: 2017-05-28 09:21:09
+  startDate: 2017-05-28 12:56:25
+  endDate: 2017-05-28 12:56:25
   createdFrom: MyString
   changedFrom: MyString
   syncedFrom: 1
   deleteFlag: false
+  tour: one
+  TourPosition: one
 
 two:
   joomlaID: 1
-  tourPosition_id: 1
-  startDate: 2017-05-28 09:21:09
-  endDate: 2017-05-28 09:21:09
+  startDate: 2017-05-28 12:56:25
+  endDate: 2017-05-28 12:56:25
   createdFrom: MyString
   changedFrom: MyString
   syncedFrom: 1
   deleteFlag: false
+  tour: two
+  TourPosition: two

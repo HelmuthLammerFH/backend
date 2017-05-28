@@ -2,7 +2,7 @@
 
 one:
   joomlaID: 1
-  bookedDate: 2017-05-28 09:20:57
+  bookedDate: 2017-05-28 12:56:42
   participated: 1
   starRating: 1
   feedbackTourGuid: MyString
@@ -10,10 +10,12 @@ one:
   changedFrom: MyString
   syncedFrom: 1
   deleteFlag: false
+  customer: one
+  tour: one
 
 two:
   joomlaID: 1
-  bookedDate: 2017-05-28 09:20:57
+  bookedDate: 2017-05-28 12:56:42
   participated: 1
   starRating: 1
   feedbackTourGuid: MyString
@@ -21,3 +23,5 @@ two:
   changedFrom: MyString
   syncedFrom: 1
   deleteFlag: false
+  customer: two
+  tour: two

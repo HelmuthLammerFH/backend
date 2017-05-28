@@ -45,5 +45,15 @@
   <%= @customer_in_tour.deleteFlag %>
 </p>
 
+<p>
+  <strong>Customer:</strong>
+  <%= @customer_in_tour.customer %>
+</p>
+
+<p>
+  <strong>Tour:</strong>
+  <%= @customer_in_tour.tour %>
+</p>
+
 <%= link_to 'Edit', edit_customer_in_tour_path(@customer_in_tour) %> |
 <%= link_to 'Back', customer_in_tours_path %>

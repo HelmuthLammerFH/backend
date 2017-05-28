@@ -7,6 +7,7 @@ one:
   changedFrom: MyString
   syncedFrom: 1
   deleteFlag: false
+  RessourceTyp: one
 
 two:
   joomlaID: 1
@@ -15,3 +16,4 @@ two:
   changedFrom: MyString
   syncedFrom: 1
   deleteFlag: false
+  RessourceTyp: two

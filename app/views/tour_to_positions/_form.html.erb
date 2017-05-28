@@ -1,10 +1,10 @@
-<%= form_for(tour_to_tour_position) do |f| %>
-  <% if tour_to_tour_position.errors.any? %>
+<%= form_for(tour_to_position) do |f| %>
+  <% if tour_to_position.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(tour_to_tour_position.errors.count, "error") %> prohibited this tour_to_tour_position from being saved:</h2>
+      <h2><%= pluralize(tour_to_position.errors.count, "error") %> prohibited this tour_to_position from being saved:</h2>
 
       <ul>
-      <% tour_to_tour_position.errors.full_messages.each do |message| %>
+      <% tour_to_position.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -14,11 +14,6 @@
   <div class="field">
     <%= f.label :joomlaID %>
     <%= f.number_field :joomlaID %>
-  </div>
-
-  <div class="field">
-    <%= f.label :tourPosition_id %>
-    <%= f.number_field :tourPosition_id %>
   </div>
 
   <div class="field">
@@ -49,6 +44,16 @@
   <div class="field">
     <%= f.label :deleteFlag %>
     <%= f.check_box :deleteFlag %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tour_id %>
+    <%= f.text_field :tour_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :TourPosition_id %>
+    <%= f.text_field :TourPosition_id %>
   </div>
 
   <div class="actions">

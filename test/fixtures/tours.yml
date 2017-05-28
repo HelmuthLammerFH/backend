@@ -5,21 +5,23 @@ one:
   name: MyString
   maxAttendees: 1
   price: 1.5
-  startDate: 2017-05-28 09:20:51
-  endDate: 2017-05-28 09:20:51
+  startDate: 2017-05-28 12:56:14
+  endDate: 2017-05-28 12:56:14
   createdFrom: MyString
   changedFrom: MyString
   syncedFrom: 1
   deleteFlag: false
+  status: one
 
 two:
   joomlaID: 1
   name: MyString
   maxAttendees: 1
   price: 1.5
-  startDate: 2017-05-28 09:20:51
-  endDate: 2017-05-28 09:20:51
+  startDate: 2017-05-28 12:56:14
+  endDate: 2017-05-28 12:56:14
   createdFrom: MyString
   changedFrom: MyString
   syncedFrom: 1
   deleteFlag: false
+  status: two
