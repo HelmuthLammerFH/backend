@@ -1,7 +1,6 @@
-class CreateRessourceTyps < ActiveRecord::Migration[5.0]
+class CreateStatuses < ActiveRecord::Migration[5.0]
   def change
-    create_table :ressource_typs do |t|
-      t.integer :joomlaID
+    create_table :statuses do |t|
       t.string :name
       t.string :createdFrom
       t.string :changedFrom

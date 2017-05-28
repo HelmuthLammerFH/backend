@@ -17,7 +17,7 @@ class TourGuidesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create tour_guide" do
     assert_difference('TourGuide.count') do
-      post tour_guides_url, params: { tour_guide: { agency_id: @tour_guide.agency_id, changedFrom: @tour_guide.changedFrom, createdFrom: @tour_guide.createdFrom, deleteFlag: @tour_guide.deleteFlag, joomlaID: @tour_guide.joomlaID, syncedFrom: @tour_guide.syncedFrom, tourGuideSince: @tour_guide.tourGuideSince, user_id: @tour_guide.user_id } }
+      post tour_guides_url, params: { tour_guide: { agency_id: @tour_guide.agency_id, changedFrom: @tour_guide.changedFrom, createdFrom: @tour_guide.createdFrom, deleteFlag: @tour_guide.deleteFlag, syncedFrom: @tour_guide.syncedFrom, tourGuideSince: @tour_guide.tourGuideSince, user_id: @tour_guide.user_id } }
     end
 
     assert_redirected_to tour_guide_url(TourGuide.last)
@@ -34,7 +34,7 @@ class TourGuidesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update tour_guide" do
-    patch tour_guide_url(@tour_guide), params: { tour_guide: { agency_id: @tour_guide.agency_id, changedFrom: @tour_guide.changedFrom, createdFrom: @tour_guide.createdFrom, deleteFlag: @tour_guide.deleteFlag, joomlaID: @tour_guide.joomlaID, syncedFrom: @tour_guide.syncedFrom, tourGuideSince: @tour_guide.tourGuideSince, user_id: @tour_guide.user_id } }
+    patch tour_guide_url(@tour_guide), params: { tour_guide: { agency_id: @tour_guide.agency_id, changedFrom: @tour_guide.changedFrom, createdFrom: @tour_guide.createdFrom, deleteFlag: @tour_guide.deleteFlag, syncedFrom: @tour_guide.syncedFrom, tourGuideSince: @tour_guide.tourGuideSince, user_id: @tour_guide.user_id } }
     assert_redirected_to tour_guide_url(@tour_guide)
   end
 

@@ -5,7 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Joomlaid</th>
       <th>Bookeddate</th>
       <th>Participated</th>
       <th>Starrating</th>
@@ -23,7 +22,6 @@
   <tbody>
     <% @customer_in_tours.each do |customer_in_tour| %>
       <tr>
-        <td><%= customer_in_tour.joomlaID %></td>
         <td><%= customer_in_tour.bookedDate %></td>
         <td><%= customer_in_tour.participated %></td>
         <td><%= customer_in_tour.starRating %></td>

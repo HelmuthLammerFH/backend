@@ -1,7 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  joomlaID: 1
   note: MyString
   createdFrom: MyString
   changedFrom: MyString
@@ -10,7 +9,6 @@ one:
   user: one
 
 two:
-  joomlaID: 1
   note: MyString
   createdFrom: MyString
   changedFrom: MyString

@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170528142151) do
+ActiveRecord::Schema.define(version: 20170528145048) do
 
   create_table "agencies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "joomlaID"
     t.string   "name"
     t.date     "entranceDate"
     t.boolean  "deleteFlag"
@@ -22,7 +21,6 @@ ActiveRecord::Schema.define(version: 20170528142151) do
   end
 
   create_table "customer_in_tours", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "joomlaID"
     t.datetime "bookedDate"
     t.integer  "participated"
     t.integer  "starRating"
@@ -40,7 +38,6 @@ ActiveRecord::Schema.define(version: 20170528142151) do
   end
 
   create_table "customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "joomlaID"
     t.string   "note"
     t.string   "createdFrom"
     t.string   "changedFrom"
@@ -53,7 +50,6 @@ ActiveRecord::Schema.define(version: 20170528142151) do
   end
 
   create_table "ressource_for_tours", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "joomlaID"
     t.string   "createdFrom"
     t.binary   "picture",          limit: 65535
     t.string   "changedFrom"
@@ -66,7 +62,6 @@ ActiveRecord::Schema.define(version: 20170528142151) do
   end
 
   create_table "ressource_typs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "joomlaID"
     t.string   "name"
     t.string   "createdFrom"
     t.string   "changedFrom"
@@ -77,7 +72,6 @@ ActiveRecord::Schema.define(version: 20170528142151) do
   end
 
   create_table "statuses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "joomlaID"
     t.string   "name"
     t.string   "createdFrom"
     t.string   "changedFrom"
@@ -88,7 +82,6 @@ ActiveRecord::Schema.define(version: 20170528142151) do
   end
 
   create_table "tour_guides", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "joomlaID"
     t.date     "tourGuideSince"
     t.string   "createdFrom"
     t.string   "changedFrom"
@@ -103,7 +96,6 @@ ActiveRecord::Schema.define(version: 20170528142151) do
   end
 
   create_table "tour_positions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "joomlaID"
     t.string   "name"
     t.string   "position"
     t.string   "description"
@@ -117,7 +109,6 @@ ActiveRecord::Schema.define(version: 20170528142151) do
   end
 
   create_table "tour_to_positions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "joomlaID"
     t.datetime "startDate"
     t.datetime "endDate"
     t.string   "createdFrom"
@@ -133,7 +124,6 @@ ActiveRecord::Schema.define(version: 20170528142151) do
   end
 
   create_table "tours", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "joomlaID"
     t.string   "name"
     t.integer  "maxAttendees"
     t.float    "price",         limit: 24
@@ -152,7 +142,6 @@ ActiveRecord::Schema.define(version: 20170528142151) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "joomlaID"
     t.string   "firstname"
     t.string   "lastname"
     t.date     "birthdate"

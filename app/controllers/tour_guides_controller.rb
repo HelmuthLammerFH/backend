@@ -69,6 +69,6 @@ class TourGuidesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_guide_params
-      params.require(:tour_guide).permit(:joomlaID, :tourGuideSince, :createdFrom, :changedFrom, :syncedFrom, :deleteFlag, :user_id, :agency_id)
+      params.require(:tour_guide).permit(:tourGuideSince, :createdFrom, :changedFrom, :syncedFrom, :deleteFlag, :user_id, :agency_id)
     end
 end

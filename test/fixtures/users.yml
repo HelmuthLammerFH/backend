@@ -1,7 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  joomlaID: 1
   firstname: MyString
   lastname: MyString
   birthdate: 2017-05-28
@@ -16,7 +15,6 @@ one:
   deleteFlag: false
 
 two:
-  joomlaID: 1
   firstname: MyString
   lastname: MyString
   birthdate: 2017-05-28

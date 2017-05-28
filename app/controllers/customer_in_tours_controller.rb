@@ -69,6 +69,6 @@ class CustomerInToursController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def customer_in_tour_params
-      params.require(:customer_in_tour).permit(:joomlaID, :bookedDate, :participated, :starRating, :feedbackTourGuid, :createdFrom, :changedFrom, :syncedFrom, :deleteFlag, :customer_id, :tour_id)
+      params.require(:customer_in_tour).permit(:bookedDate, :participated, :starRating, :feedbackTourGuid, :createdFrom, :changedFrom, :syncedFrom, :deleteFlag, :customer_id, :tour_id)
     end
 end

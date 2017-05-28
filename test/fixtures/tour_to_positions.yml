@@ -1,9 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  joomlaID: 1
-  startDate: 2017-05-28 16:21:34
-  endDate: 2017-05-28 16:21:34
+  startDate: 2017-05-28 16:50:32
+  endDate: 2017-05-28 16:50:32
   createdFrom: MyString
   changedFrom: MyString
   syncedFrom: 1
@@ -12,9 +11,8 @@ one:
   TourPosition: one
 
 two:
-  joomlaID: 1
-  startDate: 2017-05-28 16:21:34
-  endDate: 2017-05-28 16:21:34
+  startDate: 2017-05-28 16:50:32
+  endDate: 2017-05-28 16:50:32
   createdFrom: MyString
   changedFrom: MyString
   syncedFrom: 1

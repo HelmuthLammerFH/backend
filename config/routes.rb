@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   resources :customer_in_tours
+  resources :ressource_for_tours
   resources :ressource_typs
+  resources :tour_to_positions
   resources :tour_positions
+  resources :tours
   resources :statuses
   resources :tour_guides
   resources :customers
