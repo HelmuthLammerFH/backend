@@ -77,6 +77,6 @@ class Api::V1::AgenciesController < Api::V1::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def agency_params
-      params.require(:agency).permit(:joomlaID, :name, :entranceDate, :deleteFlag)
+      params.require(:agency).permit(:name, :entranceDate, :deleteFlag)
     end
 end

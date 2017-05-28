@@ -80,6 +80,6 @@ class Api::V1::ToursController < Api::V1::BaseController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def tour_params
-    params.require(:tour).permit(:joomlaID, :name, :maxAttendees, :price, :startDate, :endDate, :createdFrom, :changedFrom, :syncedFrom, :deleteFlag)
+    params.require(:tour).permit(:name, :maxAttendees, :price, :startDate, :endDate, :createdFrom, :changedFrom, :syncedFrom, :deleteFlag, :status_id)
   end
 end

@@ -77,6 +77,6 @@ class Api::V1::TourToTourPositionsController < Api::V1::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_to_tour_position_params
-      params.require(:tour_to_tour_position).permit(:joomlaID, :tourPosition_id, :startDate, :endDate, :price, :createdFrom, :changedFrom, :syncedFrom, :deleteFlag)
+      params.require(:tour_to_position).permit(:startDate, :endDate, :createdFrom, :changedFrom, :syncedFrom, :deleteFlag, :tour_id, :TourPosition_id)
     end
 end
