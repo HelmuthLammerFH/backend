@@ -90,6 +90,6 @@ class Api::V1::CustomerInToursController < Api::V1::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def customer_in_tour_params
-      params.require(:customer_in_tour).permit(:bookedDate, :participated, :starRating, :feedbackTourGuid, :createdFrom, :changedFrom, :syncedFrom, :deleteFlag, :customer_id, :tour_id, :user_id)
+      params.require(:customer_in_tour).permit(:bookedDate, :participated, :starRating, :feedbackTourGuid, :createdFrom, :changedFrom, :customer_id, :tour_id, :user_id)
     end
 end

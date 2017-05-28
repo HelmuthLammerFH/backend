@@ -77,6 +77,6 @@ class Api::V1::CustomersController < Api::V1::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def customer_params
-      params.require(:customer).permit(:note, :createdFrom, :changedFrom, :syncedFrom, :deleteFlag, :user_id)
+      params.require(:customer).permit(:note, :createdFrom, :changedFrom, :user_id)
     end
 end

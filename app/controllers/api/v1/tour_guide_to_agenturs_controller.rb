@@ -78,6 +78,6 @@ class Api::V1::TourGuideToAgentursController < Api::V1::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_guide_to_agentur_params
-      params.require(:tour_guide_to_agentur).permit(:agency_id, :tourGuide_id, :createdFrom, :changedFrom, :syncedFrom)
+      params.require(:tour_guide_to_agentur).permit(:agency_id, :tourGuide_id, :createdFrom, :changedFrom)
     end
 end
