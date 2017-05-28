@@ -1,0 +1,608 @@
+{
+	"variables": [],
+	"info": {
+		"name": "FST4Backend",
+		"_postman_id": "3be47695-696a-ceba-c30f-9af794526920",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "agency",
+			"description": "",
+			"item": [
+				{
+					"name": "/agencies/ID.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/agencies.json?clientID=1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/agencies.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/agencies.json?clientID=1",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 12345,\n  \"name\": \"SchönbrunnerAllee Toure\"\n}\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/agencies/ID.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/agencies/12345.json?clientID=1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 12345,\n  \"name\": \"SchönbrunnerAllee Toure from rp\"\n}\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/agencies/ID.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/agencies/12345.json?clientID=1",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/agencies/ID.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/agencies/1.json?clientID=1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "customer",
+			"description": "",
+			"item": [
+				{
+					"name": "/customers.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/customers.json?clientID=1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/customers.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/customers.json?clientID=1",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"note\": \"Roland\",\n\t\"user_id\": 1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/customers/ID.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/customers/1.json?clientID=1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"note\": \"Customer Roland\",\n\t\"user_id\": 1,\n\t\"joomlaID\": 123\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "customers_in_tours",
+			"description": "",
+			"item": [
+				{
+					"name": "/customer_in_tours.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/customer_in_tours.json?clientID=1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/customer_in_tours.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/customer_in_tours.json?clientID=1",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"customer_id\": 3,\n\t\"tour_id\": 1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/customer_in_tours/ID.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/customer_in_tours/1.json?clientID=1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_id\": 3,\n\t\"tour_id\": 1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "status",
+			"description": "",
+			"item": [
+				{
+					"name": "/statuses.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/statuses.json?clientID=1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/statuses/ID.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/statuses/1.json?clientID=1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/statuses.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/statuses.json?clientID=1",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 1,\n\t\"name\": \"Status 1\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tour_guides",
+			"description": "",
+			"item": [
+				{
+					"name": "/tour_guides.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/tour_guides.json?clientID=1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_id\": 1,\n\t\"agency_id\": 1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/tour_guides.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/tour_guides.json?clientID=1",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_id\": 1,\n\t\"agency_id\": 1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/tour_guides/ID.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/tour_guides/1.json?clientID=1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_id\": 2,\n\t\"agency_id\": 1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tour_positions",
+			"description": "",
+			"item": [
+				{
+					"name": "/tour_positions/ID.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/tour_positions.json?clientID=1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/tour_positions/ID.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/tour_positions/1.json?clientID=1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/tour_positions.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/tour_positions.json?clientID=1",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 1234,\n\t\"name\": \"Flodo\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/tour_positions/ID.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/tour_positions/1234.json?clientID=1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 1234,\n\t\"name\": \"Flodo\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/tour_positions/ID.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/tour_positions/1234.json?clientID=1",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 1234,\n\t\"name\": \"Flodo 2\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tour_positions_to_tour",
+			"description": "",
+			"item": [
+				{
+					"name": "/tour_positions_to_tour.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/tour_positions_to_tour.json?clientID=1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tours",
+			"description": "",
+			"item": [
+				{
+					"name": "/tours.json?clientID=1",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/tours.json?clientID=1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/tours/ID.json?clientID=1",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/tours/2.json?clientID=2",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/tours.json?clientID=1",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/tours.json?clientID=1",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"SchönbrunnerAllee Toure\",\n  \"status_id\": 1,\n  \"Tour_Guide_id\": 1,\n  \"id\": 1234\n}\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/tours/ID.json?clientID=1",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/tours/2.json?clientID=2",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"Roland\",\n  \"status_id\": 1 \n}\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/tours/ID.json?clientID=1",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/tours/1.json?clientID=1",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstname\": \"Donald\",\n  \"lastname\": \"Duck\",\n  \"birthdate\": \"1990-05-23\",\n  \"address\": \"EntenStraße\",\n  \"city\": \"Entenhousen\",\n  \"email\": \"donaldduck@gmail.com\",\n  \"username\": \"donald\",\n  \"passwort\": \"Start1234\",\n  \"createdFrom\": \"asdf\",\n  \"changedFrom\": \"asdf\",\n  \"syncedFrom\": 1,\n  \"deleteFlag\": false,\n  \"created_at\": \"2017-05-26T16: 37:44.000Z\",\n  \"updated_at\": \"2017-05-26T16: 37:44.000Z\",\n  \"url\": \"http://localhost:3000/users/4.json\"\n}\n"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"description": "",
+			"item": [
+				{
+					"name": "/users.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/users.json?clientID=1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/users/ID.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/users/1234.json?clientID=1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/users.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/users.json?clientID=1",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 1234,\n\t\"firstname\": \"Roland\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/users/ID.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/users/1234.json?clientID=1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstname\": \"Roland 1234\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/users/ID.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/users/1234.json?clientID=1",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

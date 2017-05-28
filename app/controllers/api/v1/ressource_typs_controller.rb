@@ -77,6 +77,6 @@ class Api::V1::RessourceTypsController < Api::V1::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ressource_typ_params
-      params.require(:ressource_typ).permit(:name, :createdFrom, :changedFrom, :syncedFrom, :deleteFlag)
+      params.require(:ressource_typ).permit(:name, :createdFrom, :changedFrom)
     end
 end
