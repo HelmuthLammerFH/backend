@@ -20,8 +20,8 @@ class Api::V1::BaseController < ApplicationController
   end
 
   def guard_sync(model)
-    if params[:clientID] == 2
-      if model.syncedFrom == 1
+    if params[:clientID].to_s == '2'
+      if model.syncedFrom.to_s == '1'
         render json: {error: "you are not allowed to overwrite the web because the web is the ruler of the world"}, :status => :forbidden
       end
     end
