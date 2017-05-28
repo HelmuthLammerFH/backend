@@ -1,7 +1,6 @@
 class Api::V1::TourGuideToAgentursController < Api::V1::BaseController
-  before_action :set_model, only: [:edit, :update, :destroy]
-  before_action :set_model_show, only: [:show]
-  before_action :check_synced_from, only: [:edit, :update, :destroy]
+  before_action :set_model_local, only: [:edit, :update, :destroy, :show]
+  before_action :guard_sync_local, only: [:edit, :update, :destroy]
 
 
   # GET /tour_guide_to_agenturs
@@ -67,18 +66,13 @@ class Api::V1::TourGuideToAgentursController < Api::V1::BaseController
   private
     # Use callbacks to share common setup or constraints between actions.
     # checks for the app that requests and uses the correct id
-    def set_model
-      @tour_guide_to_agentur = set_variable(TourGuideToAgentur, params[:syncedFrom], params[:id])
+    def set_model_local
+      @tour_guide_to_agentur = set_model(TourGuideToAgentur, params[:clientID], params[:id])
     end
 
     # checks for the app that requests and uses the correct id
-    def set_model_show
-      @tour_guide_to_agentur = set_variable(TourGuideToAgentur, params[:syncedFrom], params[:id])
-    end
-
-    # checks for the app that requests and uses the correct id
-    def check_synced_from
-      global_check_synced_from(@tour_guide_to_agentur, tour_guide_to_agentur_params['syncedFrom'])
+    def guard_sync_local
+      guard_sync(@tour_guide_to_agentur, params[:clientID])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,7 +1,6 @@
 class Api::V1::ToursController < Api::V1::BaseController
-  before_action :set_model, only: [:edit, :update, :destroy]
-  before_action :set_model_show, only: [:show]
-  before_action :check_synced_from, only: [:edit, :update, :destroy]
+  before_action :set_model_local, only: [:edit, :update, :destroy, :show]
+  before_action :guard_sync_local, only: [:edit, :update, :destroy]
 
   # GET /tours
   # GET /tours.json
@@ -27,7 +26,6 @@ class Api::V1::ToursController < Api::V1::BaseController
   # POST /tours.json
   def create
     @tour = Tour.new(tour_params)
-
     respond_to do |format|
       if @tour.save
         format.html {redirect_to @tour, notice: 'Tour was successfully created.'}
@@ -68,18 +66,14 @@ class Api::V1::ToursController < Api::V1::BaseController
   private
   # Use callbacks to share common setup or constraints between actions.
   # checks for the app that requests and uses the correct id
-  def set_model
-    @tour = set_variable(Tour, params[:syncedFrom], params[:id])
+  def set_model_local
+    @tour = set_model(Tour, params[:clientID], params[:id])
   end
 
-  # checks for the app that requests and uses the correct id
-  def set_model_show
-    @tour = set_variable(Tour, params[:syncedFrom], params[:id])
-  end
 
   # checks for the app that requests and uses the correct id
-  def check_synced_from
-    global_check_synced_from(@tour, tour_params['syncedFrom'])
+  def guard_sync_local
+    guard_sync(@tour, params[:clientID])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

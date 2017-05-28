@@ -172,15 +172,15 @@ ActiveRecord::Schema.define(version: 20170528074140) do
     t.datetime "updated_at",  null: false
   end
 
-  add_foreign_key "customer_in_tours", "customers", column: "Customer_id"
-  add_foreign_key "customer_in_tours", "tours", column: "Tour_id"
-  add_foreign_key "customers", "users", column: "User_id"
+  add_foreign_key "customer_in_tours", "Customers"
+  add_foreign_key "customer_in_tours", "Tours"
+  add_foreign_key "customers", "Users"
+  add_foreign_key "ressource_for_tours", "Tours"
   add_foreign_key "ressource_for_tours", "ressource_typs"
-  add_foreign_key "ressource_for_tours", "tours", column: "Tour_id"
-  add_foreign_key "tour_guides", "agencies", column: "Agency_id"
-  add_foreign_key "tour_guides", "users", column: "User_id"
+  add_foreign_key "tour_guides", "Agencies"
+  add_foreign_key "tour_guides", "Users"
+  add_foreign_key "tour_to_tour_positions", "Tours"
   add_foreign_key "tour_to_tour_positions", "tour_positions"
-  add_foreign_key "tour_to_tour_positions", "tours", column: "Tour_id"
-  add_foreign_key "tours", "statuses", column: "Status_id"
+  add_foreign_key "tours", "Statuses"
   add_foreign_key "tours", "tour_guides"
 end
