@@ -1,0 +1,52 @@
+<%= form_for(tourguide) do |f| %>
+  <% if tourguide.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tourguide.errors.count, "error") %> prohibited this tourguide from being saved:</h2>
+
+      <ul>
+      <% tourguide.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tourGuideSince %>
+    <%= f.date_select :tourGuideSince %>
+  </div>
+
+  <div class="field">
+    <%= f.label :createdFrom %>
+    <%= f.text_field :createdFrom %>
+  </div>
+
+  <div class="field">
+    <%= f.label :changedFrom %>
+    <%= f.text_field :changedFrom %>
+  </div>
+
+  <div class="field">
+    <%= f.label :syncedFrom %>
+    <%= f.number_field :syncedFrom %>
+  </div>
+
+  <div class="field">
+    <%= f.label :deleteFlag %>
+    <%= f.check_box :deleteFlag %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :agency_id %>
+    <%= f.text_field :agency_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tourposition.name %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @tourposition.position %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @tourposition.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @tourposition.price %>
+</p>
+
+<p>
+  <strong>Createdfrom:</strong>
+  <%= @tourposition.createdFrom %>
+</p>
+
+<p>
+  <strong>Changedfrom:</strong>
+  <%= @tourposition.changedFrom %>
+</p>
+
+<p>
+  <strong>Syncedfrom:</strong>
+  <%= @tourposition.syncedFrom %>
+</p>
+
+<p>
+  <strong>Deleteflag:</strong>
+  <%= @tourposition.deleteFlag %>
+</p>
+
+<%= link_to 'Edit', edit_tourposition_path(@tourposition) %> |
+<%= link_to 'Back', tourpositions_path %>

@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tourpositions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Createdfrom</th>
+      <th>Changedfrom</th>
+      <th>Syncedfrom</th>
+      <th>Deleteflag</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tourpositions.each do |tourposition| %>
+      <tr>
+        <td><%= tourposition.name %></td>
+        <td><%= tourposition.position %></td>
+        <td><%= tourposition.description %></td>
+        <td><%= tourposition.price %></td>
+        <td><%= tourposition.createdFrom %></td>
+        <td><%= tourposition.changedFrom %></td>
+        <td><%= tourposition.syncedFrom %></td>
+        <td><%= tourposition.deleteFlag %></td>
+        <td><%= link_to 'Show', tourposition %></td>
+        <td><%= link_to 'Edit', edit_tourposition_path(tourposition) %></td>
+        <td><%= link_to 'Destroy', tourposition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tourposition', new_tourposition_path %>

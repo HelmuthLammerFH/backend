@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tourguidesince:</strong>
+  <%= @tourguide.tourGuideSince %>
+</p>
+
+<p>
+  <strong>Createdfrom:</strong>
+  <%= @tourguide.createdFrom %>
+</p>
+
+<p>
+  <strong>Changedfrom:</strong>
+  <%= @tourguide.changedFrom %>
+</p>
+
+<p>
+  <strong>Syncedfrom:</strong>
+  <%= @tourguide.syncedFrom %>
+</p>
+
+<p>
+  <strong>Deleteflag:</strong>
+  <%= @tourguide.deleteFlag %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @tourguide.user %>
+</p>
+
+<p>
+  <strong>Agency:</strong>
+  <%= @tourguide.agency %>
+</p>
+
+<%= link_to 'Edit', edit_tourguide_path(@tourguide) %> |
+<%= link_to 'Back', tourguides_path %>
