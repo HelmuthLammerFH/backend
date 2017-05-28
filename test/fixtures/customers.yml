@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  joomlaID: 1
+  note: MyString
+  createdFrom: MyString
+  changedFrom: MyString
+  syncedFrom: 1
+  deleteFlag: false
+
+two:
+  joomlaID: 1
+  note: MyString
+  createdFrom: MyString
+  changedFrom: MyString
+  syncedFrom: 1
+  deleteFlag: false

@@ -1,0 +1,62 @@
+<%= form_for(tour_position) do |f| %>
+  <% if tour_position.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tour_position.errors.count, "error") %> prohibited this tour_position from being saved:</h2>
+
+      <ul>
+      <% tour_position.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :joomlaID %>
+    <%= f.number_field :joomlaID %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :position %>
+    <%= f.text_field :position %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :createdFrom %>
+    <%= f.text_field :createdFrom %>
+  </div>
+
+  <div class="field">
+    <%= f.label :changedFrom %>
+    <%= f.text_field :changedFrom %>
+  </div>
+
+  <div class="field">
+    <%= f.label :syncedFrom %>
+    <%= f.number_field :syncedFrom %>
+  </div>
+
+  <div class="field">
+    <%= f.label :deleteFlag %>
+    <%= f.check_box :deleteFlag %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Joomlaid:</strong>
+  <%= @tour_position.joomlaID %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tour_position.name %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @tour_position.position %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @tour_position.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @tour_position.price %>
+</p>
+
+<p>
+  <strong>Createdfrom:</strong>
+  <%= @tour_position.createdFrom %>
+</p>
+
+<p>
+  <strong>Changedfrom:</strong>
+  <%= @tour_position.changedFrom %>
+</p>
+
+<p>
+  <strong>Syncedfrom:</strong>
+  <%= @tour_position.syncedFrom %>
+</p>
+
+<p>
+  <strong>Deleteflag:</strong>
+  <%= @tour_position.deleteFlag %>
+</p>
+
+<%= link_to 'Edit', edit_tour_position_path(@tour_position) %> |
+<%= link_to 'Back', tour_positions_path %>

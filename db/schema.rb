@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170526110932) do
+ActiveRecord::Schema.define(version: 20170528074140) do
 
-  create_table "agencies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "agencies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "joomlaID"
     t.string   "name"
     t.date     "entranceDate"
@@ -21,10 +21,10 @@ ActiveRecord::Schema.define(version: 20170526110932) do
     t.datetime "updated_at",   null: false
   end
 
-  create_table "customer_in_tours", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "customer_in_tours", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "joomlaID"
     t.datetime "bookedDate"
-    t.string   "participated"
+    t.integer  "participated"
     t.integer  "starRating"
     t.string   "feedbackTourGuid"
     t.string   "createdFrom"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20170526110932) do
     t.index ["Tour_id"], name: "index_customer_in_tours_on_Tour_id", using: :btree
   end
 
-  create_table "customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "joomlaID"
     t.string   "note"
     t.string   "createdFrom"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20170526110932) do
     t.index ["User_id"], name: "index_customers_on_User_id", using: :btree
   end
 
-  create_table "ressource_for_tours", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "ressource_for_tours", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "joomlaID"
     t.string   "createdFrom"
     t.binary   "picture",          limit: 65535
@@ -62,12 +62,12 @@ ActiveRecord::Schema.define(version: 20170526110932) do
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.integer  "Tour_id"
-    t.integer  "Ressource_Typ_id"
-    t.index ["Ressource_Typ_id"], name: "index_ressource_for_tours_on_Ressource_Typ_id", using: :btree
+    t.integer  "ressource_typ_id"
     t.index ["Tour_id"], name: "index_ressource_for_tours_on_Tour_id", using: :btree
+    t.index ["ressource_typ_id"], name: "index_ressource_for_tours_on_ressource_typ_id", using: :btree
   end
 
-  create_table "ressource_typs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "ressource_typs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "joomlaID"
     t.string   "name"
     t.string   "createdFrom"
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 20170526110932) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "statuses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "statuses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "joomlaID"
     t.string   "name"
     t.string   "createdFrom"
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 20170526110932) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "tour_guides", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "tour_guides", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "joomlaID"
     t.date     "tourGuideSince"
     t.string   "createdFrom"
@@ -104,24 +104,25 @@ ActiveRecord::Schema.define(version: 20170526110932) do
     t.index ["User_id"], name: "index_tour_guides_on_User_id", using: :btree
   end
 
-  create_table "tour_positions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "tour_positions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "joomlaID"
     t.string   "name"
     t.string   "position"
+    t.string   "description"
+    t.float    "price",       limit: 24
     t.string   "createdFrom"
     t.string   "changedFrom"
     t.integer  "syncedFrom"
     t.boolean  "deleteFlag"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
-  create_table "tour_to_tour_positions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "tour_to_tour_positions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "joomlaID"
     t.integer  "tourPosition_id"
     t.datetime "startDate"
     t.datetime "endDate"
-    t.integer  "price"
     t.string   "createdFrom"
     t.string   "changedFrom"
     t.integer  "syncedFrom"
@@ -134,7 +135,7 @@ ActiveRecord::Schema.define(version: 20170526110932) do
     t.index ["tour_position_id"], name: "index_tour_to_tour_positions_on_tour_position_id", using: :btree
   end
 
-  create_table "tours", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "tours", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "joomlaID"
     t.string   "name"
     t.integer  "maxAttendees"
@@ -153,7 +154,7 @@ ActiveRecord::Schema.define(version: 20170526110932) do
     t.index ["tour_guide_id"], name: "index_tours_on_tour_guide_id", using: :btree
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "joomlaID"
     t.string   "firstname"
     t.string   "lastname"
@@ -171,15 +172,15 @@ ActiveRecord::Schema.define(version: 20170526110932) do
     t.datetime "updated_at",  null: false
   end
 
-  add_foreign_key "customer_in_tours", "Customers"
-  add_foreign_key "customer_in_tours", "Tours"
-  add_foreign_key "customers", "Users"
-  add_foreign_key "ressource_for_tours", "Ressource_Typs"
-  add_foreign_key "ressource_for_tours", "Tours"
-  add_foreign_key "tour_guides", "Agencies"
-  add_foreign_key "tour_guides", "Users"
-  add_foreign_key "tour_to_tour_positions", "Tours"
+  add_foreign_key "customer_in_tours", "customers", column: "Customer_id"
+  add_foreign_key "customer_in_tours", "tours", column: "Tour_id"
+  add_foreign_key "customers", "users", column: "User_id"
+  add_foreign_key "ressource_for_tours", "ressource_typs"
+  add_foreign_key "ressource_for_tours", "tours", column: "Tour_id"
+  add_foreign_key "tour_guides", "agencies", column: "Agency_id"
+  add_foreign_key "tour_guides", "users", column: "User_id"
   add_foreign_key "tour_to_tour_positions", "tour_positions"
-  add_foreign_key "tours", "Statuses"
+  add_foreign_key "tour_to_tour_positions", "tours", column: "Tour_id"
+  add_foreign_key "tours", "statuses", column: "Status_id"
   add_foreign_key "tours", "tour_guides"
 end

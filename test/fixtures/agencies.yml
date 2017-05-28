@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  joomlaID: 1
+  name: MyString
+  entranceDate: 2017-05-28
+  deleteFlag: false
+
+two:
+  joomlaID: 1
+  name: MyString
+  entranceDate: 2017-05-28
+  deleteFlag: false
