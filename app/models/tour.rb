@@ -1,4 +1,4 @@
 class Tour < ApplicationRecord
   belongs_to :status
-  belongs_to :TourGuide
+  belongs_to :Tourguide
 end

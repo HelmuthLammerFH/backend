@@ -1,0 +1,2 @@
+class Tourposition < ApplicationRecord
+end

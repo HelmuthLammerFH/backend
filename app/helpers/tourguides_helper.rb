@@ -1,0 +1,2 @@
+module TourguidesHelper
+end

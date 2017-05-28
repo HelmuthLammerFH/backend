@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tourguides</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tourguidesince</th>
+      <th>Createdfrom</th>
+      <th>Changedfrom</th>
+      <th>Syncedfrom</th>
+      <th>Deleteflag</th>
+      <th>User</th>
+      <th>Agency</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tourguides.each do |tourguide| %>
+      <tr>
+        <td><%= tourguide.tourGuideSince %></td>
+        <td><%= tourguide.createdFrom %></td>
+        <td><%= tourguide.changedFrom %></td>
+        <td><%= tourguide.syncedFrom %></td>
+        <td><%= tourguide.deleteFlag %></td>
+        <td><%= tourguide.user %></td>
+        <td><%= tourguide.agency %></td>
+        <td><%= link_to 'Show', tourguide %></td>
+        <td><%= link_to 'Edit', edit_tourguide_path(tourguide) %></td>
+        <td><%= link_to 'Destroy', tourguide, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tourguide', new_tourguide_path %>

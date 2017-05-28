@@ -10,11 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170528161159) do
+ActiveRecord::Schema.define(version: 20170528171521) do
 
   create_table "agencies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.date     "entranceDate"
+    t.string   "createdFrom"
+    t.string   "changedFrom"
     t.integer  "syncedFrom"
     t.boolean  "deleteFlag"
     t.datetime "created_at",   null: false
@@ -82,7 +84,22 @@ ActiveRecord::Schema.define(version: 20170528161159) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "tour_guides", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "tour_to_positions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "startDate"
+    t.datetime "endDate"
+    t.string   "createdFrom"
+    t.string   "changedFrom"
+    t.integer  "syncedFrom"
+    t.boolean  "deleteFlag"
+    t.integer  "tour_id"
+    t.integer  "Tourposition_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["Tourposition_id"], name: "index_tour_to_positions_on_Tourposition_id", using: :btree
+    t.index ["tour_id"], name: "index_tour_to_positions_on_tour_id", using: :btree
+  end
+
+  create_table "tourguides", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.date     "tourGuideSince"
     t.string   "createdFrom"
     t.string   "changedFrom"
@@ -92,11 +109,11 @@ ActiveRecord::Schema.define(version: 20170528161159) do
     t.integer  "agency_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.index ["agency_id"], name: "index_tour_guides_on_agency_id", using: :btree
-    t.index ["user_id"], name: "index_tour_guides_on_user_id", using: :btree
+    t.index ["agency_id"], name: "index_tourguides_on_agency_id", using: :btree
+    t.index ["user_id"], name: "index_tourguides_on_user_id", using: :btree
   end
 
-  create_table "tour_positions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "tourpositions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "position"
     t.string   "description"
@@ -109,25 +126,10 @@ ActiveRecord::Schema.define(version: 20170528161159) do
     t.datetime "updated_at",             null: false
   end
 
-  create_table "tour_to_positions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "startDate"
-    t.datetime "endDate"
-    t.string   "createdFrom"
-    t.string   "changedFrom"
-    t.integer  "syncedFrom"
-    t.boolean  "deleteFlag"
-    t.integer  "tour_id"
-    t.integer  "Tour_Position_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.index ["Tour_Position_id"], name: "index_tour_to_positions_on_Tour_Position_id", using: :btree
-    t.index ["tour_id"], name: "index_tour_to_positions_on_tour_id", using: :btree
-  end
-
   create_table "tours", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.integer  "maxAttendees"
-    t.float    "price",         limit: 24
+    t.float    "price",        limit: 24
     t.datetime "startDate"
     t.datetime "endDate"
     t.string   "createdFrom"
@@ -135,10 +137,10 @@ ActiveRecord::Schema.define(version: 20170528161159) do
     t.integer  "syncedFrom"
     t.boolean  "deleteFlag"
     t.integer  "status_id"
-    t.integer  "Tour_Guide_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.index ["Tour_Guide_id"], name: "index_tours_on_Tour_Guide_id", using: :btree
+    t.integer  "Tourguide_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.index ["Tourguide_id"], name: "index_tours_on_Tourguide_id", using: :btree
     t.index ["status_id"], name: "index_tours_on_status_id", using: :btree
   end
 
@@ -163,10 +165,10 @@ ActiveRecord::Schema.define(version: 20170528161159) do
   add_foreign_key "customer_in_tours", "tours"
   add_foreign_key "customers", "users"
   add_foreign_key "ressource_for_tours", "ressource_typs", column: "Ressource_Typ_id"
-  add_foreign_key "tour_guides", "agencies"
-  add_foreign_key "tour_guides", "users"
-  add_foreign_key "tour_to_positions", "tour_positions", column: "Tour_Position_id"
+  add_foreign_key "tour_to_positions", "tourpositions", column: "Tourposition_id"
   add_foreign_key "tour_to_positions", "tours"
+  add_foreign_key "tourguides", "agencies"
+  add_foreign_key "tourguides", "users"
   add_foreign_key "tours", "statuses"
-  add_foreign_key "tours", "tour_guides", column: "Tour_Guide_id"
+  add_foreign_key "tours", "tourguides", column: "Tourguide_id"
 end

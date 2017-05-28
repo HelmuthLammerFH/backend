@@ -3,11 +3,15 @@
 one:
   name: MyString
   entranceDate: 2017-05-28
+  createdFrom: MyString
+  changedFrom: MyString
   syncedFrom: 1
   deleteFlag: false
 
 two:
   name: MyString
   entranceDate: 2017-05-28
+  createdFrom: MyString
+  changedFrom: MyString
   syncedFrom: 1
   deleteFlag: false

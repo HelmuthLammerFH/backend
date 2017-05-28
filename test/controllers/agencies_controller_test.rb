@@ -17,7 +17,7 @@ class AgenciesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create agency" do
     assert_difference('Agency.count') do
-      post agencies_url, params: { agency: { deleteFlag: @agency.deleteFlag, entranceDate: @agency.entranceDate, name: @agency.name, syncedFrom: @agency.syncedFrom } }
+      post agencies_url, params: { agency: { changedFrom: @agency.changedFrom, createdFrom: @agency.createdFrom, deleteFlag: @agency.deleteFlag, entranceDate: @agency.entranceDate, name: @agency.name, syncedFrom: @agency.syncedFrom } }
     end
 
     assert_redirected_to agency_url(Agency.last)
@@ -34,7 +34,7 @@ class AgenciesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update agency" do
-    patch agency_url(@agency), params: { agency: { deleteFlag: @agency.deleteFlag, entranceDate: @agency.entranceDate, name: @agency.name, syncedFrom: @agency.syncedFrom } }
+    patch agency_url(@agency), params: { agency: { changedFrom: @agency.changedFrom, createdFrom: @agency.createdFrom, deleteFlag: @agency.deleteFlag, entranceDate: @agency.entranceDate, name: @agency.name, syncedFrom: @agency.syncedFrom } }
     assert_redirected_to agency_url(@agency)
   end
 

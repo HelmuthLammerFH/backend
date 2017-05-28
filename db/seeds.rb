@@ -44,26 +44,26 @@ Agency.create(
     id: "1", name:"Agency1", entranceDate:"2016-01-01T00:00:00", deleteFlag:"0"
 )
 
-TourGuide.create(
+Tourguide.create(
     user_id:"1", tourGuideSince:"2016-01-01T00:00:00", createdFrom:"rieser", changedFrom:"rieser", syncedFrom:"", deleteFlag:"0", agency_id:"1"
 )
 Tour.create(
 
-    name:'SchoenbrunnTour',maxAttendees:12,price:1234.0,startDate:'2017-05-23T15:33:00.000',endDate:'2017-05-23T15:33:00.000',createdFrom:'Mr' ,changedFrom:'Roland',syncedFrom:1 , Tour_Guide_id: "1"
+    name:'SchoenbrunnTour',maxAttendees:12,price:1234.0,startDate:'2017-05-23T15:33:00.000',endDate:'2017-05-23T15:33:00.000',createdFrom:'Mr' ,changedFrom:'Roland',syncedFrom:1 , Tourguide_id: "1"
 )
 Tour.create(
 
-    name:'Innenstadt',maxAttendees:22,price:134.0,startDate:'2017-04-21T15:33:00.000',endDate:'2017-04-21T15:33:00.000',createdFrom:'RM' ,changedFrom:'DA',syncedFrom:1, Tour_Guide_id: "1"
+    name:'Innenstadt',maxAttendees:22,price:134.0,startDate:'2017-04-21T15:33:00.000',endDate:'2017-04-21T15:33:00.000',createdFrom:'RM' ,changedFrom:'DA',syncedFrom:1, Tourguide_id: "1"
 )
 Tour.create(
 
-    name:'Flodo',maxAttendees:122,price:5.0,startDate:'2016-04-21T15:33:00.000',endDate:'2016-04-21T15:33:00.000',createdFrom:'RM' ,changedFrom:'DA',syncedFrom:1, Tour_Guide_id: "1"
+    name:'Flodo',maxAttendees:122,price:5.0,startDate:'2016-04-21T15:33:00.000',endDate:'2016-04-21T15:33:00.000',createdFrom:'RM' ,changedFrom:'DA',syncedFrom:1, Tourguide_id: "1"
 )
-TourPosition.create(
+Tourposition.create(
      name:"Schlafzimmer Sisi", position:"113111", createdFrom:"rieser", changedFrom:"rieser", syncedFrom:"0", deleteFlag:"0"
 )
 
 
-TourPosition.create(
+Tourposition.create(
     name:"Riesenrad Prater", position:"4532432", createdFrom:"rieser", changedFrom:"rieser", syncedFrom:"0", deleteFlag:"0"
 )

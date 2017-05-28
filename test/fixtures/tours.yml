@@ -4,24 +4,24 @@ one:
   name: MyString
   maxAttendees: 1
   price: 1.5
-  startDate: 2017-05-28 18:11:20
-  endDate: 2017-05-28 18:11:20
+  startDate: 2017-05-28 19:14:53
+  endDate: 2017-05-28 19:14:53
   createdFrom: MyString
   changedFrom: MyString
   syncedFrom: 1
   deleteFlag: false
   status: one
-  TourGuide: one
+  Tourguide: one
 
 two:
   name: MyString
   maxAttendees: 1
   price: 1.5
-  startDate: 2017-05-28 18:11:20
-  endDate: 2017-05-28 18:11:20
+  startDate: 2017-05-28 19:14:53
+  endDate: 2017-05-28 19:14:53
   createdFrom: MyString
   changedFrom: MyString
   syncedFrom: 1
   deleteFlag: false
   status: two
-  TourGuide: two
+  Tourguide: two

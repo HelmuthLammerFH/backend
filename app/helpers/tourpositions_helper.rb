@@ -1,0 +1,2 @@
+module TourpositionsHelper
+end

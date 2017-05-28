@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  bookedDate: 2017-05-28 18:13:47
+  bookedDate: 2017-05-28 19:15:21
   participated: 1
   starRating: 1
   feedbackTourGuid: MyString
@@ -13,7 +13,7 @@ one:
   tour: one
 
 two:
-  bookedDate: 2017-05-28 18:13:47
+  bookedDate: 2017-05-28 19:15:21
   participated: 1
   starRating: 1
   feedbackTourGuid: MyString
