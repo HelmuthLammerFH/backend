@@ -1,7 +1,6 @@
 class Api::V1::TourToTourPositionsController < Api::V1::BaseController
-  before_action :set_model, only: [:edit, :update, :destroy]
-  before_action :set_model_show, only: [:show]
-  before_action :check_synced_from, only: [:edit, :update, :destroy]
+  before_action :set_model_local, only: [:edit, :update, :destroy, :show]
+  before_action :guard_sync_local, only: [:edit, :update, :destroy]
 
   # GET /tour_to_tour_positions
   # GET /tour_to_tour_positions.json
@@ -66,18 +65,13 @@ class Api::V1::TourToTourPositionsController < Api::V1::BaseController
   private
     # Use callbacks to share common setup or constraints between actions.
     # checks for the app that requests and uses the correct id
-    def set_model
-      @tour_to_tour_position = set_variable(TourToTourPosition, params[:syncedFrom], params[:id])
+    def set_model_local
+      @tour_to_tour_position = set_model(TourToTourPosition, params[:clientID], params[:id])
     end
 
     # checks for the app that requests and uses the correct id
-    def set_model_show
-      @tour_to_tour_position = set_variable(TourToTourPosition, params[:syncedFrom], params[:id])
-    end
-
-    # checks for the app that requests and uses the correct id
-    def check_synced_from
-      global_check_synced_from(@tour_to_tour_position, tour_to_tour_position_params['syncedFrom'])
+    def guard_sync_local
+      guard_sync(@tour_to_tour_position, params[:clientID])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

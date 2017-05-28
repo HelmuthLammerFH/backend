@@ -1,7 +1,6 @@
 class Api::V1::UsersController < Api::V1::BaseController
-  before_action :set_model, only: [:edit, :update, :destroy]
-  before_action :set_model_show, only: [:show]
-  before_action :check_synced_from, only: [:edit, :update, :destroy]
+  before_action :set_model_local, only: [:edit, :update, :destroy, :show]
+  before_action :guard_sync_local, only: [:edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
@@ -65,18 +64,13 @@ class Api::V1::UsersController < Api::V1::BaseController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_model
-      @user = set_variable(User, params[:syncedFrom], params[:id])
+    def set_model_local
+      @user = set_model(User, params[:clientID], params[:id])
     end
 
     # checks for the app that requests and uses the correct id
-    def set_model_show
-      @user = set_variable(User, params[:syncedFrom], params[:id])
-    end
-
-    # checks for the app that requests and uses the correct id
-    def check_synced_from
-      global_check_synced_from(User, user_params['syncedFrom'])
+    def guard_sync_local
+      guard_sync(User, params[:clientID])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
