@@ -38,9 +38,7 @@ User.create(
     changedFrom:"roli", syncedFrom:"1", deleteFlag:"0"
 )
 
-TourGuide.create(
-    user_id:"1", tourGuideSince:"2016-01-01T00:00:00", createdFrom:"rieser", changedFrom:"rieser", syncedFrom:"", deleteFlag:"0"
-)
+
 
 Customer.create(
             user_id:"2", note:"testeintrag"
@@ -51,10 +49,12 @@ Customer.create(
 )
 
 Agency.create(
-    name:"Agency1", entranceDate:"2016-01-01T00:00:00", deleteFlag:"0"
+    id: "1", name:"Agency1", entranceDate:"2016-01-01T00:00:00", deleteFlag:"0"
 )
 
-
+TourGuide.create(
+    user_id:"1", tourGuideSince:"2016-01-01T00:00:00", createdFrom:"rieser", changedFrom:"rieser", syncedFrom:"", deleteFlag:"0", agency_id:"1"
+)
 TourPosition.create(
      name:"Schlafzimmer Sisi", position:"113111", createdFrom:"rieser", changedFrom:"rieser", syncedFrom:"0", deleteFlag:"0"
 )
