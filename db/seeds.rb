@@ -41,7 +41,6 @@ User.create(
 Tour_Guide.Create(
     joomlaID:"1111", tourGuideSince:"2016-01-01T00:00:00", createdFrom:"rieser", changedFrom:"rieser", syncedFrom:"", deleteFlag:"0"
 )
-
 Tour_Guide.Create(
     joomlaID:"1211", tourGuideSince:"2016-01-01T00:00:00", createdFrom:"rieser", changedFrom:"rieser", syncedFrom:"", deleteFlag:"0"
 )
@@ -49,6 +48,7 @@ Tour_Guide.Create(
 Agency.Create(
     joomlaID:"44", name:"Agency1", entranceDate:"2016-01-01T00:00:00", deleteFlag:"0"
 )
+
 
 Tour_position(
     joomlaID:"544", name:"Schlafzimmer Sisi", position:"113111", createdFrom:"rieser", changedFrom:"rieser", syncedFrom:"0", deleteFlag:"0"

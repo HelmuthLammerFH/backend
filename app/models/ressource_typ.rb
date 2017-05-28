@@ -1,2 +1,0 @@
-class RessourceTyp < ApplicationRecord
-end

@@ -1,2 +1,0 @@
-class TourGuide < ApplicationRecord
-end
