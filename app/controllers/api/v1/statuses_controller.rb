@@ -27,7 +27,7 @@ class Api::V1::StatusesController < Api::V1::BaseController
   # POST /statuses.json
   def create
     @status = Status.new(status_params)
-
+    @status = set_sync_state(@status)
     respond_to do |format|
       if @status.save
         format.html { redirect_to @status, notice: 'Status was successfully created.' }
@@ -42,6 +42,7 @@ class Api::V1::StatusesController < Api::V1::BaseController
   # PATCH/PUT /statuses/1
   # PATCH/PUT /statuses/1.json
   def update
+    @status = set_sync_state(@status)
     respond_to do |format|
       if @status.update(status_params)
         format.html { redirect_to @status, notice: 'Status was successfully updated.' }
@@ -67,12 +68,12 @@ class Api::V1::StatusesController < Api::V1::BaseController
     # Use callbacks to share common setup or constraints between actions.
     # checks for the app that requests and uses the correct id
     def set_model_local
-      @status = set_model(Status, params[:clientID], params[:id])
+      @status = set_model(Status)
     end
 
     # checks for the app that requests and uses the correct id
     def guard_sync_local
-      guard_sync(@status, params[:clientID])
+      guard_sync(@status)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

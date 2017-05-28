@@ -27,7 +27,7 @@ class Api::V1::CustomerInToursController < Api::V1::BaseController
   # POST /customer_in_tours.json
   def create
     @customer_in_tour = CustomerInTour.new(customer_in_tour_params)
-
+    @customer_in_tour = set_sync_state(@customer_in_tour)
     respond_to do |format|
       if @customer_in_tour.save
         format.html { redirect_to @customer_in_tour, notice: 'Customer in tour was successfully created.' }
@@ -42,6 +42,7 @@ class Api::V1::CustomerInToursController < Api::V1::BaseController
   # PATCH/PUT /customer_in_tours/1
   # PATCH/PUT /customer_in_tours/1.json
   def update
+    @customer_in_tour = set_sync_state(@customer_in_tour)
     respond_to do |format|
       if @customer_in_tour.update(customer_in_tour_params)
         format.html { redirect_to @customer_in_tour, notice: 'Customer in tour was successfully updated.' }
@@ -67,12 +68,12 @@ class Api::V1::CustomerInToursController < Api::V1::BaseController
     # Use callbacks to share common setup or constraints between actions.
     # checks for the app that requests and uses the correct id
     def set_model_local
-      @customer_in_tour = set_model(CustomerInTour, params[:clientID], params[:id])
+      @customer_in_tour = set_model(CustomerInTour)
     end
 
     # checks for the app that requests and uses the correct id
     def guard_sync_local
-      guard_sync(@customer_in_tour, params[:clientID])
+      guard_sync(@customer_in_tour)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

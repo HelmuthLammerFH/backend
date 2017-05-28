@@ -26,7 +26,7 @@ class Api::V1::RessourceTypsController < Api::V1::BaseController
   # POST /ressource_typs.json
   def create
     @ressource_typ = RessourceTyp.new(ressource_typ_params)
-
+    @ressource_typ = set_sync_state(@ressource_typ)
     respond_to do |format|
       if @ressource_typ.save
         format.html { redirect_to @ressource_typ, notice: 'Ressource typ was successfully created.' }
@@ -41,6 +41,7 @@ class Api::V1::RessourceTypsController < Api::V1::BaseController
   # PATCH/PUT /ressource_typs/1
   # PATCH/PUT /ressource_typs/1.json
   def update
+    @ressource_typ = set_sync_state(@ressource_typ)
     respond_to do |format|
       if @ressource_typ.update(ressource_typ_params)
         format.html { redirect_to @ressource_typ, notice: 'Ressource typ was successfully updated.' }
@@ -66,12 +67,12 @@ class Api::V1::RessourceTypsController < Api::V1::BaseController
     # Use callbacks to share common setup or constraints between actions.
     # checks for the app that requests and uses the correct id
     def set_model_local
-      @ressource_typ = set_model(RessourceTyp, params[:clientID], params[:id])
+      @ressource_typ = set_model(RessourceTyp)
     end
 
     # checks for the app that requests and uses the correct id
     def guard_sync_local
-      guard_sync(@ressource_typ, params[:clientID])
+      guard_sync(@ressource_typ)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

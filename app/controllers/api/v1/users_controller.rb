@@ -26,7 +26,7 @@ class Api::V1::UsersController < Api::V1::BaseController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
+    @user = set_sync_state(@user)
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
@@ -41,6 +41,7 @@ class Api::V1::UsersController < Api::V1::BaseController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    @user = set_sync_state(@user)
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
@@ -65,12 +66,12 @@ class Api::V1::UsersController < Api::V1::BaseController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_model_local
-      @user = set_model(User, params[:clientID], params[:id])
+      @user = set_model(User)
     end
 
     # checks for the app that requests and uses the correct id
     def guard_sync_local
-      guard_sync(User, params[:clientID])
+      guard_sync(User)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

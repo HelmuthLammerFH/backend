@@ -26,7 +26,7 @@ class Api::V1::AgenciesController < Api::V1::BaseController
   # POST /agencies.json
   def create
     @agency = Agency.new(agency_params)
-
+    @agency = set_sync_state(@agency)
     respond_to do |format|
       if @agency.save
         format.html { redirect_to @agency, notice: 'Agency was successfully created.' }
@@ -41,6 +41,7 @@ class Api::V1::AgenciesController < Api::V1::BaseController
   # PATCH/PUT /agencies/1
   # PATCH/PUT /agencies/1.json
   def update
+    @agency = set_sync_state(@agency)
     respond_to do |format|
       if @agency.update(agency_params)
         format.html { redirect_to @agency, notice: 'Agency was successfully updated.' }
@@ -66,12 +67,12 @@ class Api::V1::AgenciesController < Api::V1::BaseController
     # Use callbacks to share common setup or constraints between actions.
 
     def set_model_local
-      @agency = set_model(Agency, params[:clientID], params[:id])
+      @agency = set_model(Agency)
     end
 
     # checks for the app that requests and uses the correct id
     def guard_sync_local
-      guard_sync(Agency, params[:clientID])
+      guard_sync(Agency)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -26,7 +26,7 @@ class Api::V1::RessourceForToursController < Api::V1::BaseController
   # POST /ressource_for_tours.json
   def create
     @ressource_for_tour = RessourceForTour.new(ressource_for_tour_params)
-
+    @ressource_for_tour = set_sync_state(@ressource_for_tour)
     respond_to do |format|
       if @ressource_for_tour.save
         format.html { redirect_to @ressource_for_tour, notice: 'Ressource for tour was successfully created.' }
@@ -41,6 +41,7 @@ class Api::V1::RessourceForToursController < Api::V1::BaseController
   # PATCH/PUT /ressource_for_tours/1
   # PATCH/PUT /ressource_for_tours/1.json
   def update
+    @ressource_for_tour = set_sync_state(@ressource_for_tour)
     respond_to do |format|
       if @ressource_for_tour.update(ressource_for_tour_params)
         format.html { redirect_to @ressource_for_tour, notice: 'Ressource for tour was successfully updated.' }
@@ -66,12 +67,12 @@ class Api::V1::RessourceForToursController < Api::V1::BaseController
     # Use callbacks to share common setup or constraints between actions.
     # checks for the app that requests and uses the correct id
     def set_model_local
-      @ressource_for_tour = set_model(RessourceForTour, params[:clientID], params[:id])
+      @ressource_for_tour = set_model(RessourceForTour)
     end
 
     # checks for the app that requests and uses the correct id
     def guard_sync_local
-      guard_sync(@ressource_for_tour, params[:clientID])
+      guard_sync(@ressource_for_tour)
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def ressource_for_tour_params

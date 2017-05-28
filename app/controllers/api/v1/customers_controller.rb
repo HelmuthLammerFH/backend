@@ -26,7 +26,7 @@ class Api::V1::CustomersController < Api::V1::BaseController
   # POST /customers.json
   def create
     @customer = Customer.new(customer_params)
-
+    @customer = set_sync_state(@customer)
     respond_to do |format|
       if @customer.save
         format.html { redirect_to @customer, notice: 'Customer was successfully created.' }
@@ -41,6 +41,7 @@ class Api::V1::CustomersController < Api::V1::BaseController
   # PATCH/PUT /customers/1
   # PATCH/PUT /customers/1.json
   def update
+    @customer = set_sync_state(@customer)
     respond_to do |format|
       if @customer.update(customer_params)
         format.html { redirect_to @customer, notice: 'Customer was successfully updated.' }
@@ -66,12 +67,12 @@ class Api::V1::CustomersController < Api::V1::BaseController
     # Use callbacks to share common setup or constraints between actions.
     # checks for the app that requests and uses the correct id
     def set_model_local
-      @customer = set_model(Customer, params[:clientID], params[:id])
+      @customer = set_model(Customer)
     end
 
     # checks for the app that requests and uses the correct id
     def guard_sync_local
-      guard_sync(@customer, params[:clientID])
+      guard_sync(@customer)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

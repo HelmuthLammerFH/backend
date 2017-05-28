@@ -26,7 +26,7 @@ class Api::V1::TourGuidesController < Api::V1::BaseController
   # POST /tour_guides.json
   def create
     @tour_guide = TourGuide.new(tour_guide_params)
-
+    @tour_guide = set_sync_state(@tour_guide)
     respond_to do |format|
       if @tour_guide.save
         format.html { redirect_to @tour_guide, notice: 'Tour guide was successfully created.' }
@@ -41,6 +41,7 @@ class Api::V1::TourGuidesController < Api::V1::BaseController
   # PATCH/PUT /tour_guides/1
   # PATCH/PUT /tour_guides/1.json
   def update
+    @tour_guide = set_sync_state(@tour_guide)
     respond_to do |format|
       if @tour_guide.update(tour_guide_params)
         format.html { redirect_to @tour_guide, notice: 'Tour guide was successfully updated.' }
@@ -66,12 +67,12 @@ class Api::V1::TourGuidesController < Api::V1::BaseController
     # Use callbacks to share common setup or constraints between actions.
     # checks for the app that requests and uses the correct id
     def set_model_local
-      @tour_guide = set_model(TourGuide, params[:clientID], params[:id])
+      @tour_guide = set_model(TourGuide)
     end
 
     # checks for the app that requests and uses the correct id
     def guard_sync_local
-      guard_sync(@tour_guide, params[:clientID])
+      guard_sync(@tour_guide)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
