@@ -10,17 +10,6 @@ Rails.application.routes.draw do
   resources :customers
   resources :agencies
   resources :users
-  resources :customer_in_tours
-  resources :ressource_for_tours
-  resources :ressource_typs
-  resources :tour_to_positions
-  resources :tour_positions
-  resources :tours
-  resources :statuses
-  resources :tour_guides
-  resources :customers
-  resources :agencies
-  resources :users
   resources :tour_guide_to_agenturs
   get 'welcome/index'
 
@@ -33,10 +22,10 @@ Rails.application.routes.draw do
       resources :ressource_for_tours
       resources :ressource_typs
       resources :tour_to_positions
-      resources :tour_positions
+      resources :tourpositions
       resources :tours
       resources :statuses
-      resources :tour_guides
+      resources :tourguides
       resources :customers
       resources :agencies
       resources :users
