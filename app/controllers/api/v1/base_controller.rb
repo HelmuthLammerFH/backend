@@ -10,11 +10,12 @@ class Api::V1::BaseController < ApplicationController
   end
 
   def set_model(table)
-    if params[:clientID].to_s == '1'
-      return table.where("joomlaID = #{ params[:id] }").first
-    else
-      return table.find(params[:id])
-    end
+    #if params[:clientID].to_s == '1'
+    #  return table.where("joomlaID = #{ params[:id] }").first
+    #else
+    #  return table.find(params[:id])
+    #end
+    return table.where("joomlaID = #{ params[:id] }")
   end
 
   def guard_sync(model)
