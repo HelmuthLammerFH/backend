@@ -3,6 +3,7 @@ class CreateAgencies < ActiveRecord::Migration[5.0]
     create_table :agencies do |t|
       t.string :name
       t.date :entranceDate
+      t.integer :syncedFrom
       t.boolean :deleteFlag
 
       t.timestamps

@@ -4,8 +4,8 @@ one:
   name: MyString
   maxAttendees: 1
   price: 1.5
-  startDate: 2017-05-28 16:50:21
-  endDate: 2017-05-28 16:50:21
+  startDate: 2017-05-28 18:11:20
+  endDate: 2017-05-28 18:11:20
   createdFrom: MyString
   changedFrom: MyString
   syncedFrom: 1
@@ -17,8 +17,8 @@ two:
   name: MyString
   maxAttendees: 1
   price: 1.5
-  startDate: 2017-05-28 16:50:21
-  endDate: 2017-05-28 16:50:21
+  startDate: 2017-05-28 18:11:20
+  endDate: 2017-05-28 18:11:20
   createdFrom: MyString
   changedFrom: MyString
   syncedFrom: 1

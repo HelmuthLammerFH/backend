@@ -1,6 +1,6 @@
 
 rails generate scaffold User firstname:string lastname:string birthdate:date address:string city:string email:string username:string passwort:string createdFrom:string changedFrom:string syncedFrom:integer deleteFlag:boolean
-rails generate scaffold Agency name:string entranceDate:date deleteFlag:boolean
+rails generate scaffold Agency name:string entranceDate:date syncedFrom:integer deleteFlag:boolean
 rails generate scaffold Customer note:string createdFrom:string changedFrom:string syncedFrom:integer deleteFlag:boolean user:belongs_to
 rails generate scaffold TourGuide tourGuideSince:date createdFrom:string changedFrom:string syncedFrom:integer deleteFlag:boolean user:belongs_to agency:belongs_to
 rails generate scaffold Status name:string createdFrom:string changedFrom:string syncedFrom:integer deleteFlag:boolean

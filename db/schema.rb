@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170528145048) do
+ActiveRecord::Schema.define(version: 20170528161159) do
 
   create_table "agencies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.date     "entranceDate"
+    t.integer  "syncedFrom"
     t.boolean  "deleteFlag"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
