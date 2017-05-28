@@ -45,7 +45,7 @@ Agency.create(
 )
 
 Tourguide.create(
-    user_id:"1", tourGuideSince:"2016-01-01T00:00:00", createdFrom:"rieser", changedFrom:"rieser", syncedFrom:"", deleteFlag:"0", agency_id:"1"
+    user_id:"2", tourGuideSince:"2016-01-01T00:00:00", createdFrom:"rieser", changedFrom:"rieser", syncedFrom:"", deleteFlag:"0", agency_id:"1"
 )
 Tour.create(
 
