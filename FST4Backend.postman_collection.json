@@ -1,0 +1,218 @@
+{
+	"variables": [],
+	"info": {
+		"name": "FST4Backend",
+		"_postman_id": "3be47695-696a-ceba-c30f-9af794526920",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "customers_in_tours",
+			"description": "",
+			"item": [
+				{
+					"name": "/customer_in_tours.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/customer_in_tours.json",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tour_guides",
+			"description": "",
+			"item": [
+				{
+					"name": "/tour_guides.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/tour_guides.json",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tour_positions",
+			"description": "",
+			"item": [
+				{
+					"name": "/tour_positions.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/tour_positions.json",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tours",
+			"description": "",
+			"item": [
+				{
+					"name": "/tours.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/tours.json",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/tours.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/tours.json",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstname\": \"Donald\",\n  \"lastname\": \"Duck\",\n  \"birthdate\": \"1990-05-23\",\n  \"address\": \"EntenStraße\",\n  \"city\": \"Entenhousen\",\n  \"email\": \"donaldduck@gmail.com\",\n  \"username\": \"donald\",\n  \"passwort\": \"Start1234\",\n  \"createdFrom\": \"asdf\",\n  \"changedFrom\": \"asdf\",\n  \"syncedFrom\": 1,\n  \"deleteFlag\": false,\n  \"created_at\": \"2017-05-26T16: 37:44.000Z\",\n  \"updated_at\": \"2017-05-26T16: 37:44.000Z\",\n  \"url\": \"http://localhost:3000/users/4.json\"\n}\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/tours/ID.json?syncedFrom=2",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/tours/4.json?syncedFrom=2",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstname\": \"Donald2\",\n  \"lastname\": \"Duck\",\n  \"birthdate\": \"1990-05-23\",\n  \"address\": \"EntenStraße\",\n  \"city\": \"Entenhousen\",\n  \"email\": \"donaldduck@gmail.com\",\n  \"username\": \"donald\",\n  \"passwort\": \"Start1234\",\n  \"createdFrom\": \"asdf\",\n  \"changedFrom\": \"asdf\",\n  \"syncedFrom\": 1,\n  \"deleteFlag\": false,\n  \"created_at\": \"2017-05-26T16: 37:44.000Z\",\n  \"updated_at\": \"2017-05-26T16: 37:44.000Z\",\n  \"url\": \"http://localhost:3000/users/4.json\"\n}\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/tours/joomlaID.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/tours/1234.json",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"joomlaID\": 1234,\n  \"firstname\": \"Donald23\",\n  \"lastname\": \"Duck\",\n  \"birthdate\": \"1990-05-23\",\n  \"address\": \"EntenStraße\",\n  \"city\": \"Entenhousen\",\n  \"email\": \"donaldduck@gmail.com\",\n  \"username\": \"donald\",\n  \"passwort\": \"Start1234\",\n  \"createdFrom\": \"asdf\",\n  \"changedFrom\": \"asdf\",\n  \"syncedFrom\": 1,\n  \"deleteFlag\": false,\n  \"created_at\": \"2017-05-26T16: 37:44.000Z\",\n  \"updated_at\": \"2017-05-26T16: 37:44.000Z\",\n  \"url\": \"http://localhost:3000/users/4.json\"\n}\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/tours/joomlaID.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/tours/1234.json",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/tours/ID.json?syncedFrom=2",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/tours/1.json?syncedFrom=2",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstname\": \"Donald\",\n  \"lastname\": \"Duck\",\n  \"birthdate\": \"1990-05-23\",\n  \"address\": \"EntenStraße\",\n  \"city\": \"Entenhousen\",\n  \"email\": \"donaldduck@gmail.com\",\n  \"username\": \"donald\",\n  \"passwort\": \"Start1234\",\n  \"createdFrom\": \"asdf\",\n  \"changedFrom\": \"asdf\",\n  \"syncedFrom\": 1,\n  \"deleteFlag\": false,\n  \"created_at\": \"2017-05-26T16: 37:44.000Z\",\n  \"updated_at\": \"2017-05-26T16: 37:44.000Z\",\n  \"url\": \"http://localhost:3000/users/4.json\"\n}\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/tours/joomlaID.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/tours/1234.json",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstname\": \"Donald\",\n  \"lastname\": \"Duck\",\n  \"birthdate\": \"1990-05-23\",\n  \"address\": \"EntenStraße\",\n  \"city\": \"Entenhousen\",\n  \"email\": \"donaldduck@gmail.com\",\n  \"username\": \"donald\",\n  \"passwort\": \"Start1234\",\n  \"createdFrom\": \"asdf\",\n  \"changedFrom\": \"asdf\",\n  \"syncedFrom\": 1,\n  \"deleteFlag\": false,\n  \"created_at\": \"2017-05-26T16: 37:44.000Z\",\n  \"updated_at\": \"2017-05-26T16: 37:44.000Z\",\n  \"url\": \"http://localhost:3000/users/4.json\"\n}\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/tours/ID.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/tours/2.json",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"description": "",
+			"item": [
+				{
+					"name": "/users.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/users.json",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

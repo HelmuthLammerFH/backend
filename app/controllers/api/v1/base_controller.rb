@@ -8,7 +8,7 @@ class Api::V1::BaseController < ApplicationController
   end
 
   def set_variable(table, decider, id)
-    if decider == 1
+    if decider.to_s == '1'
       return table.where("joomlaID = #{ id }").first
     else
       return table.find(id)
