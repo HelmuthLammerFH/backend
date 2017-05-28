@@ -71,11 +71,11 @@ class Api::V1::UsersController < Api::V1::BaseController
 
     # checks for the app that requests and uses the correct id
     def guard_sync_local
-      guard_sync(User)
+      guard_sync(@user)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:firstname, :lastname, :birthdate, :address, :city, :email, :username, :passwort, :createdFrom, :changedFrom, :syncedFrom, :deleteFlag)
+      params.require(:user).permit(:id, :firstname, :lastname, :birthdate, :address, :city, :email, :username, :passwort, :createdFrom, :changedFrom, :syncedFrom, :deleteFlag)
     end
 end

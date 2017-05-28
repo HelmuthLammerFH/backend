@@ -78,6 +78,6 @@ class Api::V1::StatusesController < Api::V1::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def status_params
-      params.require(:status).permit(:name, :createdFrom, :changedFrom, :syncedFrom, :deleteFlag)
+      params.require(:status).permit(:id, :name, :createdFrom, :changedFrom)
     end
 end
