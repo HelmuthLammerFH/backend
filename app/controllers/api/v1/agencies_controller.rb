@@ -72,11 +72,11 @@ class Api::V1::AgenciesController < Api::V1::BaseController
 
     # checks for the app that requests and uses the correct id
     def guard_sync_local
-      guard_sync(Agency)
+      guard_sync(@agency)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def agency_params
-      params.require(:agency).permit(:name, :entranceDate, :deleteFlag)
+      params.require(:agency).permit(:id, :name, :entranceDate)
     end
 end
