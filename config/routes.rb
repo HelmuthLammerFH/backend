@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'login/index'
+
   resources :customer_in_tours
   resources :ressource_for_tours
   resources :ressource_typs
@@ -29,6 +31,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      get 'login/index'
       resources :customer_in_tours
       resources :ressource_for_tours
       resources :ressource_typs
@@ -42,9 +45,5 @@ Rails.application.routes.draw do
       resources :users
       resources :tour_guide_to_agenturs
     end
-  end
-
-  scope "/api/v2" do
-    resources :ressource_for_tours
   end
 end

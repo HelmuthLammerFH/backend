@@ -12,7 +12,7 @@
 			"description": "",
 			"item": [
 				{
-					"name": "/agencies/ID.json",
+					"name": "/agencies.json",
 					"request": {
 						"url": "{{url}}{{api}}{{version}}/agencies.json?clientID=1",
 						"method": "GET",
@@ -210,6 +210,51 @@
 			]
 		},
 		{
+			"name": "login",
+			"description": "",
+			"item": [
+				{
+					"name": "/login",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/login/index?clientID=1&username=roli&password=ddad",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ressource_for_tours",
+			"description": "",
+			"item": [
+				{
+					"name": "/ressource_for_tours.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/customer_in_tours.json?clientID=1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/ressource_for_tours.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/ressource_for_tours.json?clientID=1",
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "status",
 			"description": "",
 			"item": [
@@ -262,9 +307,9 @@
 			"description": "",
 			"item": [
 				{
-					"name": "/tour_guides.json",
+					"name": "/tourguides.json",
 					"request": {
-						"url": "{{url}}{{api}}{{version}}/tour_guides.json?clientID=1",
+						"url": "{{url}}{{api}}{{version}}/tourguides.json?clientID=1",
 						"method": "GET",
 						"header": [
 							{
@@ -282,9 +327,9 @@
 					"response": []
 				},
 				{
-					"name": "/tour_guides.json",
+					"name": "/tourguides.json",
 					"request": {
-						"url": "{{url}}{{api}}{{version}}/tour_guides.json?clientID=1",
+						"url": "{{url}}{{api}}{{version}}/tourguides.json?clientID=1",
 						"method": "POST",
 						"header": [
 							{
@@ -295,16 +340,16 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"user_id\": 1,\n\t\"agency_id\": 1\n}"
+							"raw": "{\n\t\"user_id\": 2,\n\t\"agency_id\": 1\n}"
 						},
 						"description": ""
 					},
 					"response": []
 				},
 				{
-					"name": "/tour_guides/ID.json",
+					"name": "/tourguides/ID.json",
 					"request": {
-						"url": "{{url}}{{api}}{{version}}/tour_guides/1.json?clientID=1",
+						"url": "{{url}}{{api}}{{version}}/tourguides/2.json?clientID=1",
 						"method": "PUT",
 						"header": [
 							{
@@ -328,9 +373,9 @@
 			"description": "",
 			"item": [
 				{
-					"name": "/tour_positions/ID.json",
+					"name": "/tourpositions.json",
 					"request": {
-						"url": "{{url}}{{api}}{{version}}/tour_positions.json?clientID=1",
+						"url": "{{url}}{{api}}{{version}}/tourpositions.json?clientID=1",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -339,9 +384,9 @@
 					"response": []
 				},
 				{
-					"name": "/tour_positions/ID.json",
+					"name": "/tourpositions/ID.json",
 					"request": {
-						"url": "{{url}}{{api}}{{version}}/tour_positions/1.json?clientID=1",
+						"url": "{{url}}{{api}}{{version}}/tourpositions/1.json?clientID=1",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -350,9 +395,9 @@
 					"response": []
 				},
 				{
-					"name": "/tour_positions.json",
+					"name": "/tourpositions.json",
 					"request": {
-						"url": "{{url}}{{api}}{{version}}/tour_positions.json?clientID=1",
+						"url": "{{url}}{{api}}{{version}}/tourpositions.json?clientID=1",
 						"method": "POST",
 						"header": [
 							{
@@ -363,16 +408,16 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\": 1234,\n\t\"name\": \"Flodo\"\n}"
+							"raw": "{\n\t\"id\": 12344,\n\t\"name\": \"Flodo\"\n}"
 						},
 						"description": ""
 					},
 					"response": []
 				},
 				{
-					"name": "/tour_positions/ID.json",
+					"name": "/tourpositions/ID.json",
 					"request": {
-						"url": "{{url}}{{api}}{{version}}/tour_positions/1234.json?clientID=1",
+						"url": "{{url}}{{api}}{{version}}/tourpositions/1234.json?clientID=1",
 						"method": "PUT",
 						"header": [
 							{
@@ -383,16 +428,16 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\": 1234,\n\t\"name\": \"Flodo\"\n}"
+							"raw": "{\n\t\"name\": \"Flodosvd\"\n}"
 						},
 						"description": ""
 					},
 					"response": []
 				},
 				{
-					"name": "/tour_positions/ID.json",
+					"name": "/tourpositions/ID.json",
 					"request": {
-						"url": "{{url}}{{api}}{{version}}/tour_positions/1234.json?clientID=1",
+						"url": "{{url}}{{api}}{{version}}/tourpositions/12344.json?clientID=1",
 						"method": "DELETE",
 						"header": [
 							{
@@ -468,7 +513,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"SchönbrunnerAllee Toure\",\n  \"status_id\": 1,\n  \"Tour_Guide_id\": 1,\n  \"id\": 1234\n}\n"
+							"raw": "{\n  \"name\": \"SchönbrunnerAllee Toure\",\n  \"status_id\": 1,\n  \"Tourguide_id\": 2,\n  \"id\": 1234\n}\n"
 						},
 						"description": ""
 					},
