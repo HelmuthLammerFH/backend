@@ -76,6 +76,6 @@ class Api::V1::RessourceForToursController < Api::V1::BaseController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def ressource_for_tour_params
-      params.require(:ressource_for_tour).permit(:id, :createdFrom, :picture, :changedFrom, :RessourceTyp_id)
+      params.require(:ressource_for_tour).permit(:id, :createdFrom, :picture, :changedFrom, :Ressource_Typ_id, :Tour_id)
     end
 end

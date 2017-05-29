@@ -25,7 +25,7 @@
         <td><%= ressource_for_tour.syncedFrom %></td>
         <td><%= ressource_for_tour.deleteFlag %></td>
         <td><%= ressource_for_tour.RessourceTyp %></td>
-        <td><%= ressource_for_tour.Tour %></td>
+        <td><%= ressource_for_tour.Tour.id %></td>
         <td><%= link_to 'Show', ressource_for_tour %></td>
         <td><%= link_to 'Edit', edit_ressource_for_tour_path(ressource_for_tour) %></td>
         <td><%= link_to 'Destroy', ressource_for_tour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
