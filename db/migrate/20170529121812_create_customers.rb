@@ -5,7 +5,7 @@ class CreateCustomers < ActiveRecord::Migration[5.0]
       t.string :createdFrom
       t.string :changedFrom
       t.integer :syncedFrom
-      t.boolean :deleteFlag
+      t.boolean :deleteFlag, :default=>false
       t.belongs_to :user, foreign_key: true
 
       t.timestamps

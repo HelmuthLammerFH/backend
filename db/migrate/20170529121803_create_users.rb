@@ -12,7 +12,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :createdFrom
       t.string :changedFrom
       t.integer :syncedFrom
-      t.boolean :deleteFlag
+      t.boolean :deleteFlag, :default=>false
 
       t.timestamps
     end

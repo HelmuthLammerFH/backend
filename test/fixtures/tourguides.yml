@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  tourGuideSince: 2017-05-28
+  tourGuideSince: 2017-05-29
   createdFrom: MyString
   changedFrom: MyString
   syncedFrom: 1
@@ -10,7 +10,7 @@ one:
   agency: one
 
 two:
-  tourGuideSince: 2017-05-28
+  tourGuideSince: 2017-05-29
   createdFrom: MyString
   changedFrom: MyString
   syncedFrom: 1

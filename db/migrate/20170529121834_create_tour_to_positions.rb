@@ -6,7 +6,7 @@ class CreateTourToPositions < ActiveRecord::Migration[5.0]
       t.string :createdFrom
       t.string :changedFrom
       t.integer :syncedFrom
-      t.boolean :deleteFlag
+      t.boolean :deleteFlag, :default=>false
       t.belongs_to :tour, foreign_key: true
       t.belongs_to :Tourposition, foreign_key: true
 

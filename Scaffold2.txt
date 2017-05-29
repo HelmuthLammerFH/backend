@@ -8,7 +8,7 @@ rails generate scaffold Tour name:string maxAttendees:integer price:float startD
 rails generate scaffold Tourposition name:string position:string description:string price:float createdFrom:string changedFrom:string syncedFrom:integer deleteFlag:boolean
 rails generate scaffold TourToPosition startDate:datetime endDate:datetime createdFrom:string changedFrom:string syncedFrom:integer deleteFlag:boolean tour:belongs_to Tourposition:belongs_to
 rails generate scaffold RessourceTyp name:string createdFrom:string changedFrom:string syncedFrom:integer deleteFlag:boolean
-rails generate scaffold RessourceForTour createdFrom:string picture:binary changedFrom:string syncedFrom:integer deleteFlag:boolean RessourceTyp:belongs_to
+rails generate scaffold RessourceForTour createdFrom:string picture:binary changedFrom:string syncedFrom:integer deleteFlag:boolean RessourceTyp:belongs_to Tour:belongs_to
 rails generate scaffold CustomerInTour bookedDate:datetime participated:integer starRating:integer feedbackTourGuid:string createdFrom:string changedFrom:string syncedFrom:integer deleteFlag:boolean customer:belongs_to tour:belongs_to
 
 
@@ -22,7 +22,7 @@ rails destroy scaffold Customer
 rails destroy scaffold Tourguide
 rails destroy scaffold Status
 rails destroy scaffold Tour
-rails destroy scaffold TourPosition
+rails destroy scaffold Tourposition
 rails destroy scaffold TourToPosition
 rails destroy scaffold RessourceTyp
 rails destroy scaffold RessourceForTour

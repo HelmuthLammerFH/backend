@@ -5,8 +5,9 @@ class CreateRessourceForTours < ActiveRecord::Migration[5.0]
       t.binary :picture
       t.string :changedFrom
       t.integer :syncedFrom
-      t.boolean :deleteFlag
+      t.boolean :deleteFlag, :default=>false
       t.belongs_to :Ressource_Typ, foreign_key: true
+      t.belongs_to :Tour, foreign_key: true
 
       t.timestamps
     end

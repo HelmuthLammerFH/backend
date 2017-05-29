@@ -7,6 +7,7 @@ one:
   syncedFrom: 1
   deleteFlag: false
   RessourceTyp: one
+  Tour: one
 
 two:
   createdFrom: MyString
@@ -15,3 +16,4 @@ two:
   syncedFrom: 1
   deleteFlag: false
   RessourceTyp: two
+  Tour: two

@@ -1,8 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  startDate: 2017-05-28 19:15:04
-  endDate: 2017-05-28 19:15:04
+  startDate: 2017-05-29 14:18:34
+  endDate: 2017-05-29 14:18:34
   createdFrom: MyString
   changedFrom: MyString
   syncedFrom: 1
@@ -11,8 +11,8 @@ one:
   Tourposition: one
 
 two:
-  startDate: 2017-05-28 19:15:04
-  endDate: 2017-05-28 19:15:04
+  startDate: 2017-05-29 14:18:34
+  endDate: 2017-05-29 14:18:34
   createdFrom: MyString
   changedFrom: MyString
   syncedFrom: 1

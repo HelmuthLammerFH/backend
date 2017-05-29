@@ -9,7 +9,7 @@ class CreateTours < ActiveRecord::Migration[5.0]
       t.string :createdFrom
       t.string :changedFrom
       t.integer :syncedFrom
-      t.boolean :deleteFlag
+      t.boolean :deleteFlag, :default=>false
       t.belongs_to :status, foreign_key: true
       t.belongs_to :Tourguide, foreign_key: true
 
