@@ -7,7 +7,11 @@ class Api::V1::RessourceForToursController < Api::V1::BaseController
   # GET /ressource_for_tours
   # GET /ressource_for_tours.json
   def index
-    @ressource_for_tours = RessourceForTour.all
+    if params['tour_id'] != nil
+      @ressource_for_tours = RessourceForTour.where("tour_id = ?", params['tour_id'])
+    else
+      @ressource_for_tours = RessourceForTour.all
+    end
   end
 
   # GET /ressource_for_tours/1
