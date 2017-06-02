@@ -91,6 +91,7 @@ class Api::V1::UsersController < Api::V1::BaseController
         @newtourguide['user_id'] = @user['id']
         @newtourguide['createdFrom'] = @user['createdFrom']
         @newtourguide['changedFrom'] = @user['changedFrom']
+        @newtourguide['tourGuideSince'] = DateTime.now.strftime("%Y-%m-%d")
         @newtourguide = set_sync_state(@newtourguide)
         @newtourguide.save
       end
