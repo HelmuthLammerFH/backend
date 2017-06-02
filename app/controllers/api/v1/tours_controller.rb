@@ -28,12 +28,6 @@ class Api::V1::ToursController < Api::V1::BaseController
     @tour = Tour.new(tour_params)
     @tour = set_sync_state(@tour)
 
-    if tour_params['Tourguide_id'] != nil
-      @tourguide = Tourguide.where("user_id = #{ tour_params[:Tourguide_id] }").first
-      
-      @tour.Tourguide_id = @tourguide['id']
-    end
-
     respond_to do |format|
       if @tour.save
         format.html {redirect_to @tour, notice: 'Tour was successfully created.'}
@@ -49,11 +43,6 @@ class Api::V1::ToursController < Api::V1::BaseController
   # PATCH/PUT /tours/1.json
   def update
     @tour = set_sync_state(@tour)
-
-    if tour_params['Tourguide_id'] != nil
-      @tourguide = Tourguide.where("user_id = #{ tour_params[:Tourguide_id] }").first
-      @tour.Tourguide_id = @tourguide['id']
-    end
 
     respond_to do |format|
       if @tour.update(tour_params)
