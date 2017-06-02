@@ -42,7 +42,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      get 'login/index'
+      get 'login' => 'login#index'
       put 'customer_in_tour_custom' => 'customer_in_tour_custom#update'
       resources :customer_in_tours
       resources :ressource_for_tours
