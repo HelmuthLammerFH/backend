@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   resources :users
   resources :tour_guide_to_agenturs
   get 'welcome/index'
+  put 'customer_in_tour_custom' => 'customer_in_tour_custom#update'
 
   root 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -42,6 +43,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get 'login/index'
+      put 'customer_in_tour_custom' => 'customer_in_tour_custom#update'
       resources :customer_in_tours
       resources :ressource_for_tours
       resources :ressource_typs
