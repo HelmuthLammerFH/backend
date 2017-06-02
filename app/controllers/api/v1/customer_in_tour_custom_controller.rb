@@ -10,6 +10,7 @@ class Api::V1::CustomerInTourCustomController < Api::V1::BaseController
     elsif params['participated'] != nil
       @customer_in_tour['participated'] = params['participated']
     end
+    @customer_in_tour = set_sync_state(@customer_in_tour)
 
     if @customer_in_tour.save
         render json: @customer_in_tour, :status => :ok
