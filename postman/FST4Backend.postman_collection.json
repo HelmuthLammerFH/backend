@@ -153,6 +153,62 @@
 			]
 		},
 		{
+			"name": "customer_in_tour_custom",
+			"description": "",
+			"item": [
+				{
+					"name": "/customer_in_tour_custom.json copy",
+					"request": {
+						"url": {
+							"raw": "{{url}}{{api}}{{version}}/customer_in_tour_custom.json?clientID=1&user_id=81&tour_id=83",
+							"auth": {},
+							"host": [
+								"{{url}}{{api}}{{version}}"
+							],
+							"path": [
+								"customer_in_tour_custom.json"
+							],
+							"query": [
+								{
+									"key": "clientID",
+									"value": "1",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "user_id",
+									"value": "81",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "tour_id",
+									"value": "83",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"starRating\": 5\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "customers_in_tours",
 			"description": "",
 			"item": [
@@ -168,9 +224,57 @@
 					"response": []
 				},
 				{
+					"name": "/customer_in_tours/ID.json",
+					"request": {
+						"url": {
+							"raw": "{{url}}{{api}}{{version}}/customer_in_tours/2.json?clientID=1",
+							"auth": {},
+							"host": [
+								"{{url}}{{api}}{{version}}"
+							],
+							"path": [
+								"customer_in_tours",
+								"2.json"
+							],
+							"query": [
+								{
+									"key": "clientID",
+									"value": "1",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
 					"name": "/customer_in_tours.json",
 					"request": {
-						"url": "{{url}}{{api}}{{version}}/customer_in_tours.json?clientID=1",
+						"url": {
+							"raw": "{{url}}{{api}}{{version}}/customer_in_tours.json?clientID=1",
+							"auth": {},
+							"host": [
+								"{{url}}{{api}}{{version}}"
+							],
+							"path": [
+								"customer_in_tours.json"
+							],
+							"query": [
+								{
+									"key": "clientID",
+									"value": "1",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -181,7 +285,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"customer_id\": 3,\n\t\"tour_id\": 1\n}"
+							"raw": "{\n\t\"customer_id\": 81,\n\t\"tour_id\": 83\n}"
 						},
 						"description": ""
 					},
@@ -190,7 +294,25 @@
 				{
 					"name": "/customer_in_tours/ID.json",
 					"request": {
-						"url": "{{url}}{{api}}{{version}}/customer_in_tours/1.json?clientID=1",
+						"url": {
+							"raw": "{{url}}{{api}}{{version}}/customer_in_tour_custom?clientID=1",
+							"auth": {},
+							"host": [
+								"{{url}}{{api}}{{version}}"
+							],
+							"path": [
+								"customer_in_tour_custom"
+							],
+							"query": [
+								{
+									"key": "clientID",
+									"value": "1",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
 						"method": "PUT",
 						"header": [
 							{
@@ -201,7 +323,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"user_id\": 3,\n\t\"tour_id\": 1\n}"
+							"raw": "{\n\t\"user_id\": 2,\n\t\"tour_id\": 12342\n}"
 						},
 						"description": ""
 					},
@@ -216,7 +338,37 @@
 				{
 					"name": "/login",
 					"request": {
-						"url": "{{url}}{{api}}{{version}}/login/index?clientID=1&username=roli&password=ddad",
+						"url": {
+							"raw": "{{url}}{{api}}{{version}}/login?clientID=1&username=roli&password=ddad",
+							"auth": {},
+							"host": [
+								"{{url}}{{api}}{{version}}"
+							],
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "clientID",
+									"value": "1",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "username",
+									"value": "roli",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "password",
+									"value": "ddad",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -233,7 +385,31 @@
 				{
 					"name": "/ressource_for_tours.json",
 					"request": {
-						"url": "{{url}}{{api}}{{version}}/customer_in_tours.json?clientID=1",
+						"url": {
+							"raw": "{{url}}{{api}}{{version}}/ressource_for_tours.json?clientID=1&tour_id=83",
+							"auth": {},
+							"host": [
+								"{{url}}{{api}}{{version}}"
+							],
+							"path": [
+								"ressource_for_tours.json"
+							],
+							"query": [
+								{
+									"key": "clientID",
+									"value": "1",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "tour_id",
+									"value": "83",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -244,10 +420,68 @@
 				{
 					"name": "/ressource_for_tours.json",
 					"request": {
-						"url": "{{url}}{{api}}{{version}}/ressource_for_tours.json?clientID=1",
+						"url": {
+							"raw": "{{url}}{{api}}{{version}}/ressource_for_tours.json?clientID=1",
+							"auth": {},
+							"host": [
+								"{{url}}{{api}}{{version}}"
+							],
+							"path": [
+								"ressource_for_tours.json"
+							],
+							"query": [
+								{
+									"key": "clientID",
+									"value": "1",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
 						"method": "POST",
-						"header": [],
-						"body": {},
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 3,\n\t\"name\": \"picture\",\n\t\"picture\": \"base64 string goes here\",\n\t\"Tour_id\": 83\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/ressource_for_tours/ID.json",
+					"request": {
+						"url": "{{url}}{{api}}{{version}}/ressource_for_tours/1.json?clientID=1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "picture",
+									"type": "file",
+									"src": "patrick.jpg"
+								},
+								{
+									"key": "createdFrom",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
 						"description": ""
 					},
 					"response": []
@@ -283,7 +517,25 @@
 				{
 					"name": "/statuses.json",
 					"request": {
-						"url": "{{url}}{{api}}{{version}}/statuses.json?clientID=1",
+						"url": {
+							"raw": "{{url}}{{api}}{{version}}/statuses.json?clientID=1",
+							"auth": {},
+							"host": [
+								"{{url}}{{api}}{{version}}"
+							],
+							"path": [
+								"statuses.json"
+							],
+							"query": [
+								{
+									"key": "clientID",
+									"value": "1",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -294,7 +546,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\": 1,\n\t\"name\": \"Status 1\"\n}"
+							"raw": "{\n\t\"id\": 2,\n\t\"name\": \"Status 2\"\n}"
 						},
 						"description": ""
 					},
@@ -329,7 +581,25 @@
 				{
 					"name": "/tourguides.json",
 					"request": {
-						"url": "{{url}}{{api}}{{version}}/tourguides.json?clientID=1",
+						"url": {
+							"raw": "{{url}}{{api}}{{version}}/tourguides.json?clientID=1",
+							"auth": {},
+							"host": [
+								"{{url}}{{api}}{{version}}"
+							],
+							"path": [
+								"tourguides.json"
+							],
+							"query": [
+								{
+									"key": "clientID",
+									"value": "1",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -340,7 +610,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"user_id\": 2,\n\t\"agency_id\": 1\n}"
+							"raw": "{\n\t\"user_id\": 2,\n\t\"createdFrom\": \"Roland the awesome guy\"\n}"
 						},
 						"description": ""
 					},
@@ -397,7 +667,25 @@
 				{
 					"name": "/tourpositions.json",
 					"request": {
-						"url": "{{url}}{{api}}{{version}}/tourpositions.json?clientID=1",
+						"url": {
+							"raw": "{{url}}{{api}}{{version}}/tourpositions.json?clientID=1",
+							"auth": {},
+							"host": [
+								"{{url}}{{api}}{{version}}"
+							],
+							"path": [
+								"tourpositions.json"
+							],
+							"query": [
+								{
+									"key": "clientID",
+									"value": "1",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -408,7 +696,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\": 12344,\n\t\"name\": \"Flodo\"\n}"
+							"raw": "{\n\t\"id\": 84,\n\t\"name\": \"Flodo\"\n}"
 						},
 						"description": ""
 					},
@@ -417,7 +705,26 @@
 				{
 					"name": "/tourpositions/ID.json",
 					"request": {
-						"url": "{{url}}{{api}}{{version}}/tourpositions/1234.json?clientID=1",
+						"url": {
+							"raw": "{{url}}{{api}}{{version}}/tourpositions/84.json?clientID=1",
+							"auth": {},
+							"host": [
+								"{{url}}{{api}}{{version}}"
+							],
+							"path": [
+								"tourpositions",
+								"84.json"
+							],
+							"query": [
+								{
+									"key": "clientID",
+									"value": "1",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
 						"method": "PUT",
 						"header": [
 							{
@@ -457,16 +764,72 @@
 			]
 		},
 		{
-			"name": "tour_positions_to_tour",
+			"name": "tour_to_positions",
 			"description": "",
 			"item": [
 				{
-					"name": "/tour_positions_to_tour.json",
+					"name": "/tour_to_positions.json",
 					"request": {
-						"url": "{{url}}{{api}}{{version}}/tour_positions_to_tour.json?clientID=1",
+						"url": {
+							"raw": "{{url}}{{api}}{{version}}/tour_to_positions.json?clientID=1",
+							"auth": {},
+							"host": [
+								"{{url}}{{api}}{{version}}"
+							],
+							"path": [
+								"tour_to_positions.json"
+							],
+							"query": [
+								{
+									"key": "clientID",
+									"value": "1",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
 						"method": "GET",
 						"header": [],
 						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/tour_to_positions.json",
+					"request": {
+						"url": {
+							"raw": "{{url}}{{api}}{{version}}/tour_to_positions.json?clientID=1",
+							"auth": {},
+							"host": [
+								"{{url}}{{api}}{{version}}"
+							],
+							"path": [
+								"tour_to_positions.json"
+							],
+							"query": [
+								{
+									"key": "clientID",
+									"value": "1",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 85,\n\t\"tour_id\": 83,\n\t\"Tourposition_id\": 84\n}"
+						},
 						"description": ""
 					},
 					"response": []
@@ -491,7 +854,26 @@
 				{
 					"name": "/tours/ID.json?clientID=1",
 					"request": {
-						"url": "{{url}}{{api}}{{version}}/tours/2.json?clientID=2",
+						"url": {
+							"raw": "{{url}}{{api}}{{version}}/tours/99.json?clientID=2",
+							"auth": {},
+							"host": [
+								"{{url}}{{api}}{{version}}"
+							],
+							"path": [
+								"tours",
+								"99.json"
+							],
+							"query": [
+								{
+									"key": "clientID",
+									"value": "2",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -502,7 +884,25 @@
 				{
 					"name": "/tours.json?clientID=1",
 					"request": {
-						"url": "{{url}}{{api}}{{version}}/tours.json?clientID=1",
+						"url": {
+							"raw": "{{url}}{{api}}{{version}}/tours.json?clientID=1",
+							"auth": {},
+							"host": [
+								"{{url}}{{api}}{{version}}"
+							],
+							"path": [
+								"tours.json"
+							],
+							"query": [
+								{
+									"key": "clientID",
+									"value": "1",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -513,7 +913,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"SchönbrunnerAllee Toure\",\n  \"status_id\": 1,\n  \"Tourguide_id\": 2,\n  \"id\": 1234\n}\n"
+							"raw": "{\n  \"name\": \"SchönbrunnerAllee Toure\",\n  \"status_id\": 1,\n  \"Tourguide_id\": 81,\n  \"id\": 84\n}\n"
 						},
 						"description": ""
 					},
@@ -522,7 +922,26 @@
 				{
 					"name": "/tours/ID.json?clientID=1",
 					"request": {
-						"url": "{{url}}{{api}}{{version}}/tours/2.json?clientID=2",
+						"url": {
+							"raw": "{{url}}{{api}}{{version}}/tours/83.json?clientID=2",
+							"auth": {},
+							"host": [
+								"{{url}}{{api}}{{version}}"
+							],
+							"path": [
+								"tours",
+								"83.json"
+							],
+							"query": [
+								{
+									"key": "clientID",
+									"value": "2",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
 						"method": "PUT",
 						"header": [
 							{
@@ -533,7 +952,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\":\"Roland\",\n  \"status_id\": 1 \n}\n"
+							"raw": "{\n  \"name\":\"Roland testet sync\",\n  \"status_id\": 1 \n}\n"
 						},
 						"description": ""
 					},
@@ -579,7 +998,26 @@
 				{
 					"name": "/users/ID.json",
 					"request": {
-						"url": "{{url}}{{api}}{{version}}/users/1234.json?clientID=1",
+						"url": {
+							"raw": "{{url}}{{api}}{{version}}/users/83.json?clientID=1",
+							"auth": {},
+							"host": [
+								"{{url}}{{api}}{{version}}"
+							],
+							"path": [
+								"users",
+								"83.json"
+							],
+							"query": [
+								{
+									"key": "clientID",
+									"value": "1",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -588,29 +1026,28 @@
 					"response": []
 				},
 				{
-					"name": "/users.json",
-					"request": {
-						"url": "{{url}}{{api}}{{version}}/users.json?clientID=1",
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"id\": 1234,\n\t\"firstname\": \"Roland\"\n}"
-						},
-						"description": ""
-					},
-					"response": []
-				},
-				{
 					"name": "/users/ID.json",
 					"request": {
-						"url": "{{url}}{{api}}{{version}}/users/1234.json?clientID=1",
+						"url": {
+							"raw": "{{url}}{{api}}{{version}}/users/83.json?clientID=1",
+							"auth": {},
+							"host": [
+								"{{url}}{{api}}{{version}}"
+							],
+							"path": [
+								"users",
+								"83.json"
+							],
+							"query": [
+								{
+									"key": "clientID",
+									"value": "1",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
 						"method": "PUT",
 						"header": [
 							{
@@ -621,7 +1058,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"firstname\": \"Roland 1234\"\n}"
+							"raw": "{\n\t\"firstname\": \"Rolanddddddddd\"\n}"
 						},
 						"description": ""
 					},
@@ -646,8 +1083,81 @@
 						"description": ""
 					},
 					"response": []
+				},
+				{
+					"name": "/users.json?clientID=1",
+					"request": {
+						"url": {
+							"raw": "{{url}}{{api}}{{version}}/users.json?clientID=1",
+							"auth": {},
+							"host": [
+								"{{url}}{{api}}{{version}}"
+							],
+							"path": [
+								"users.json"
+							],
+							"query": [
+								{
+									"key": "clientID",
+									"value": "1",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 82,\n  \"firstname\": \"Patrick 3.\",\n  \"userType\": 2\n}\n"
+						},
+						"description": ""
+					},
+					"response": []
 				}
 			]
+		},
+		{
+			"name": "/new entries.json?clientID=1",
+			"request": {
+				"url": {
+					"raw": "{{url}}{{api}}{{version}}/get_all_new_entries?clientID=1&syncState=2",
+					"auth": {},
+					"host": [
+						"{{url}}{{api}}{{version}}"
+					],
+					"path": [
+						"get_all_new_entries"
+					],
+					"query": [
+						{
+							"key": "clientID",
+							"value": "1",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "syncState",
+							"value": "2",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
 		}
 	]
 }
