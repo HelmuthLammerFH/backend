@@ -1,0 +1,2 @@
+class CustomerInTourCustomController < ApplicationController
+end
