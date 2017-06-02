@@ -1,6 +1,7 @@
 class Api::V1::UsersController < Api::V1::BaseController
   before_action :set_model_local, only: [:edit, :update, :destroy, :show]
   before_action :guard_sync_local, only: [:edit, :update, :destroy]
+  before_action :guard_user_type, only: [:create]
 
   # GET /users
   # GET /users.json
@@ -74,8 +75,15 @@ class Api::V1::UsersController < Api::V1::BaseController
       guard_sync(@user)
     end
 
+    def guard_user_type
+      if params['userType'] == nil
+        render json: { error: "user type is missing" }, :status => :forbidden
+        return
+      end
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:id, :firstname, :lastname, :birthdate, :address, :city, :email, :username, :passwort, :createdFrom, :changedFrom)
+      params.require(:user).permit(:id, :firstname, :lastname, :birthdate, :address, :city, :email, :username, :passwort, :createdFrom, :changedFrom, :userType)
     end
 end
