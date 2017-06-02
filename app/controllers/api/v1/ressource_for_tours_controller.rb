@@ -1,6 +1,8 @@
 class Api::V1::RessourceForToursController < Api::V1::BaseController
   before_action :set_model_local, only: [:edit, :update, :destroy, :show]
   before_action :guard_sync_local, only: [:edit, :update, :destroy]
+  after_action :set_sync_state_on_object_after_read_local, only: [:show]
+  after_action :set_sync_state_on_array_after_read_local, only: [:index]
 
   # GET /ressource_for_tours
   # GET /ressource_for_tours.json
@@ -74,6 +76,15 @@ class Api::V1::RessourceForToursController < Api::V1::BaseController
     def guard_sync_local
       guard_sync(@ressource_for_tour)
     end
+
+  def set_sync_state_on_object_after_read_local
+    set_sync_state_on_object_after_read(@ressource_for_tour)
+  end
+
+  def set_sync_state_on_array_after_read_local
+    set_sync_state_on_array_after_read(@ressource_for_tours)
+  end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def ressource_for_tour_params
       params.require(:ressource_for_tour).permit(:id, :createdFrom, :picture, :changedFrom, :Tour_id)

@@ -1,7 +1,8 @@
 class Api::V1::CustomerInToursController < Api::V1::BaseController
   before_action :set_model_local, only: [:edit, :update, :destroy, :show]
   before_action :guard_sync_local, only: [:edit, :update, :destroy]
-
+  after_action :set_sync_state_on_object_after_read_local, only: [:show]
+  after_action :set_sync_state_on_array_after_read_local, only: [:index]
 
   # GET /customer_in_tours
   # GET /customer_in_tours.json
@@ -76,6 +77,14 @@ class Api::V1::CustomerInToursController < Api::V1::BaseController
   # checks for the app that requests and uses the correct id
   def guard_sync_local
     guard_sync(@customer_in_tour)
+  end
+
+  def set_sync_state_on_object_after_read_local
+    set_sync_state_on_object_after_read(@customer_in_tour)
+  end
+
+  def set_sync_state_on_array_after_read_local
+    set_sync_state_on_array_after_read(@customer_in_tours)
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

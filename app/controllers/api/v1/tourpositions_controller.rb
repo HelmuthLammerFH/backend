@@ -1,6 +1,8 @@
 class Api::V1::TourpositionsController < Api::V1::BaseController
   before_action :set_model_local, only: [:edit, :update, :destroy, :show]
   before_action :guard_sync_local, only: [:edit, :update, :destroy]
+  after_action :set_sync_state_on_object_after_read_local, only: [:show]
+  after_action :set_sync_state_on_array_after_read_local, only: [:index]
 
   # GET /tour_positions
   # GET /tour_positions.json
@@ -74,6 +76,14 @@ class Api::V1::TourpositionsController < Api::V1::BaseController
     def guard_sync_local
       guard_sync(@tourposition)
     end
+
+  def set_sync_state_on_object_after_read_local
+    set_sync_state_on_object_after_read(@tourposition)
+  end
+
+  def set_sync_state_on_array_after_read_local
+    set_sync_state_on_array_after_read(@tourpositions)
+  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_position_params

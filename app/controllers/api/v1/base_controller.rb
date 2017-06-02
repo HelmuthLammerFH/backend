@@ -31,4 +31,22 @@ class Api::V1::BaseController < ApplicationController
       render json: { error: "clientID is missing" }, :status => :forbidden
     end
   end
+
+  def set_sync_state_on_object_after_read (model)
+    if params[:clientID].to_s == '2' && model.syncedFrom == 1
+      model.syncedFrom = 0
+      model.save
+    end
+  end
+
+  def set_sync_state_on_array_after_read (models)
+    if params[:clientID].to_s == '2'
+      models.each do |model|
+        if model.syncedFrom == 1
+          model.syncedFrom = 0
+          model.save
+        end
+      end
+    end
+  end
 end
