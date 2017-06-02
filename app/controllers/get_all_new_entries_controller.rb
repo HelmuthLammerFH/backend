@@ -1,0 +1,2 @@
+class GetAllNewEntriesController < ApplicationController
+end
