@@ -87,6 +87,6 @@ class Api::V1::TourToPositionsController < Api::V1::BaseController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def tour_to_position_params
-    params.require(:tour_to_position).permit(:startDate, :endDate, :createdFrom, :changedFrom, :tour_id, :TourPosition_id)
+    params.require(:tour_to_position).permit(:startDate, :endDate, :createdFrom, :changedFrom, :tour_id, :Tourposition_id)
   end
 end
