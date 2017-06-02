@@ -7,9 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Status.create(
-          name:"Planung"
+          id:"1", name:"Planung"
 )
 
+Status.create(
+    id:"1", name:"Laeuft"
+)
 
 
 
@@ -33,7 +36,7 @@ User.create(
 
 
 Customer.create(
-            user_id:"2", note:"testeintrag"
+    user_id:"2", note:"testeintrag"
 )
 
 Customer.create(
@@ -49,21 +52,40 @@ Tourguide.create(
 )
 Tour.create(
 
-    name:'SchoenbrunnTour',maxAttendees:12,price:1234.0,startDate:'2017-05-23T15:33:00.000',endDate:'2017-05-23T15:33:00.000',createdFrom:'Mr' ,changedFrom:'Roland',syncedFrom:1 , Tourguide_id: "1"
+    id:"1", name:'SchoenbrunnTour',maxAttendees:12,price:1234.0,startDate:'2017-05-23T15:33:00.000',endDate:'2017-05-23T15:33:00.000',createdFrom:'Mr' ,changedFrom:'Roland',syncedFrom:1 , Tourguide_id: "1"
 )
 Tour.create(
 
-    name:'Innenstadt',maxAttendees:22,price:134.0,startDate:'2017-04-21T15:33:00.000',endDate:'2017-04-21T15:33:00.000',createdFrom:'RM' ,changedFrom:'DA',syncedFrom:1, Tourguide_id: "1"
+    id:"2", name:'Innenstadt',maxAttendees:22,price:134.0,startDate:'2017-04-21T15:33:00.000',endDate:'2017-04-21T15:33:00.000',createdFrom:'RM' ,changedFrom:'DA',syncedFrom:1, Tourguide_id: "1"
 )
 Tour.create(
 
-    name:'Flodo',maxAttendees:122,price:5.0,startDate:'2016-04-21T15:33:00.000',endDate:'2016-04-21T15:33:00.000',createdFrom:'RM' ,changedFrom:'DA',syncedFrom:1, Tourguide_id: "1"
+    id:"3", name:'Flodo',maxAttendees:122,price:5.0,startDate:'2016-04-21T15:33:00.000',endDate:'2016-04-21T15:33:00.000',createdFrom:'RM' ,changedFrom:'DA',syncedFrom:1, Tourguide_id: "1"
 )
 Tourposition.create(
-     name:"Schlafzimmer Sisi", position:"113111", createdFrom:"rieser", changedFrom:"rieser", syncedFrom:"0", deleteFlag:"0"
+     id:"1", name:"Schlafzimmer Sisi", position:"113111", createdFrom:"rieser", changedFrom:"rieser", syncedFrom:"0", deleteFlag:"0"
 )
 
 
 Tourposition.create(
-    name:"Riesenrad Prater", position:"4532432", createdFrom:"rieser", changedFrom:"rieser", syncedFrom:"0", deleteFlag:"0"
+    id:"2", name:"Riesenrad Prater", position:"4532432", createdFrom:"rieser", changedFrom:"rieser", syncedFrom:"0", deleteFlag:"0"
+)
+
+Tourtour_to_positions.create(
+  id:"1", tour_id:"1",  tourposition_id:"1"
+)
+
+
+Tourtour_to_positions.create(
+    id:"2", tour_id:"1",  tourposition_id:"2"
+)
+
+
+Tourtour_to_positions.create(
+    id:"3", tour_id:"2",  tourposition_id:"1"
+)
+
+
+Tourtour_to_positions.create(
+    id:"4", tour_id:"2",  tourposition_id:"2"
 )
