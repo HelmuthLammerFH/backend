@@ -2,6 +2,7 @@ class Api::V1::UsersController < Api::V1::BaseController
   before_action :set_model_local, only: [:edit, :update, :destroy, :show]
   before_action :guard_sync_local, only: [:edit, :update, :destroy]
   before_action :guard_user_type, only: [:create]
+  after_action :add_customer_or_tourguide, only: [:create]
 
   # GET /users
   # GET /users.json
@@ -73,6 +74,26 @@ class Api::V1::UsersController < Api::V1::BaseController
     # checks for the app that requests and uses the correct id
     def guard_sync_local
       guard_sync(@user)
+    end
+
+    def add_customer_or_tourguide
+      if params['userType'].to_s == '1'
+        @newcustomer = Customer.new()
+        @newcustomer['id'] = @user['id']
+        @newcustomer['user_id'] = @user['id']
+        @newcustomer['createdFrom'] = @user['createdFrom']
+        @newcustomer['changedFrom'] = @user['changedFrom']
+        @newcustomer = set_sync_state(@newcustomer)
+        @newcustomer.save
+      elsif params['userType'].to_s == '2'
+        @newtourguide = Tourguide.new()
+        @newtourguide['id'] = @user['id']
+        @newtourguide['user_id'] = @user['id']
+        @newtourguide['createdFrom'] = @user['createdFrom']
+        @newtourguide['changedFrom'] = @user['changedFrom']
+        @newtourguide = set_sync_state(@newtourguide)
+        @newtourguide.save
+      end
     end
 
     def guard_user_type
