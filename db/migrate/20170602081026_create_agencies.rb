@@ -1,11 +1,12 @@
-class CreateStatuses < ActiveRecord::Migration[5.0]
+class CreateAgencies < ActiveRecord::Migration[5.0]
   def change
-    create_table :statuses do |t|
+    create_table :agencies do |t|
       t.string :name
+      t.date :entranceDate
       t.string :createdFrom
       t.string :changedFrom
       t.integer :syncedFrom
-      t.boolean :deleteFlag, :default=>false
+      t.boolean :deleteFlag
 
       t.timestamps
     end

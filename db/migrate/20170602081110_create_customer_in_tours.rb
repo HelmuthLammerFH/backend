@@ -8,7 +8,7 @@ class CreateCustomerInTours < ActiveRecord::Migration[5.0]
       t.string :createdFrom
       t.string :changedFrom
       t.integer :syncedFrom
-      t.boolean :deleteFlag, :default=>false
+      t.boolean :deleteFlag
       t.belongs_to :customer, foreign_key: true
       t.belongs_to :tour, foreign_key: true
 

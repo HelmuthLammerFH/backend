@@ -6,7 +6,6 @@ one:
   changedFrom: MyString
   syncedFrom: 1
   deleteFlag: false
-  RessourceTyp: one
   Tour: one
 
 two:
@@ -15,5 +14,4 @@ two:
   changedFrom: MyString
   syncedFrom: 1
   deleteFlag: false
-  RessourceTyp: two
   Tour: two

@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :customer_in_tours
+  resources :ressource_for_tours
+  resources :tour_to_positions
+  resources :tourpositions
+  resources :tours
+  resources :statuses
+  resources :tourguides
+  resources :customers
+  resources :agencies
+  resources :users
   get 'login/index'
 
   resources :customer_in_tours
