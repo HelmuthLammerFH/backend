@@ -29,18 +29,13 @@ class Api::V1::CustomerInToursController < Api::V1::BaseController
     @customer_in_tour = CustomerInTour.new(customer_in_tour_params)
     @customer_in_tour = set_sync_state(@customer_in_tour)
 
-    if customer_in_tour_params['customer_id'] != nil
-      @customer = Customer.where("user_id = #{ customer_in_tour_params['customer_id'] }").first
-      @customer_in_tour.customer_id = @customer['id']
-    end
-
     respond_to do |format|
       if @customer_in_tour.save
-        format.html { redirect_to @customer_in_tour, notice: 'Customer in tour was successfully created.' }
-        format.json { render :show, status: :created, location: @customer_in_tour }
+        format.html {redirect_to @customer_in_tour, notice: 'Customer in tour was successfully created.'}
+        format.json {render :show, status: :created, location: @customer_in_tour}
       else
-        format.html { render :new }
-        format.json { render json: @customer_in_tour.errors, status: :unprocessable_entity }
+        format.html {render :new}
+        format.json {render json: @customer_in_tour.errors, status: :unprocessable_entity}
       end
     end
   end
@@ -50,18 +45,13 @@ class Api::V1::CustomerInToursController < Api::V1::BaseController
   def update
     @customer_in_tour = set_sync_state(@customer_in_tour)
 
-    if customer_in_tour_params['customer_id'] != nil
-      @customer = Customer.where("user_id = #{ customer_in_tour_params['customer_id'] }").first
-      @customer_in_tour.customer_id = @customer['id']
-    end
-
     respond_to do |format|
       if @customer_in_tour.update(customer_in_tour_params)
-        format.html { redirect_to @customer_in_tour, notice: 'Customer in tour was successfully updated.' }
-        format.json { render :show, status: :ok, location: @customer_in_tour }
+        format.html {redirect_to @customer_in_tour, notice: 'Customer in tour was successfully updated.'}
+        format.json {render :show, status: :ok, location: @customer_in_tour}
       else
-        format.html { render :edit }
-        format.json { render json: @customer_in_tour.errors, status: :unprocessable_entity }
+        format.html {render :edit}
+        format.json {render json: @customer_in_tour.errors, status: :unprocessable_entity}
       end
     end
   end
@@ -71,25 +61,25 @@ class Api::V1::CustomerInToursController < Api::V1::BaseController
   def destroy
     @customer_in_tour.destroy
     respond_to do |format|
-      format.html { redirect_to customer_in_tours_url, notice: 'Customer in tour was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html {redirect_to customer_in_tours_url, notice: 'Customer in tour was successfully destroyed.'}
+      format.json {head :no_content}
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    # checks for the app that requests and uses the correct id
-    def set_model_local
-      @customer_in_tour = set_model(CustomerInTour)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  # checks for the app that requests and uses the correct id
+  def set_model_local
+    @customer_in_tour = set_model(CustomerInTour)
+  end
 
-    # checks for the app that requests and uses the correct id
-    def guard_sync_local
-      guard_sync(@customer_in_tour)
-    end
+  # checks for the app that requests and uses the correct id
+  def guard_sync_local
+    guard_sync(@customer_in_tour)
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def customer_in_tour_params
-      params.require(:customer_in_tour).permit(:bookedDate, :participated, :starRating, :feedbackTourGuid, :createdFrom, :changedFrom, :customer_id, :tour_id, :user_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def customer_in_tour_params
+    params.require(:customer_in_tour).permit(:bookedDate, :participated, :starRating, :feedbackTourGuid, :createdFrom, :changedFrom, :customer_id, :tour_id, :user_id)
+  end
 end
