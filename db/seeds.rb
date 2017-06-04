@@ -11,7 +11,7 @@ Status.create(
 )
 
 Status.create(
-    id:"1", name:"Laeuft"
+    id:"2", name:"Laeuft"
 )
 
 
