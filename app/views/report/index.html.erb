@@ -1,57 +1,76 @@
 <h1>Auswertungen</h1>
-
-
-
 <div class="row">
-
-  <div class="col-xs-12">
-
-    <!-- Einnahmen Infos  -->
-    <div class="row">
-      <div class="col-xs-12">
-        <h2>Umsatz</h2>
-      </div>
-      <div class="col-xs-3">VON: Datetime picker</div>
-      <div class="col-xs-3">BIS: Datetime picker</div>
-      <div class="col-xs-3">
-        <button>Reload</button>
-      </div>
-      <div class="col-xs-12">
-        <%= line_chart @linchartData %>
-      </div>
-    </div>
-
-    <!-- tour Guide Infos -->
-    <div class="row">
-      <div class="col-xs-12">
-        <h2>Tourguide Infos</h2>
-      </div>
-      <div class="col-xs-3">VON: Datetime picker</div>
-      <div class="col-xs-3">BIS: Datetime picker</div>
-      <div class="col-xs-3">
-        <button>Reload</button>
-      </div>
-      <div class="col-xs-12">
-        <%= column_chart @tourGuideData %>
-      </div>
-    </div>
-
-    <!-- -->
-    <div class="row">
-      <div class="col-xs-12">
-        <h2>Tour Informationen</h2>
-      </div>
-      <div class="col-xs-3">VON: Datetime picker</div>
-      <div class="col-xs-3">BIS: Datetime picker</div>
-      <div class="col-xs-3">
-        <button>Reload</button>
-      </div>
-      <div class="col-xs-12">
-        <%= line_chart @multipleSeries %>
-      </div>
-    </div>
-
+  <div class="col-sm-12">
+    <h3>Complete Income</h3>
+    <p><strong>€ <%= @totalMoney %></strong></p>
+  </div>
+  <div class="col-sm-12">
+    <form action="/reports">
+      <input name="atg_sd" type="date" value="<%= params[:atg_sd] %>" placeholder="start date"/>
+      <input name="atg_ed" type="date" value="<%= params[:atg_ed] %>" placeholder="end date"/>
+      <button>Load</button>
+    </form>
 
   </div>
+  <div class="col-sm-12">
+    <h3>All Tour Guides</h3>
+  </div>
+  <div class="col-sm-12">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Tours</th>
+        <th>Action</th>
+      </tr>
+      </thead>
 
+      <tbody>
+      <% @tourguides.each_with_index do |tourguide, index| %>
+          <tr>
+            <td><%= tourguide.user.firstname %></td>
+            <td><%= tourguide.user.lastname %></td>
+            <td><%= @tourscount[index] %></td>
+            <td><%= link_to 'Show', tourguide %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-sm-12">
+    <h3>All Tours</h3>
+  </div>
+  <div class="col-sm-12">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Maxattendees</th>
+        <th>Price</th>
+        <th>Startdate</th>
+        <th>Enddate</th>
+        <th>Status</th>
+        <th>Overall sum</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @tours.each_with_index do |tour, index| %>
+          <tr>
+            <td><%= tour.name %></td>
+            <td><%= tour.maxAttendees %></td>
+            <td><%= tour.price %></td>
+            <td><%= tour.startDate %></td>
+            <td><%= tour.endDate %></td>
+            <td><%= tour.status.name %></td>
+            <td><%= @tourssum[index] %></td>
+            <td><%= link_to 'Show', tour %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>

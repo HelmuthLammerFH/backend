@@ -10,6 +10,7 @@ class TourguidesController < ApplicationController
   # GET /tourguides/1
   # GET /tourguides/1.json
   def show
+    @tours = Tour.where('Tourguide_id = ?', @tourguide.id)
   end
 
   # GET /tourguides/new

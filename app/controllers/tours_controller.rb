@@ -10,6 +10,16 @@ class ToursController < ApplicationController
   # GET /tours/1
   # GET /tours/1.json
   def show
+    @customers_in_tours = CustomerInTour.where('tour_id = ?', @tour.id)
+    @users = []
+    @customers_in_tours.each do |cit|
+      @temp = User.where('id = ?', cit.customer_id).first
+      @users.push(@temp)
+    end
+
+    puts '######################'
+    puts json: @users
+    puts '######################'
   end
 
   # GET /tours/new

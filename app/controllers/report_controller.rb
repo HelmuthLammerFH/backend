@@ -1,37 +1,26 @@
 class ReportController < ApplicationController
   def index
-    @tourGuideData = [
-        ['Hubert', 12],
-        ['Franz', 22],
-        ['Herbert', 1],
-        ['Walter', 4],
-        ['Thomas', 7]
-    ]
+    @tours_startdate = params['atg_sd'] ? params['atg_sd'] : '2017-01-01'
+    @tours_enddate = params['atg_ed'] ? params['atg_ed'] : '2017-12-31'
 
-    @linchartData = [
-        ['12.12.2016', '133'],
-        ['14.12.2016', '143'],
-        ['16.12.2016', '323'],
-        ['18.12.2016', '893']
-    ]
+    @totalMoney = 0
 
-    #@CustomersPerTour  = Tour.joins(:Tourguide)
+    # tourguides
+    @tourguides = Tourguide.all
+    @tourscount = []
+    @tourguides.each do |tg|
+      @temp = Tour.where('Tourguide_id = ? AND startDate >= ? AND endDate <= ? ', tg.id, @tours_startdate, @tours_enddate).count
+      @tourscount.push(@temp)
+    end
 
-    #@CustomersPerTour = Tour.joins(:CustomerInTour)
-
-
-    # ======================
-    #  Anzahl ned korrekt :((
-    #   @CustomersPerTour = Tour.joins("INNER JOIN customer_in_tours as cit ON cit.tour_id = tours.id ").group(:id).select('count(tours.id) AS leit, tours.name')
-    # ======================
-
-    # CustomerInTour.group(:tour_id).count #works
-
-
-    puts "asdksalladlkdadkjlkajdöldöjsajdsadjsakdjsadjdsajdjdalk"
-    puts json: @CustomersPerTour
-
-
+    # tours
+    @tours = Tour.where('startDate >= ? AND endDate <= ? ', @tours_startdate, @tours_enddate)
+    @tourssum = []
+    @tours.each do |to|
+      @customers_in_tour = CustomerInTour.where('tour_id = ?', to.id).count
+      @sum = @customers_in_tour * to.price.to_f
+      @tourssum.push(@sum)
+      @totalMoney = @totalMoney + @sum
+    end
   end
-
 end
