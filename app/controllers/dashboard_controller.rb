@@ -8,27 +8,43 @@ class DashboardController < ApplicationController
         ['Thomas', 7]
     ]
 
-    @linchartData = [
-        ['12.12.2016', '133'],
-        ['14.12.2016', '143'],
-        ['16.12.2016', '323'],
-        ['18.12.2016', '893']
-    ]
 
-    #@CustomersPerTour  = Tour.joins(:Tourguide)
+    #Sales Chart
+    @sales_chart = []
+    @totalMoney = 0
+    @tours = Tour.order(:endDate)
 
-    #@CustomersPerTour = Tour.joins(:CustomerInTour)
-
-
-    # ======================
-    #  Anzahl ned korrekt :((
-    #   @CustomersPerTour = Tour.joins("INNER JOIN customer_in_tours as cit ON cit.tour_id = tours.id ").group(:id).select('count(tours.id) AS leit, tours.name')
-    # ======================
-
-    # CustomerInTour.group(:tour_id).count #works
+    @tourssum = []
+    @tours.each do |to|
+      @customers_in_tour = CustomerInTour.where('tour_id = ?', to.id).count
+      @sum = @customers_in_tour * to.price.to_f
+      @tourssum.push(@sum)
+      @totalMoney = @totalMoney + @sum
+      @temp = [to.startDate, @totalMoney]
+      @sales_chart.push(@temp)
+    end
+    #Sales Chart end
 
 
-    puts "asdksalladlkdadkjlkajdöldöjsajdsadjsakdjsadjdsajdjdalk"
-    puts json: @CustomersPerTour
+    #most booked tours
+    @mostBookedTours = []
+    @mostTours = CustomerInTour.group(:tour_id).order('count_id desc').count('id')
+    @i = 0
+    @mostTours.each do |key, value|
+      @tour1 = Tour.find(key)
+      # puts json: @tour1
+      @tempItem = []
+      @tempItem = [@tour1, value]
+      if @i < 3
+        @mostBookedTours.push(@tempItem)
+      end
+      @i+1
+      # puts key
+      #   puts value
+    end
+
+
+    #most booked tours end
+
   end
 end

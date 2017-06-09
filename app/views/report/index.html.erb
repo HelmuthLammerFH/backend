@@ -1,28 +1,28 @@
 <h1>Auswertungen</h1>
 <div class="row">
   <div class="col-sm-12">
-    <h3>Complete Income</h3>
+    <h3>Umsatz im ausgew&auml;hlten Zeitraum</h3>
     <p><strong>€ <%= @totalMoney %></strong></p>
   </div>
   <div class="col-sm-12">
     <form action="/reports">
       <input name="atg_sd" type="date" value="<%= params[:atg_sd] %>" placeholder="start date"/>
       <input name="atg_ed" type="date" value="<%= params[:atg_ed] %>" placeholder="end date"/>
-      <button>Load</button>
+      <button>Laden</button>
     </form>
 
   </div>
   <div class="col-sm-12">
-    <h3>All Tour Guides</h3>
+    <h3>Tourguide Details</h3>
   </div>
   <div class="col-sm-12">
     <table class="table table-bordered">
       <thead>
       <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
+        <th>Vorname</th>
+        <th>Nachname</th>
         <th>Tours</th>
-        <th>Action</th>
+        <th>Aktion</th>
       </tr>
       </thead>
 
@@ -32,7 +32,7 @@
             <td><%= tourguide.user.firstname %></td>
             <td><%= tourguide.user.lastname %></td>
             <td><%= @tourscount[index] %></td>
-            <td><%= link_to 'Show', tourguide %></td>
+            <td><%= link_to 'Anzeigen', tourguide %></td>
           </tr>
       <% end %>
       </tbody>
@@ -40,20 +40,20 @@
   </div>
 
   <div class="col-sm-12">
-    <h3>All Tours</h3>
+    <h3>Alle Touren</h3>
   </div>
   <div class="col-sm-12">
     <table class="table table-bordered">
       <thead>
       <tr>
         <th>Name</th>
-        <th>Maxattendees</th>
-        <th>Price</th>
-        <th>Startdate</th>
-        <th>Enddate</th>
+        <th>max. Teilnehmer</th>
+        <th>Preis</th>
+        <th>Start</th>
+        <th>Ende</th>
         <th>Status</th>
-        <th>Overall sum</th>
-        <th>Action</th>
+        <th>Einnahmen</th>
+        <th>Aktion</th>
       </tr>
       </thead>
 
