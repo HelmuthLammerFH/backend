@@ -1,12 +1,12 @@
 class DashboardController < ApplicationController
   def index
-    @tourGuideData = [
-        ['Hubert', 12],
-        ['Franz', 22],
-        ['Herbert', 1],
-        ['Walter', 4],
-        ['Thomas', 7]
-    ]
+    #@tourGuideData = [
+    #    ['Hubert', 12],
+    #    ['Franz', 22],
+    #    ['Herbert', 1],
+    #    ['Walter', 4],
+    #   ['Thomas', 7]
+    #]
 
 
     #Sales Chart
@@ -20,10 +20,13 @@ class DashboardController < ApplicationController
       @sum = @customers_in_tour * to.price.to_f
       @tourssum.push(@sum)
       @totalMoney = @totalMoney + @sum
-      @temp = [to.startDate, @totalMoney]
+      if to.startDate != nil
+        @startDate = to.startDate.strftime("%d/%m/%Y")
+      end
+      @temp = [@startDate, @totalMoney]
       @sales_chart.push(@temp)
     end
-    #Sales Chart end
+    # Sales Chart end
 
 
     #most booked tours
@@ -42,9 +45,34 @@ class DashboardController < ApplicationController
       # puts key
       #   puts value
     end
-
-
     #most booked tours end
+
+    # tourguides
+    @tourguides = Tourguide.all
+    @tourguidesChartData = []
+    @tourguides.each do |tg|
+      @temp = Tour.where('Tourguide_id = ?', tg.id).count
+      @tempArray = []
+      @tempArray.push(tg.user.firstname)
+      @tempArray.push(@temp)
+      @tourguidesChartData.push(@tempArray)
+    end
+    # tourguide end
+
+
+    # tours
+    @tours = Tour.all
+    @tourssum = []
+    @tours.each do |to|
+      @customers_in_tour = CustomerInTour.where('tour_id = ?', to.id).count
+      @sum = @customers_in_tour * to.price.to_f
+      @tempArray = []
+      @tempArray.push(to.name)
+      @tempArray.push(@sum)
+      @tourssum.push(@tempArray)
+    end
+    # tours end
+
 
   end
 end
