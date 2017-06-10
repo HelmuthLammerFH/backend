@@ -1,7 +1,7 @@
 class ReportController < ApplicationController
   def index
-    @tours_startdate = params['atg_sd'] ? params['atg_sd'] : '2017-01-01'
-    @tours_enddate = params['atg_ed'] ? params['atg_ed'] : '2017-12-31'
+    @tours_startdate = params['start'] ? params['start'] : '2017-01-01'
+    @tours_enddate = params['end'] ? params['end'] : '2017-12-31'
 
     @totalMoney = 0
 
