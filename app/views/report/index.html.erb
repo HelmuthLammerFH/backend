@@ -1,18 +1,14 @@
 <h1>Auswertungen</h1>
+<hr>
 <div class="row">
   <div class="col-sm-12">
-    <h3>Umsatz im ausgew&auml;hlten Zeitraum</h3>
-    <p><strong>€ <%= @totalMoney %></strong></p>
-  </div>
-  <div class="col-sm-12">
-
     <form class="form-inline" action="/reports">
       <div class="form-group">
-        <label for="startdate">Name</label>
+        <label for="startdate">Start Datum:</label>
         <input name="start" type="date" class="form-control" id="startdate" value="<%= @tours_startdate  %>">
       </div>
       <div class="form-group">
-        <label for="enddate">Email</label>
+        <label for="enddate">Ende Datum:</label>
         <input name="end" type="date" class="form-control" id="enddate" value="<%= @tours_enddate  %>">
       </div>
       <button type="submit" class="btn btn-default">Laden</button>
@@ -20,6 +16,12 @@
   </div>
 </div>
 <hr>
+<div class="row">
+  <div class="col-sm-12">
+    <h3>Umsatz im ausgew&auml;hlten Zeitraum</h3>
+    <p><strong>€ <%= @totalMoney %></strong></p>
+  </div>
+</div>
 <div class="row">
   <div class="col-sm-12">
     <h3>Tourguide Details</h3>
@@ -76,7 +78,7 @@
             <td><%= tour.endDate %></td>
             <td><%= tour.status.name %></td>
             <td><%= @tourssum[index] %></td>
-            <td><%= link_to 'Show', tour %></td>
+            <td><%= link_to 'Anzeigen', tour %></td>
           </tr>
       <% end %>
       </tbody>
