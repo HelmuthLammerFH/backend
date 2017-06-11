@@ -5,3 +5,40 @@
 .bootstrap-welcome {
   padding-top: 5em;
 }
+
+.navbar {
+  background-color: #cc0000;
+  border-radius: 0;
+
+  .navbar-brand {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 18px;
+  }
+
+  li {
+    a {
+      color: #ffcccc;
+
+      &:hover, &:focus {
+        color: #ffffff;
+        box-shadow: inset 0 -2px 0 #ffffff;
+      }
+    }
+  }
+
+  .nav > li > a:hover, .nav > li > a:focus {
+    background-color: #cc0000;
+  }
+
+  .navbar-brand:hover, .navbar-brand:focus {
+    background-color: #cc0000;
+  }
+
+  li.active {
+    a {
+        color: #ffffff;
+        box-shadow: inset 0 -2px 0 #ffffff;
+    }
+  }
+}
