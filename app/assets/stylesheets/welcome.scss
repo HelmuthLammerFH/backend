@@ -37,8 +37,16 @@
 
   li.active {
     a {
-        color: #ffffff;
-        box-shadow: inset 0 -2px 0 #ffffff;
+      color: #ffffff;
+      box-shadow: inset 0 -2px 0 #ffffff;
     }
   }
+}
+
+a:hover, a:focus {
+  background-color: transparent;
+}
+
+a, a:visited {
+  color: #337ab7
 }
