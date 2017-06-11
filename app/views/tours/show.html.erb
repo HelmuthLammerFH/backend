@@ -26,34 +26,34 @@
 </p>
 
 <p>
-  <strong>Createdfrom:</strong>
-  <%= @tour.createdFrom %>
-</p>
-
-<p>
-  <strong>Changedfrom:</strong>
-  <%= @tour.changedFrom %>
-</p>
-
-<p>
-  <strong>Syncedfrom:</strong>
-  <%= @tour.syncedFrom %>
-</p>
-
-<p>
-  <strong>Deleteflag:</strong>
-  <%= @tour.deleteFlag %>
-</p>
-
-<p>
   <strong>Status:</strong>
-  <%= @tour.status %>
+  <%= @tour.status.name %>
 </p>
 
 <p>
   <strong>Tourguide:</strong>
-  <%= @tour.Tourguide %>
+  <%= @tour.Tourguide.user.firstname %>  <%= @tour.Tourguide.user.lastname%>
+  <td><%= link_to 'Show', @tour.Tourguide %></td>
 </p>
 
-<%= link_to 'Edit', edit_tour_path(@tour) %> |
-<%= link_to 'Back', tours_path %>
+<h1>Customers</h1>
+
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @users.each do |user| %>
+      <tr>
+        <td><%= user.firstname %></td>
+        <td><%= user.lastname %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back', reports_path %>

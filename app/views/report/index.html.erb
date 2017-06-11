@@ -1,0 +1,87 @@
+<h1>Auswertungen</h1>
+<hr>
+<div class="row">
+  <div class="col-sm-12">
+    <form class="form-inline" action="/reports">
+      <div class="form-group">
+        <label for="startdate">Start Datum:</label>
+        <input name="start" type="date" class="form-control" id="startdate" value="<%= @tours_startdate  %>">
+      </div>
+      <div class="form-group">
+        <label for="enddate">Ende Datum:</label>
+        <input name="end" type="date" class="form-control" id="enddate" value="<%= @tours_enddate  %>">
+      </div>
+      <button type="submit" class="btn btn-default">Laden</button>
+    </form>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-sm-12">
+    <h3>Umsatz im ausgew&auml;hlten Zeitraum</h3>
+    <p><strong>€ <%= @totalMoney %></strong></p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <h3>Tourguide Details</h3>
+  </div>
+  <div class="col-sm-12">
+    <table class="table table-bordered table-hover">
+      <thead>
+      <tr>
+        <th>Vorname</th>
+        <th>Nachname</th>
+        <th>Tours</th>
+        <th>Aktion</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @tourguides.each_with_index do |tourguide, index| %>
+          <tr>
+            <td><%= tourguide.user.firstname %></td>
+            <td><%= tourguide.user.lastname %></td>
+            <td><%= @tourscount[index] %></td>
+            <td><%= link_to 'Anzeigen', tourguide %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-sm-12">
+    <h3>Alle Touren</h3>
+  </div>
+  <div class="col-sm-12">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>max. Teilnehmer</th>
+        <th>Preis</th>
+        <th>Start</th>
+        <th>Ende</th>
+        <th>Status</th>
+        <th>Einnahmen</th>
+        <th>Aktion</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @tours.each_with_index do |tour, index| %>
+          <tr>
+            <td><%= tour.name %></td>
+            <td><%= tour.maxAttendees %></td>
+            <td><%= tour.price %></td>
+            <td><%= tour.startDate %></td>
+            <td><%= tour.endDate %></td>
+            <td><%= tour.status.name %></td>
+            <td><%= @tourssum[index] %></td>
+            <td><%= link_to 'Anzeigen', tour %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

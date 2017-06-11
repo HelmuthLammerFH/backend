@@ -1,39 +1,48 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Firstname:</strong>
+  <%= @tourguide.user.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @tourguide.user.firstname %>
+</p>
+
+<p>
   <strong>Tourguidesince:</strong>
   <%= @tourguide.tourGuideSince %>
 </p>
 
-<p>
-  <strong>Createdfrom:</strong>
-  <%= @tourguide.createdFrom %>
-</p>
+<h1>Tours</h1>
 
-<p>
-  <strong>Changedfrom:</strong>
-  <%= @tourguide.changedFrom %>
-</p>
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Maxattendees</th>
+    <th>Price</th>
+    <th>Startdate</th>
+    <th>Enddate</th>
+    <th>Status</th>
+    <th>Action</th>
+  </tr>
+  </thead>
 
-<p>
-  <strong>Syncedfrom:</strong>
-  <%= @tourguide.syncedFrom %>
-</p>
+  <tbody>
+  <% @tours.each do |tour| %>
+      <tr>
+        <td><%= tour.name %></td>
+        <td><%= tour.maxAttendees %></td>
+        <td><%= tour.price %></td>
+        <td><%= tour.startDate %></td>
+        <td><%= tour.endDate %></td>
+        <td><%= tour.status.name %></td>
+        <td><%= link_to 'Show', tour %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
 
-<p>
-  <strong>Deleteflag:</strong>
-  <%= @tourguide.deleteFlag %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @tourguide.user %>
-</p>
-
-<p>
-  <strong>Agency:</strong>
-  <%= @tourguide.agency %>
-</p>
-
-<%= link_to 'Edit', edit_tourguide_path(@tourguide) %> |
-<%= link_to 'Back', tourguides_path %>
+<%= link_to 'Back', reports_path %>

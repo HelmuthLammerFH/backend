@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'reports' => 'report#index'
+  get 'dashboard' => 'dashboard#index'
+
   resources :customer_in_tours
   resources :ressource_for_tours
   resources :tour_to_positions
