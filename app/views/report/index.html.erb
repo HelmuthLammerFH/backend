@@ -19,7 +19,7 @@
 <div class="row">
   <div class="col-sm-12">
     <h3>Umsatz im ausgew&auml;hlten Zeitraum</h3>
-    <p><strong>€ <%= @totalMoney %></strong></p>
+    <h4>€ <%= @totalMoney %></h4>
   </div>
 </div>
 <div class="row">
@@ -30,8 +30,8 @@
     <table class="table table-bordered table-hover">
       <thead>
       <tr>
-        <th>Vorname</th>
-        <th>Nachname</th>
+        <th>Name</th>
+        <th>Geburtsdatum</th>
         <th>Tours</th>
         <th>Aktion</th>
       </tr>
@@ -40,8 +40,8 @@
       <tbody>
       <% @tourguides.each_with_index do |tourguide, index| %>
           <tr>
-            <td><%= tourguide.user.firstname %></td>
             <td><%= tourguide.user.lastname %></td>
+            <td><%= tourguide.user.birthdate %></td>
             <td><%= @tourscount[index] %></td>
             <td><%= link_to 'Anzeigen', tourguide %></td>
           </tr>
