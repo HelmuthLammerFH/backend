@@ -32,25 +32,25 @@
 
 <p>
   <strong>Tourguide:</strong>
-  <%= @tour.Tourguide.user.firstname %>  <%= @tour.Tourguide.user.lastname%>
+  <%= @tour.Tourguide.user.lastname %>
   <td><%= link_to 'Anzeigen', @tour.Tourguide %></td>
 </p>
 
-<h1>Customers</h1>
+<h1>Teilnehmer</h1>
 
 <table class="table table-bordered">
   <thead>
   <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
+    <th>Name</th>
+    <th>Geburtsdatum</th>
   </tr>
   </thead>
 
   <tbody>
   <% @users.each do |user| %>
       <tr>
-        <td><%= user.firstname %></td>
         <td><%= user.lastname %></td>
+        <td><%= user.birthdate %></td>
       </tr>
   <% end %>
   </tbody>
