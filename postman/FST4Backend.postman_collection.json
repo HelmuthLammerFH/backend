@@ -161,7 +161,6 @@
 					"request": {
 						"url": {
 							"raw": "{{url}}{{api}}{{version}}/customer_in_tour_custom.json?clientID=1&user_id=81&tour_id=83",
-							"auth": {},
 							"host": [
 								"{{url}}{{api}}{{version}}"
 							],
@@ -228,7 +227,6 @@
 					"request": {
 						"url": {
 							"raw": "{{url}}{{api}}{{version}}/customer_in_tours/2.json?clientID=1",
-							"auth": {},
 							"host": [
 								"{{url}}{{api}}{{version}}"
 							],
@@ -258,7 +256,6 @@
 					"request": {
 						"url": {
 							"raw": "{{url}}{{api}}{{version}}/customer_in_tours.json?clientID=1",
-							"auth": {},
 							"host": [
 								"{{url}}{{api}}{{version}}"
 							],
@@ -296,7 +293,6 @@
 					"request": {
 						"url": {
 							"raw": "{{url}}{{api}}{{version}}/customer_in_tour_custom?clientID=1",
-							"auth": {},
 							"host": [
 								"{{url}}{{api}}{{version}}"
 							],
@@ -340,7 +336,6 @@
 					"request": {
 						"url": {
 							"raw": "{{url}}{{api}}{{version}}/login?clientID=1&username=roli&password=ddad",
-							"auth": {},
 							"host": [
 								"{{url}}{{api}}{{version}}"
 							],
@@ -387,7 +382,6 @@
 					"request": {
 						"url": {
 							"raw": "{{url}}{{api}}{{version}}/ressource_for_tours.json?clientID=1&tour_id=83",
-							"auth": {},
 							"host": [
 								"{{url}}{{api}}{{version}}"
 							],
@@ -422,7 +416,6 @@
 					"request": {
 						"url": {
 							"raw": "{{url}}{{api}}{{version}}/ressource_for_tours.json?clientID=1",
-							"auth": {},
 							"host": [
 								"{{url}}{{api}}{{version}}"
 							],
@@ -519,7 +512,6 @@
 					"request": {
 						"url": {
 							"raw": "{{url}}{{api}}{{version}}/statuses.json?clientID=1",
-							"auth": {},
 							"host": [
 								"{{url}}{{api}}{{version}}"
 							],
@@ -583,7 +575,6 @@
 					"request": {
 						"url": {
 							"raw": "{{url}}{{api}}{{version}}/tourguides.json?clientID=1",
-							"auth": {},
 							"host": [
 								"{{url}}{{api}}{{version}}"
 							],
@@ -669,7 +660,6 @@
 					"request": {
 						"url": {
 							"raw": "{{url}}{{api}}{{version}}/tourpositions.json?clientID=1",
-							"auth": {},
 							"host": [
 								"{{url}}{{api}}{{version}}"
 							],
@@ -707,7 +697,6 @@
 					"request": {
 						"url": {
 							"raw": "{{url}}{{api}}{{version}}/tourpositions/84.json?clientID=1",
-							"auth": {},
 							"host": [
 								"{{url}}{{api}}{{version}}"
 							],
@@ -772,7 +761,6 @@
 					"request": {
 						"url": {
 							"raw": "{{url}}{{api}}{{version}}/tour_to_positions.json?clientID=1",
-							"auth": {},
 							"host": [
 								"{{url}}{{api}}{{version}}"
 							],
@@ -801,7 +789,6 @@
 					"request": {
 						"url": {
 							"raw": "{{url}}{{api}}{{version}}/tour_to_positions.json?clientID=1",
-							"auth": {},
 							"host": [
 								"{{url}}{{api}}{{version}}"
 							],
@@ -856,7 +843,6 @@
 					"request": {
 						"url": {
 							"raw": "{{url}}{{api}}{{version}}/tours/99.json?clientID=2",
-							"auth": {},
 							"host": [
 								"{{url}}{{api}}{{version}}"
 							],
@@ -886,7 +872,6 @@
 					"request": {
 						"url": {
 							"raw": "{{url}}{{api}}{{version}}/tours.json?clientID=1",
-							"auth": {},
 							"host": [
 								"{{url}}{{api}}{{version}}"
 							],
@@ -924,7 +909,6 @@
 					"request": {
 						"url": {
 							"raw": "{{url}}{{api}}{{version}}/tours/83.json?clientID=2",
-							"auth": {},
 							"host": [
 								"{{url}}{{api}}{{version}}"
 							],
@@ -1000,7 +984,6 @@
 					"request": {
 						"url": {
 							"raw": "{{url}}{{api}}{{version}}/users/83.json?clientID=1",
-							"auth": {},
 							"host": [
 								"{{url}}{{api}}{{version}}"
 							],
@@ -1030,7 +1013,6 @@
 					"request": {
 						"url": {
 							"raw": "{{url}}{{api}}{{version}}/users/83.json?clientID=1",
-							"auth": {},
 							"host": [
 								"{{url}}{{api}}{{version}}"
 							],
@@ -1089,7 +1071,6 @@
 					"request": {
 						"url": {
 							"raw": "{{url}}{{api}}{{version}}/users.json?clientID=1",
-							"auth": {},
 							"host": [
 								"{{url}}{{api}}{{version}}"
 							],
@@ -1129,7 +1110,6 @@
 			"request": {
 				"url": {
 					"raw": "{{url}}{{api}}{{version}}/get_all_new_entries?clientID=1&syncState=2",
-					"auth": {},
 					"host": [
 						"{{url}}{{api}}{{version}}"
 					],
