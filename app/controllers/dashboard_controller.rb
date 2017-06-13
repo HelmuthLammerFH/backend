@@ -53,7 +53,7 @@ class DashboardController < ApplicationController
     @tourguides.each do |tg|
       @temp = Tour.where('Tourguide_id = ?', tg.id).count
       @tempArray = []
-      @tempArray.push(tg.user.firstname)
+      @tempArray.push(tg.user.lastname)
       @tempArray.push(@temp)
       @tourguidesChartData.push(@tempArray)
     end
