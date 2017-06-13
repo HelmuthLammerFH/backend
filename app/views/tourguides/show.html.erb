@@ -7,7 +7,7 @@
 
 <p>
   <strong>Lastname:</strong>
-  <%= @tourguide.user.firstname %>
+  <%= @tourguide.user.lastname %>
 </p>
 
 <p>
@@ -39,10 +39,10 @@
         <td><%= tour.startDate %></td>
         <td><%= tour.endDate %></td>
         <td><%= tour.status.name %></td>
-        <td><%= link_to 'Show', tour %></td>
+        <td><%= link_to 'Anzeigen', tour %></td>
       </tr>
   <% end %>
   </tbody>
 </table>
 
-<%= link_to 'Back', reports_path %>
+<%= link_to 'Zurück', reports_path %>
