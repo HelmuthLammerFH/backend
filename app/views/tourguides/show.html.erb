@@ -1,14 +1,56 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @tourguide.user.lastname %>
-</p>
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <p>
+          <strong>Name:</strong>
+        </p>
+      </div>
+      <div class="col-xs-12 col-md-6"><%= @tourguide.user.lastname %></div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Tourguide seit:</strong>
-  <%= @tourguide.tourGuideSince %>
-</p>
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <p>
+          <strong>Geburtsdatum:</strong>
+        </p>
+      </div>
+      <div class="col-xs-12 col-md-6"><%= @tourguide.user.birthdate %></div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <p>
+          <strong>Tourguide seit:</strong>
+        </p>
+      </div>
+      <div class="col-xs-12 col-md-6"><%= @tourguide.tourGuideSince %></div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <p>
+          <strong>Email:</strong>
+        </p>
+      </div>
+      <div class="col-xs-12 col-md-6"><%= @tourguide.user.email %></div>
+    </div>
+  </div>
+</div>
 
 <h1>Touren</h1>
 
