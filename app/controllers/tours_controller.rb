@@ -16,10 +16,6 @@ class ToursController < ApplicationController
       @temp = User.where('id = ?', cit.customer_id).first
       @users.push(@temp)
     end
-
-    puts '######################'
-    puts json: @users
-    puts '######################'
   end
 
   # GET /tours/new

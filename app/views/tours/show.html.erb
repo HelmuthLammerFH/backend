@@ -1,57 +1,124 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @tour.name %>
-</p>
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <p>
+          <strong>Name:</strong>
+        </p>
+      </div>
+      <div class="col-xs-12 col-md-6"><%= @tour.name %></div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Maxattendees:</strong>
-  <%= @tour.maxAttendees %>
-</p>
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <p>
+          <strong>Max. Teilnehmer:</strong>
+        </p>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <%= @tour.maxAttendees %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Price:</strong>
-  <%= @tour.price %>
-</p>
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <p>
+          <strong>Price:</strong>
+        </p>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <%= @tour.price %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Startdate:</strong>
-  <%= @tour.startDate %>
-</p>
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <p>
+          <strong>Startdate:</strong>
+        </p>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <%= @tour.startDate %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Enddate:</strong>
-  <%= @tour.endDate %>
-</p>
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <p>
+          <strong>Enddate:</strong>
+        </p>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <%= @tour.endDate %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Status:</strong>
-  <%= @tour.status.name %>
-</p>
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <p>
+          <strong>Status:</strong>
+        </p>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <%= @tour.status.name %>
+      </div>
+    </div>
+  </div>
+</div>
 
 <p>
   <strong>Tourguide:</strong>
-  <%= @tour.Tourguide.user.lastname %>
-  <td><%= link_to 'Anzeigen', @tour.Tourguide %></td>
+  <%= link_to 'Anzeigen', @tour.Tourguide %>
 </p>
 
-<h1>Teilnehmer</h1>
 
+<h1>Teilnehmer</h1>
 <table class="table table-bordered">
   <thead>
   <tr>
     <th>Name</th>
     <th>Geburtsdatum</th>
+    <th>Teilgenommen</th>
+    <th>Bewertung</th>
   </tr>
   </thead>
 
   <tbody>
-  <% @users.each do |user| %>
+  <% @users.each_with_index do |user, index| %>
       <tr>
         <td><%= user.lastname %></td>
         <td><%= user.birthdate %></td>
+        <td><%= @customers_in_tours[index].participated ? 'Ja' : 'Nein' %></td>
+        <td>
+          <% for i in 1..@customers_in_tours[index].starRating  do %>
+              <img height="15" src="/assets/star.ico" />
+          <% end %>
+        </td>
       </tr>
   <% end %>
   </tbody>
 </table>
+
+

@@ -35,9 +35,12 @@ class DashboardController < ApplicationController
     @i = 0
     @mostTours.each do |key, value|
       @tour1 = Tour.find(key)
-      # puts json: @tour1
+
+      @sumStarRating = CustomerInTour.group(:tour_id).where('tour_id = ?', @tour1.id).sum(:starRating)
+      @averageRating = (@sumStarRating[@tour1.id].to_f/value)
+
       @tempItem = []
-      @tempItem = [@tour1, value]
+      @tempItem = [@tour1, value, @averageRating]
       if @i < 3
         @mostBookedTours.push(@tempItem)
       end
