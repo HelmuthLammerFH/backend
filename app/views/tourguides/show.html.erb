@@ -21,7 +21,7 @@
           <strong>Geburtsdatum:</strong>
         </p>
       </div>
-      <div class="col-xs-12 col-md-6"><%= @tourguide.user.birthdate %></div>
+      <div class="col-xs-12 col-md-6"><%= @tourguide.user.birthdate.strftime("%d/%m/%Y") %></div>
     </div>
   </div>
 </div>
@@ -34,7 +34,7 @@
           <strong>Tourguide seit:</strong>
         </p>
       </div>
-      <div class="col-xs-12 col-md-6"><%= @tourguide.tourGuideSince %></div>
+      <div class="col-xs-12 col-md-6"><%= @tourguide.tourGuideSince.strftime("%d/%m/%Y") %></div>
     </div>
   </div>
 </div>
