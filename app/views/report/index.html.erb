@@ -32,7 +32,7 @@
       <tr>
         <th>Name</th>
         <th>Geburtsdatum</th>
-        <th>Tours</th>
+        <th>Touren</th>
         <th>Aktion</th>
       </tr>
       </thead>
@@ -60,7 +60,7 @@
         <th>Name</th>
         <th>max. Teilnehmer</th>
         <th>Preis</th>
-        <th>Start</th>
+        <th>Beginn</th>
         <th>Ende</th>
         <th>Status</th>
         <th>Einnahmen</th>
@@ -73,9 +73,9 @@
           <tr>
             <td><%= tour.name %></td>
             <td><%= tour.maxAttendees %></td>
-            <td><%= tour.price %></td>
-            <td><%= tour.startDate %></td>
-            <td><%= tour.endDate %></td>
+            <td>€ <%= tour.price %></td>
+            <td><%= tour.startDate.strftime("%d/%m/%Y %H:%M") %></td>
+            <td><%= tour.endDate.strftime("%d/%m/%Y %H:%M") %></td>
             <td><%= tour.status.name %></td>
             <td><%= @tourssum[index] %></td>
             <td><%= link_to 'Anzeigen', tour %></td>

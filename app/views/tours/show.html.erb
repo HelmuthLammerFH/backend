@@ -33,11 +33,11 @@
     <div class="row">
       <div class="col-xs-12 col-md-6">
         <p>
-          <strong>Price:</strong>
+          <strong>Preis:</strong>
         </p>
       </div>
       <div class="col-xs-12 col-md-6">
-        <%= @tour.price %>
+        € <%= @tour.price %>
       </div>
     </div>
   </div>
@@ -48,11 +48,11 @@
     <div class="row">
       <div class="col-xs-12 col-md-6">
         <p>
-          <strong>Startdate:</strong>
+          <strong>Beginn:</strong>
         </p>
       </div>
       <div class="col-xs-12 col-md-6">
-        <%= @tour.startDate %>
+        <%= @tour.startDate.strftime("%d/%m/%Y %H:%M") %>
       </div>
     </div>
   </div>
@@ -63,11 +63,11 @@
     <div class="row">
       <div class="col-xs-12 col-md-6">
         <p>
-          <strong>Enddate:</strong>
+          <strong>Ende:</strong>
         </p>
       </div>
       <div class="col-xs-12 col-md-6">
-        <%= @tour.endDate %>
+        <%= @tour.endDate.strftime("%d/%m/%Y %H:%M") %>
       </div>
     </div>
   </div>
@@ -90,6 +90,7 @@
 
 <p>
   <strong>Tourguide:</strong>
+  <%= @tour.Tourguide.user.lastname %>
   <%= link_to 'Anzeigen', @tour.Tourguide %>
 </p>
 
@@ -109,7 +110,7 @@
   <% @users.each_with_index do |user, index| %>
       <tr>
         <td><%= user.lastname %></td>
-        <td><%= user.birthdate %></td>
+        <td><%= user.birthdate.strftime("%d/%m/%Y") %></td>
         <td><%= @customers_in_tours[index].participated ? 'Ja' : 'Nein' %></td>
         <td>
           <% for i in 1..@customers_in_tours[index].starRating  do %>

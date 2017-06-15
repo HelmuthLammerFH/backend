@@ -6,22 +6,22 @@
 </p>
 
 <p>
-  <strong>Tourguidesince:</strong>
+  <strong>Tourguide seit:</strong>
   <%= @tourguide.tourGuideSince %>
 </p>
 
-<h1>Tours</h1>
+<h1>Touren</h1>
 
 <table class="table table-bordered">
   <thead>
   <tr>
     <th>Name</th>
-    <th>Maxattendees</th>
-    <th>Price</th>
-    <th>Startdate</th>
-    <th>Enddate</th>
+    <th>Max. Teilnehmer</th>
+    <th>Preis</th>
+    <th>Beginn</th>
+    <th>Ende</th>
     <th>Status</th>
-    <th>Action</th>
+    <th>Aktion</th>
   </tr>
   </thead>
 
@@ -29,10 +29,10 @@
   <% @tours.each do |tour| %>
       <tr>
         <td><%= tour.name %></td>
-        <td><%= tour.maxAttendees %></td>
-        <td><%= tour.price %></td>
-        <td><%= tour.startDate %></td>
-        <td><%= tour.endDate %></td>
+        <td><%= tour.maxAttendees  %></td>
+        <td>€ <%= tour.price %></td>
+        <td><%= tour.startDate? ? tour.startDate.strftime("%d/%m/%Y") : '-' %></td>
+        <td><%= tour.startDate? ? tour.endDate.strftime("%d/%m/%Y") : '-' %></td>
         <td><%= tour.status.name %></td>
         <td><%= link_to 'Anzeigen', tour %></td>
       </tr>
