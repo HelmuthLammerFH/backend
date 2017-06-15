@@ -24,10 +24,10 @@ class ReportController < ApplicationController
 
       @sumStarRating = CustomerInTour.group(:tour_id).where('tour_id = ?', to.id).sum(:starRating)
       puts '###############################sumStarRating'
-      if @sumStarRating == nil
+      @averageRating = (@sumStarRating[to.id].to_f/@customers_in_tour)
+      if @averageRating == NaN
         @sumStarRating = 0
       end
-      @averageRating = (@sumStarRating[to.id].to_f/@customers_in_tour)
       puts '###############################@averageRating'
       puts json: @averageRating
 
