@@ -25,7 +25,7 @@ class ReportController < ApplicationController
       @sumStarRating = CustomerInTour.group(:tour_id).where('tour_id = ?', to.id).sum(:starRating)
       puts '###############################sumStarRating'
       @averageRating = (@sumStarRating[to.id].to_f/@customers_in_tour)
-      if @averageRating == NaN
+      if @averageRating.nan?
         @sumStarRating = 0
       end
       puts '###############################@averageRating'
