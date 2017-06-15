@@ -4,11 +4,11 @@
   <div class="col-sm-12">
     <form class="form-inline" action="/reports">
       <div class="form-group">
-        <label for="startdate">Start Datum:</label>
+        <label for="startdate">Beginn:</label>
         <input name="start" type="date" class="form-control" id="startdate" value="<%= @tours_startdate  %>">
       </div>
       <div class="form-group">
-        <label for="enddate">Ende Datum:</label>
+        <label for="enddate">Ende:</label>
         <input name="end" type="date" class="form-control" id="enddate" value="<%= @tours_enddate  %>">
       </div>
       <button type="submit" class="btn btn-default">Laden</button>
@@ -41,7 +41,7 @@
       <% @tourguides.each_with_index do |tourguide, index| %>
           <tr>
             <td><%= tourguide.user.lastname %></td>
-            <td><%= tourguide.user.birthdate %></td>
+            <td><%= tourguide.user.birthdate.strftime("%d/%m/%Y") %></td>
             <td><%= @tourscount[index] %></td>
             <td><%= link_to 'Anzeigen', tourguide %></td>
           </tr>
