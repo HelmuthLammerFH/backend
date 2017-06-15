@@ -16,10 +16,16 @@ class ReportController < ApplicationController
     # tours
     @tours = Tour.where('startDate >= ? AND endDate <= ? ', @tours_startdate, @tours_enddate)
     @tourssum = []
+    @toursstars = []
     @tours.each do |to|
       @customers_in_tour = CustomerInTour.where('tour_id = ?', to.id).count
       @sum = @customers_in_tour * to.price.to_f
       @tourssum.push(@sum)
+
+      @sumStarRating = CustomerInTour.group(:tour_id).where('tour_id = ?', to.id).sum(:starRating)
+      @averageRating = (@sumStarRating[to.id].to_f/@customers_in_tour)
+      @toursstars.push(@averageRating)
+
       @totalMoney = @totalMoney + @sum
     end
   end
