@@ -26,7 +26,7 @@ class ReportController < ApplicationController
       puts '###############################sumStarRating'
       @averageRating = (@sumStarRating[to.id].to_f/@customers_in_tour)
       if @averageRating.nan?
-        @sumStarRating = 0
+        @averageRating = 0
       end
       puts '###############################@averageRating'
       puts json: @averageRating
