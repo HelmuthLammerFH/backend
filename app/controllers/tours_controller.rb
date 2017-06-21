@@ -11,6 +11,7 @@ class ToursController < ApplicationController
   # GET /tours/1.json
   def show
     @customers_in_tours = CustomerInTour.where('tour_id = ?', @tour.id)
+    @customerTourCount = @customers_in_tours.count
     @users = []
     @customers_in_tours.each do |cit|
       @temp = User.where('id = ?', cit.customer_id).first
