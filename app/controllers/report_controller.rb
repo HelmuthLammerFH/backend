@@ -17,6 +17,7 @@ class ReportController < ApplicationController
     @tours = Tour.where('startDate >= ? AND endDate <= ? ', @tours_startdate, @tours_enddate)
     @tourssum = []
     @toursstars = []
+    @tourCustomerCount = []
     @tours.each do |to|
       @customers_in_tour = CustomerInTour.where('tour_id = ?', to.id).count
       @sum = @customers_in_tour * to.price.to_f
@@ -30,6 +31,7 @@ class ReportController < ApplicationController
       end
 
       @toursstars.push(@averageRating)
+      @tourCustomerCount.push(@customers_in_tour)
 
       @totalMoney = @totalMoney + @sum
     end

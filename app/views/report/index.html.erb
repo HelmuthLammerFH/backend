@@ -63,6 +63,7 @@
         <th>Beginn</th>
         <th>Ende</th>
         <th>Status</th>
+        <th>Teilnehmer</th>
         <th>Einnahmen</th>
         <th>Bewertung</th>
         <th>Aktion</th>
@@ -78,7 +79,8 @@
             <td><%= tour.startDate.strftime("%d/%m/%Y %H:%M") %></td>
             <td><%= tour.endDate.strftime("%d/%m/%Y %H:%M") %></td>
             <td><%= tour.status.name %></td>
-            <td><%= @tourssum[index] %></td>
+            <td><%= @tourCustomerCount[index] %></td>
+            <td>€ <%= @tourssum[index] %></td>
             <td><%= @toursstars[index] %></td>
             <td><%= link_to 'Anzeigen', tour %></td>
           </tr>
