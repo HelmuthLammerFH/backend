@@ -62,7 +62,6 @@
         <th>Preis</th>
         <th>Beginn</th>
         <th>Ende</th>
-        <th>Status</th>
         <th>Teilnehmer</th>
         <th>Einnahmen</th>
         <th>Bewertung</th>
@@ -78,7 +77,6 @@
             <td>€ <%= tour.price %></td>
             <td><%= tour.startDate.strftime("%d/%m/%Y %H:%M") %></td>
             <td><%= tour.endDate.strftime("%d/%m/%Y %H:%M") %></td>
-            <td><%= tour.status.name %></td>
             <td><%= @tourCustomerCount[index] %></td>
             <td>€ <%= @tourssum[index] %></td>
             <td><%= @toursstars[index] %></td>
