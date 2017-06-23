@@ -81,7 +81,7 @@
             <td><%= tour.status.name %></td>
             <td><%= @tourCustomerCount[index] %></td>
             <td>€ <%= @tourssum[index] %></td>
-            <td><%= @toursstars[index] %></td>
+            <td><%= @toursstars[index] %> count:<%= @customers_in_tour_with_rating_count %></td>
             <td><%= link_to 'Anzeigen', tour %></td>
           </tr>
       <% end %>
