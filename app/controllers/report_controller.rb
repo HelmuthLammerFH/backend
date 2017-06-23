@@ -25,9 +25,10 @@ class ReportController < ApplicationController
 
       @sumStarRating = CustomerInTour.group(:tour_id).where('tour_id = ?', to.id).sum(:starRating)
 
-      @customers_in_tour_with_rating_count = CustomerInTour.where('tour_id = ? AND starRating <> ?', to.id, nil).count
-
+      # for calculation of average rating
+      @customers_in_tour_with_rating_count = CustomerInTour.where('tour_id = ?', to.id).where.not(starRating: nil).count
       @averageRating = (@sumStarRating[to.id].to_f/@customers_in_tour_with_rating_count)
+
       if @averageRating.nan?
         @averageRating = 0.0
       end

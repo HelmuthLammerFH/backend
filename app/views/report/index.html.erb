@@ -41,7 +41,7 @@
       <% @tourguides.each_with_index do |tourguide, index| %>
           <tr>
             <td><%= tourguide.user.lastname %></td>
-            <td><%= tourguide.user.birthdate.strftime("%d/%m/%Y") %></td>
+            <td><%= tourguide.user.birthdate && tourguide.user.birthdate.strftime("%d/%m/%Y") %></td>
             <td><%= @tourscount[index] %></td>
             <td><%= link_to 'Anzeigen', tourguide %></td>
           </tr>
