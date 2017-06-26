@@ -37,7 +37,7 @@ class DashboardController < ApplicationController
       @tour1 = Tour.find(key)
 
       @sumStarRating = CustomerInTour.group(:tour_id).where('tour_id = ?', @tour1.id).sum(:starRating)
-      @averageRating = (@sumStarRating[@tour1.id].to_f/value)
+      @averageRating = ActionController::Base.helpers.number_with_precision((@sumStarRating[@tour1.id].to_f/value), precision: 2)
 
       @tempItem = []
       @tempItem = [@tour1, value, @averageRating]
