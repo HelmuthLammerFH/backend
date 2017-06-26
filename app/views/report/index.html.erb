@@ -65,6 +65,7 @@
         <th>Teilnehmer</th>
         <th>Einnahmen</th>
         <th>Bewertung</th>
+        <th>Stars</th>
         <th>Aktion</th>
       </tr>
       </thead>
@@ -80,6 +81,11 @@
             <td><%= @tourCustomerCount[index] %></td>
             <td>€ <%= @tourssum[index] %></td>
             <td><%= @toursstars[index] %></td>
+            <td>
+              <% for i in 1..@toursstars[index]  do %>
+                  <img height="15" src="/assets/star.ico" />
+              <% end %>
+            </td>
             <td><%= link_to 'Anzeigen', tour %></td>
           </tr>
       <% end %>

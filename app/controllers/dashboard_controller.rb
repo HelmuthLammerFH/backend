@@ -37,12 +37,11 @@ class DashboardController < ApplicationController
       @tour1 = Tour.find(key)
 
       @sumStarRating = CustomerInTour.group(:tour_id).where('tour_id = ?', @tour1.id).sum(:starRating)
-      @averageRating = ActionController::Base.helpers.number_with_precision((@sumStarRating[@tour1.id].to_f/value), precision: 2)
-      @rounded = ActionController::Base.helpers.number_with_precision((@sumStarRating[@tour1.id].to_f/value), precision: 0).to_i
-      puts '######################################################'
-      puts json: @rounded
 
+      @customers_in_tour_with_rating_count = CustomerInTour.where('tour_id = ?', @tour1.id).where.not(starRating: nil).where.not(starRating: 0).count
 
+      @averageRating = ActionController::Base.helpers.number_with_precision((@sumStarRating[@tour1.id].to_f/@customers_in_tour_with_rating_count), precision: 2)
+      @rounded = ActionController::Base.helpers.number_with_precision((@sumStarRating[@tour1.id].to_f/@customers_in_tour_with_rating_count), precision: 0).to_i
       
       @tempItem = []
       @tempItem = [@tour1, value, @averageRating, @rounded]
