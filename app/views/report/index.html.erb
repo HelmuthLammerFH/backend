@@ -73,12 +73,12 @@
       <% @tours.each_with_index do |tour, index| %>
           <tr>
             <td><%= tour.name %></td>
-            <td><%= tour.maxAttendees %></td>
-            <td>€ <%= tour.price %></td>
+            <td class="ta-align-right"><%= tour.maxAttendees %></td>
+            <td class="ta-align-right">€ <%= tour.price %></td>
             <td><%= tour.startDate.strftime("%d/%m/%Y %H:%M") %></td>
             <td><%= tour.endDate.strftime("%d/%m/%Y %H:%M") %></td>
             <td><%= @tourCustomerCount[index] %></td>
-            <td>€ <%= @tourssum[index] %></td>
+            <td class="ta-align-right">€ <%= @tourssum[index] %></td>
             <td>
               <% for i in 1..@toursstars[index]  do %>
                   <img height="15" src="/assets/star.ico" />
