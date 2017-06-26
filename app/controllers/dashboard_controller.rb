@@ -31,7 +31,7 @@ class DashboardController < ApplicationController
 
     #most booked tours
     @mostBookedTours = []
-    @mostTours = CustomerInTour.group(:tour_id).order('count_id desc').count('id').take(3)
+    @mostTours = CustomerInTour.group(:tour_id).order('count_id desc').count('id').take(5)
 
     @mostTours.each do |key, value|
       @tour1 = Tour.find(key)
