@@ -31,8 +31,8 @@ class DashboardController < ApplicationController
 
     #most booked tours
     @mostBookedTours = []
-    @mostTours = CustomerInTour.group(:tour_id).order('count_id desc').count('id')
-    @i = 0
+    @mostTours = CustomerInTour.group(:tour_id).order('count_id desc').count('id').take(3)
+
     @mostTours.each do |key, value|
       @tour1 = Tour.find(key)
 
@@ -45,12 +45,8 @@ class DashboardController < ApplicationController
       
       @tempItem = []
       @tempItem = [@tour1, value, @averageRating, @rounded]
-      if @i < 3
-        @mostBookedTours.push(@tempItem)
-      end
-      @i+1
-      # puts key
-      #   puts value
+
+      @mostBookedTours.push(@tempItem)
     end
     #most booked tours end
 
