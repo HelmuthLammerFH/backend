@@ -71,8 +71,8 @@
   <% @tours.each do |tour| %>
       <tr>
         <td><%= tour.name %></td>
-        <td><%= tour.maxAttendees  %></td>
-        <td>€ <%= tour.price %></td>
+        <td class="ta-align-right"><%= tour.maxAttendees  %></td>
+        <td class="ta-align-right">€ <%= tour.price %></td>
         <td><%= tour.startDate? ? tour.startDate.strftime("%d/%m/%Y") : '-' %></td>
         <td><%= tour.startDate? ? tour.endDate.strftime("%d/%m/%Y") : '-' %></td>
         <td><%= tour.status.name %></td>
