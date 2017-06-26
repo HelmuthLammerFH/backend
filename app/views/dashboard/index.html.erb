@@ -58,15 +58,11 @@
           </tr>
           </thead>
           <tbody>
-          <% @mostBookedTours.each do |tour, customers, stars, rounded| %>
+          <% @mostBookedTours.each do |tour, customers, stars| %>
               <tr>
                 <td><%= tour.name %></td>
                 <td><%= customers %></td>
-                <td>
-                  <% for i in 1..rounded  do %>
-                      <img height="15" src="/assets/star.ico" />
-                  <% end %>
-                </td>
+                <td><%= stars %></td>
                 <td><%= link_to 'Anzeigen', tour %></td>
               </tr>
           <% end %>

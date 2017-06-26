@@ -41,7 +41,7 @@ class DashboardController < ApplicationController
       @customers_in_tour_with_rating_count = CustomerInTour.where('tour_id = ?', @tour1.id).where.not(starRating: nil).where.not(starRating: 0).count
 
       @averageRating = ActionController::Base.helpers.number_with_precision((@sumStarRating[@tour1.id].to_f/@customers_in_tour_with_rating_count), precision: 2)
-      @rounded = ActionController::Base.helpers.number_with_precision((@sumStarRating[@tour1.id].to_f/@customers_in_tour_with_rating_count), precision: 0).to_i
+      #@rounded = ActionController::Base.helpers.number_with_precision((@sumStarRating[@tour1.id].to_f/@customers_in_tour_with_rating_count), precision: 0).to_i
       
       @tempItem = []
       @tempItem = [@tour1, value, @averageRating, @rounded]
